@@ -2,6 +2,11 @@ poolparty-skeleton
 ==================
 This project provides a skeleton for a poolparty <tt>clouds.rb</tt>. Just fork this project and go!
 
+branches
+========
+<tt>simple</tt> is a bare-bones branch. Start here if you want to build most everything yourself.
+<tt>master</tt> is a slightly sophisticated branch. Look here if you want more examples. 
+
 LICENSE:
 =======
 
