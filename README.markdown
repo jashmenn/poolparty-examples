@@ -1,6 +1,6 @@
 poolparty-skeleton
 ==================
-This file provides a skeleton for a poolparty clouds.rb. Just fork this project and go!
+This project provides a skeleton for a poolparty <tt>clouds.rb</tt>. Just fork this project and go!
 
 LICENSE:
 =======
