@@ -1,22 +1,19 @@
-# XXX untested XXX
-#
 # NOTE: many of the virtual resources below still need to be written
-pool(:vmware_custom) do
+pool(:washington) do
   cloud(:app) do
 
-    using :vmrun do
-      vmx_hash({
-        "/Users/nmurray/Documents/VMware/Ubuntu-jaunty.vmwarevm/Ubuntu-jaunty.vmx" => "192.168.133.128"
-      })
-    end
+    keypair "poolparty-examples-jash"
+    using :ec2
+
+    # using :vmrun do
+    #   vmx_hash({
+    #     "/Users/nmurray/Documents/VMware/Ubuntu-jaunty.vmwarevm/Ubuntu-jaunty.vmx" => "192.168.133.128"
+    #   })
+    # end
 
     instances 1
     expand_when "cpu > 3.5" 
     contract_when "cpu < 0.50"
-
-    # s3fs do 
-    #   bucket "pprb-testing"
-    # end
 
     enable :haproxy
 
@@ -33,6 +30,20 @@ pool(:vmware_custom) do
       end
     end
 
+    chef do
+      include_recipes "~/.poolparty/chef/cookbooks/*"
+    # recipe "#{File.dirname(__FILE__)}/recipes/example_recipe.rb"
+    end
+
+
+    # -- Nothing below this line works yet --
+
+    # s3fs do 
+    #   bucket "pprb-testing"
+    # end
+
+    # below is the eventual apache config
+    
     # apache do
       # installed_as_standard
 
@@ -76,13 +87,7 @@ pool(:vmware_custom) do
     #           :template => File.dirname(__FILE__) + "/templates/bin/setlock.sh",
     #           :mode => 755})
 
-    chef do
-      include_recipes "~/.poolparty/chef/cookbooks/*"
-    #   
-    #   recipe "#{File.dirname(__FILE__)}/examples/fairchild_chef.rb"
-
-    end
- 
+    
 
   end # cloud :app
 end # pool
