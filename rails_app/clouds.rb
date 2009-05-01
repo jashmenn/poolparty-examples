@@ -6,7 +6,7 @@ pool :application do
   instances 1..3
   
   cloud :pp2 do    
-    enable :haproxy, :git
+    enable :git, :apache
     
     has_package "libsqlite3-dev"
     include_chef_recipe "sqlite"
@@ -33,8 +33,8 @@ production:
     chef do
       include_recipes "~/.poolparty/chef/cookbooks/*"
       
-      recipe "chef_recipe.rb"
-      templates "templates/"
+      recipe "#{::File.dirname(__FILE__)}/chef_recipe.rb"
+      templates "#{::File.dirname(__FILE__)}/templates"
     end
     
     verify do

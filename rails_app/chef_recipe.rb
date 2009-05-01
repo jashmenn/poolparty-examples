@@ -1,5 +1,7 @@
 # BEEE YOURSELF!
 node[:apache][:dir] = "/etc/apache2"
+node[:apache][:dir] = "/etc/apache2"
+node[:apache][:listen_ports] = ["80"]
 node[:passenger][:version] = "2.2.2"
 node[:rails][:version] = "2.3.2"
 
