@@ -2,10 +2,10 @@ poolparty-skeleton
 ==================
 This project provides a skeleton for a poolparty <tt>clouds.rb</tt>. Just fork this project and go!
 
-branches
+projects
 ========
-* <tt>simple</tt> is a bare-bones branch. Start here if you want to build most everything yourself.
-* <tt>master</tt> is a slightly sophisticated branch. Look here if you want more examples. 
+* <tt>simple</tt> is a bare-bones example. Start here if you want to build most everything yourself.
+* <tt>washington</tt> is a slightly sophisticated branch. It uses some plugins and contains information on how to run a node on VMware _or_ EC2 
 
 LICENSE:
 =======
