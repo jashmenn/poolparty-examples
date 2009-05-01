@@ -1,3 +1,6 @@
+# XXX untested XXX
+#
+# NOTE: many of the virtual resources below still need to be written
 pool(:vmware_custom) do
   cloud(:app) do
 
