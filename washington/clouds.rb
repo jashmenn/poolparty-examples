@@ -4,16 +4,16 @@ pool(:washington) do
 
     # if you want to use ec2 do this:
 
-    keypair "poolparty-examples"
-    using :ec2
+    # keypair "poolparty-examples"
+    # using :ec2
 
     # if you want to use vmware, try this:
     # 
-    # using :vmrun do
-    #   vmx_hash({
-    #     "/Users/nmurray/Documents/VMware/Ubuntu-jaunty.vmwarevm/Ubuntu-jaunty.vmx" => "192.168.133.128"
-    #   })
-    # end
+    using :vmrun do
+      vmx_hash({
+        "/Users/nmurray/Documents/VMware/Ubuntu-jaunty.vmwarevm/Ubuntu-jaunty.vmx" => "192.168.133.128"
+      })
+    end
 
     instances 1
     expand_when "cpu > 3.5" 
@@ -32,11 +32,21 @@ pool(:washington) do
       enable_php5 do
         extras :cli, :pspell
       end
+
+      has_file :name => "/var/www/index.html" do
+        content "<h1>Welcome to your new poolparty instance</h1>"
+        mode 0644
+        owner "www-data"
+      end
     end
 
     chef do
       include_recipes "~/.poolparty/chef/cookbooks/*"
     # recipe "#{File.dirname(__FILE__)}/recipes/example_recipe.rb"
+    end
+
+    verify do
+      ping
     end
 
 
