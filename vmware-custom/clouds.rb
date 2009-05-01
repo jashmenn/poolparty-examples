@@ -26,6 +26,11 @@ pool(:vmware_custom) do
     has_package("screen")
 
     apache do
+      present_apache_module("status")
+
+      enable_php5 do
+        extras :cli, :pspell
+      end
     end
 
     # apache do
