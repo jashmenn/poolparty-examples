@@ -2,9 +2,13 @@
 pool(:washington) do
   cloud(:app) do
 
-    keypair "poolparty-examples-jash"
+    # if you want to use ec2 do this:
+
+    keypair "poolparty-examples"
     using :ec2
 
+    # if you want to use vmware, try this:
+    # 
     # using :vmrun do
     #   vmx_hash({
     #     "/Users/nmurray/Documents/VMware/Ubuntu-jaunty.vmwarevm/Ubuntu-jaunty.vmx" => "192.168.133.128"
