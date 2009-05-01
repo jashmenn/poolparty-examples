@@ -25,6 +25,9 @@ pool(:vmware_custom) do
     has_package("xfsprogs")
     has_package("screen")
 
+    apache do
+    end
+
     # apache do
       # installed_as_standard
 
