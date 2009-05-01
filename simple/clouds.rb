@@ -14,8 +14,8 @@ pool :poolparty do
   end
   
   has_git_repos "paparazzi" do
-    :source => "git://github.com/auser/paparazzi.git"
-    :at => "/var/www"
+    source "git://github.com/auser/paparazzi.git"
+    at "/var/www"
   end
 
 end
