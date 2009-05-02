@@ -8,7 +8,7 @@ pool(:washington) do
     # using :ec2
 
     # if you want to use vmware, try this:
-    # 
+    # replace this with the IP address of your vmware instance
     vmware_ip = "192.168.133.128"
 
     using :vmrun do
