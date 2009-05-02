@@ -9,9 +9,11 @@ pool(:washington) do
 
     # if you want to use vmware, try this:
     # 
+    vmware_ip = "192.168.133.128"
+
     using :vmrun do
       vmx_hash({
-        "/Users/nmurray/Documents/VMware/Ubuntu-jaunty.vmwarevm/Ubuntu-jaunty.vmx" => "192.168.133.128"
+        "/Users/nmurray/Documents/VMware/Ubuntu-jaunty.vmwarevm/Ubuntu-jaunty.vmx" => vmware_ip
       })
     end
 
@@ -47,6 +49,11 @@ pool(:washington) do
 
     verify do
       ping
+      http_status "http://#{vmware_ip}/index.html", 200
+      http_status "http://#{vmware_ip}/index.html", :success
+      http_status "http://#{vmware_ip}/asdfasdfads.html", 404
+      http_match  "http://#{vmware_ip}/index.html", /Welcome to your/
+      http_match  "http://#{vmware_ip}/index.html", /new poolparty instance/
     end
 
 
