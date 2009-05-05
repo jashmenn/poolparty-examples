@@ -12,7 +12,9 @@ pool(:adams) do
 
     instances 1
     # enable :haproxy
+
     has_package "tree"
+    has_package "vim-nox"
 
     apache do
       enable_default
@@ -21,7 +23,6 @@ pool(:adams) do
         mode 0644
         owner "www-data"
       end
-
 
       has_virtualhost do
         name "handkerchief.com"
@@ -56,37 +57,6 @@ pool(:adams) do
       http_status "http://tissues.com", 200
       http_match  "http://tissues.com", /Welcome to tissues.com/
     end
-
-
-    # below is the eventual apache config
-    
-    # apache do
-      # installed_as_standard
-
-      # enable_php5 do
-      #   extras :cli, :pspell, :mysql
-      # end
-
-      # config("store", ::File.join(File.dirname(__FILE__), "templates/apache", "store.conf.erb"))
-
-      # has_custom_store do
-      #   name "my_store.com"
-      # end
-
-      # has_file({:name => "/etc/apache2/htpasswd", 
-      #         :template => File.dirname(__FILE__) + "/templates/apache/htpasswd",
-      #         :owner => "www-data",
-      #         :group => "www-data",
-      #         :mode => 660})
-
-      # present_apache_module("speling")
-      # has_file({:name => "/etc/apache2/mods-enabled/speling.conf", 
-      #             :content => "CheckSpelling On",
-      #             :owner => "www-data",
-      #             :group => "www-data",
-      #             :mode => 660})
-
-    # end
 
   end # cloud :app
 end # pool
