@@ -4,7 +4,7 @@
 module PoolParty
   module Plugin
     class Hadoop < Plugin
-      def loaded(*args)
+      def before_load(o={}, &block)
         install_jdk
         add_users_and_groups
         build
@@ -25,7 +25,14 @@ module PoolParty
 
       def add_users_and_groups
         has_group "hadoop"
-        has_user "hadoop", :group => "hadoop"
+        has_user "hadoop", :gid => "hadoop"
+        has_directory "/home/hadoop", :owner => "hadoop", :mode => "755"
+        has_exec "ssh-keygen -t rsa -N '' -f /home/hadoop/.ssh/id_rsa", :user => "hadoop", 
+          :not_if => "test -e /home/hadoop/.ssh/id_rsa"
+        has_exec "cp /home/hadoop/.ssh/id_rsa.pub /home/hadoop/.ssh/authorized_keys",
+          :not_if => "test -e /home/hadoop/.ssh/authorized_keys", :user => "hadoop"
+        has_exec "chmod 644 /home/hadoop/.ssh/authorized_keys", :user => "hadoop"
+        has_exec "ssh -o 'StrictHostKeyChecking no' localhost echo", :user => "hadoop" # verify the host key
       end
 
       def build
@@ -61,10 +68,50 @@ module PoolParty
         has_directory "/usr/local/hadoop-datastore/hadoop-hadoop", :mode => "770"
         has_exec "chown -R hadoop:hadoop /usr/local/hadoop-datastore"
 
-        has_exec "sudo -H -u hadoop #{hadoop_install_dir}/bin/hadoop namenode -format", 
-          :not_if => "test -e /usr/local/hadoop-datastore/hadoop-hadoop/dfs"
+        has_exec "#{hadoop_install_dir}/bin/hadoop namenode -format", 
+          :not_if => "test -e /usr/local/hadoop-datastore/hadoop-hadoop/dfs", 
+          :user => "hadoop"
       end
 
+      # stuff for examples
+
+      def run_example_job
+        start_hadoop
+        download_sample_data
+        copy_sample_data_to_hdfs
+        start_the_job
+      end
+
+      def start_hadoop
+        has_exec hadoop_install_dir/"bin/start-all.sh", 
+          :user => "hadoop"
+      end
+
+      def download_sample_data
+        has_directory "/tmp/gutenberg", :mode => "770", :owner => "hadoop"
+        # todo, create has_wget
+        has_exec "wget http://www.gutenberg.org/files/20417/20417.txt -O /tmp/gutenberg/outline-of-science.txt", 
+          :not_if => "test -e /tmp/gutenberg/outline-of-science.txt"
+        has_exec "wget http://www.gutenberg.org/dirs/etext04/7ldvc10.txt -O /tmp/gutenberg/7ldvc10.txt", 
+          :not_if => "test -e /tmp/gutenberg/7ldvc10.txt"
+        has_exec "wget http://www.gutenberg.org/files/4300/4300.txt -O /tmp/gutenberg/ulysses.txt",
+          :not_if => "test -e /tmp/gutenberg/ulysses.txt"
+        has_exec "chown -R hadoop:hadoop /tmp/gutenberg"
+      end
+
+      def copy_sample_data_to_hdfs
+        has_exec "#{hadoop_install_dir}/bin/hadoop dfs -copyFromLocal /tmp/gutenberg gutenberg", 
+          :not_if => "sudo -H -u hadoop #{hadoop_install_dir}/bin/hadoop dfs -ls gutenberg | grep ulysses",
+          :user => "hadoop"
+      end
+
+      def start_the_job
+        has_exec "#{hadoop_install_dir}/bin/hadoop jar hadoop-0.19.1-examples.jar wordcount gutenberg gutenberg-output", 
+          :user => "hadoop"
+      end
+
+      # open http://192.168.133.128:50070/dfshealth.jsp
+      
     end
   end
 end

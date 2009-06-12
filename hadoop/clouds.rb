@@ -19,7 +19,9 @@ pool(:hadoop_cluster) do
     #   ping
     # end
 
-    hadoop
+    hadoop do
+      run_example_job
+    end
 
 
   end # cloud :hadoop
