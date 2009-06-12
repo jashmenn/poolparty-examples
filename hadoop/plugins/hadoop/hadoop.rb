@@ -9,6 +9,7 @@ module PoolParty
         add_users_and_groups
         build
         configure
+        format_hdfs
       end
 
       def install_jdk
@@ -46,9 +47,6 @@ module PoolParty
       end
 
       def configure
-        has_directory "/usr/local/hadoop-datastore/hadoop-hadoop"
-        has_exec "chown -R hadoop:hadoop /usr/local/hadoop-datastore"
-
         has_file(:name => hadoop_install_dir/"conf/hadoop-env.sh") do
           mode 0644
           template :plugins/:hadoop/:templates/"hadoop-env.sh"
@@ -57,6 +55,14 @@ module PoolParty
           mode 0644
           template :plugins/:hadoop/:templates/"hadoop-site.xml"
         end
+     end
+
+      def format_hdfs
+        has_directory "/usr/local/hadoop-datastore/hadoop-hadoop", :mode => "770"
+        has_exec "chown -R hadoop:hadoop /usr/local/hadoop-datastore"
+
+        has_exec "sudo -H -u hadoop #{hadoop_install_dir}/bin/hadoop namenode -format", 
+          :not_if => "test -e /usr/local/hadoop-datastore/hadoop-hadoop/dfs"
       end
 
     end
