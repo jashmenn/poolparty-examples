@@ -1,3 +1,5 @@
+require 'plugins/hadoop/hadoop'
+
 pool(:hadoop_cluster) do
   cloud(:hadoop) do
     vmware_ip = "192.168.133.128"
@@ -13,9 +15,9 @@ pool(:hadoop_cluster) do
     has_package" screen"
     has_package" irb"
 
-    verify do
-      ping
-    end
+    # verify do
+    #   ping
+    # end
 
     hadoop
 
