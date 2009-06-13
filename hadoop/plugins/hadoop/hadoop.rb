@@ -24,7 +24,7 @@ module PoolParty
       end
 
       def add_users_and_groups
-        has_group "hadoop"
+        has_group "hadoop", :action => :create
         has_user "hadoop", :gid => "hadoop"
         has_directory "/home/hadoop", :owner => "hadoop", :mode => "755"
         has_exec "ssh-keygen -t rsa -N '' -f /home/hadoop/.ssh/id_rsa", :user => "hadoop", 
@@ -100,13 +100,17 @@ module PoolParty
       end
 
       def copy_sample_data_to_hdfs
+        has_exec "#{hadoop_install_dir}/bin/hadoop dfs -rmr gutenberg", :user => "hadoop", 
+          :only_if => "sudo -H -u hadoop #{hadoop_install_dir}/bin/hadoop dfs -ls gutenberg"
+        has_exec "#{hadoop_install_dir}/bin/hadoop dfs -rmr gutenberg-output", :user => "hadoop", 
+          :only_if => "sudo -H -u hadoop #{hadoop_install_dir}/bin/hadoop dfs -ls gutenberg-output"
         has_exec "#{hadoop_install_dir}/bin/hadoop dfs -copyFromLocal /tmp/gutenberg gutenberg", 
           :not_if => "sudo -H -u hadoop #{hadoop_install_dir}/bin/hadoop dfs -ls gutenberg | grep ulysses",
           :user => "hadoop"
       end
 
       def start_the_job
-        has_exec "#{hadoop_install_dir}/bin/hadoop jar hadoop-0.19.1-examples.jar wordcount gutenberg gutenberg-output", 
+        has_exec "#{hadoop_install_dir}/bin/hadoop jar #{hadoop_install_dir}/hadoop-0.19.1-examples.jar wordcount gutenberg gutenberg-output", 
           :user => "hadoop"
       end
 
