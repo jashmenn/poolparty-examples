@@ -12,6 +12,14 @@ module PoolParty
         format_hdfs
       end
 
+      # def enable(o={})
+      #   install_jdk
+      #   add_users_and_groups
+      #   build
+      #   configure
+      #   format_hdfs
+      # end
+
       def install_jdk
         # accept the sun license agreements. see: http://www.davidpashley.com/blog/debian/java-license
         has_exec "echo sun-java6-jdk shared/accepted-sun-dlj-v1-1 select true | /usr/bin/debconf-set-selections"
