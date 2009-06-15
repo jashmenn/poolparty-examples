@@ -20,7 +20,7 @@ pool(:hadoop_cluster) do
     has_package "vim-nox"
     has_package" screen"
     has_package" irb"
-    has_bash_alias "inspect-poolparty-recipes", :value => "vi /var/poolparty/dr_configure/chef/cookbooks/poolparty/recipes/default.rb"
+    has_bash_alias :name => "inspect-poolparty-recipes", :value => "vi /var/poolparty/dr_configure/chef/cookbooks/poolparty/recipes/default.rb"
 
     hadoop do
       # run_example_job
@@ -44,7 +44,7 @@ pool(:hadoop_cluster) do
     has_package "vim-nox"
     has_package" screen"
     has_package" irb"
-    has_bash_alias "inspect-poolparty-recipes", :value => "vi /var/poolparty/dr_configure/chef/cookbooks/poolparty/recipes/default.rb"
+    has_bash_alias :name => "inspect-poolparty-recipes", :value => "vi /var/poolparty/dr_configure/chef/cookbooks/poolparty/recipes/default.rb"
 
     hadoop do
       # run_example_job
