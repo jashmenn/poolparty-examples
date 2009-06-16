@@ -1,5 +1,6 @@
-require 'plugins/hadoop/hadoop'
 require 'poolparty-extensions'
+require 'plugins/hadoop/hadoop'
+require 'plugins/convenience_helpers'
 
 pool(:hadoop_cluster) do
 
@@ -8,13 +9,7 @@ pool(:hadoop_cluster) do
 
     using :ec2
     keypair "nmurray-hadoop-slave"
-
-    has_package "tree"
-    has_package "vim-nox"
-    has_package" screen"
-    has_package" irb"
-    has_bash_alias :name => "inspect-poolparty-recipes", :value => "vi /var/poolparty/dr_configure/chef/cookbooks/poolparty/recipes/default.rb"
-    has_bash_alias :name => "cd-cookbooks", :value => "pushd /var/poolparty/dr_configure/chef/cookbooks/poolparty"
+    has_convenience_helpers
 
     hadoop do
       # run_example_job
@@ -37,13 +32,7 @@ pool(:hadoop_cluster) do
 
     using :ec2
     keypair "nmurray-hadoop-master"
-
-    has_package "tree"
-    has_package "vim-nox"
-    has_package" screen"
-    has_package" irb"
-    has_bash_alias :name => "inspect-poolparty-recipes", :value => "vi /var/poolparty/dr_configure/chef/cookbooks/poolparty/recipes/default.rb"
-    has_bash_alias :name => "cd-cookbooks", :value => "pushd /var/poolparty/dr_configure/chef/cookbooks/poolparty"
+    has_convenience_helpers
 
     hadoop do
       configure_master
