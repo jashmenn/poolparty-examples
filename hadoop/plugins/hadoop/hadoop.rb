@@ -7,6 +7,8 @@ module PoolParty
       def before_load(o={}, &block)
         install_jdk
         add_users_and_groups
+        create_keys
+        connect_keys
         build
         configure
         format_hdfs
@@ -35,12 +37,44 @@ module PoolParty
         has_group "hadoop", :action => :create
         has_user "hadoop", :gid => "hadoop"
         has_directory "/home/hadoop", :owner => "hadoop", :mode => "755"
-        has_exec "ssh-keygen -t rsa -N '' -f /home/hadoop/.ssh/id_rsa", :user => "hadoop", 
-          :not_if => "test -e /home/hadoop/.ssh/id_rsa"
-        has_exec "cp /home/hadoop/.ssh/id_rsa.pub /home/hadoop/.ssh/authorized_keys",
-          :not_if => "test -e /home/hadoop/.ssh/authorized_keys", :user => "hadoop"
-        has_exec "chmod 644 /home/hadoop/.ssh/authorized_keys", :user => "hadoop"
-        has_exec "ssh -o 'StrictHostKeyChecking no' localhost echo", :user => "hadoop" # verify the host key
+
+        # TODO - ssh key code below needs to turn into these lines. those should become plugins
+        # has_ssh_key :user => "hadoop", :name => "hadoop_id_rsa", :create => true
+        # has_authorized_key :user => "hadoop", :name => "hadoop_id_rsa"
+      end
+
+      def create_keys
+        unless File.exists?(hadoop_id_rsa)
+          FileUtils.mkdir_p(cloud_keys_dir)
+          cmd = "ssh-keygen -t rsa -N '' -f #{hadoop_id_rsa}" # todo, make into variables
+          puts cmd
+          `#{cmd}`
+        end
+      end
+
+      # everything below should become methods and/or plugins
+      def connect_keys
+        # has_exec "ssh-keygen -t rsa -N '' -f /home/hadoop/.ssh/id_rsa", :user => "hadoop", 
+        #   :not_if => "test -e /home/hadoop/.ssh/id_rsa"
+
+        # so annoying, chef/rsync/something doesn't copy over dotfiles, so upload it as non-dot
+        has_directory :name => '/home/hadoop/ssh'
+        has_directory :name => '/home/hadoop/.ssh'
+        has_file :name => "/home/hadoop/ssh/#{hadoop_id_rsa_base}", :content => open(hadoop_id_rsa).read
+        has_exec "mv /home/hadoop/ssh/hadoop_id_rsa /home/hadoop/.ssh/#{hadoop_id_rsa_base}"
+        has_exec "chmod 600 /home/hadoop/.ssh/#{hadoop_id_rsa_base}"
+        has_exec "chmod 700 /home/hadoop/.ssh"
+        has_exec "rm -rf /home/hadoop/ssh"
+
+        # setup authorized keys
+        has_exec "touch /home/hadoop/.ssh/authorized_keys"
+        has_exec "chmod 644 /home/hadoop/.ssh/authorized_keys"
+        has_exec "chown -R hadoop /home/hadoop/.ssh"
+        has_line_in_file :file => "/home/hadoop/.ssh/authorized_keys", :line => File.read("#{hadoop_id_rsa}.pub")
+        has_exec "ssh -o 'StrictHostKeyChecking no' -i /home/hadoop/.ssh/#{hadoop_id_rsa_base} localhost echo", :user => "hadoop" # verify the host key
+
+        # TODO - the above lines will be the plugin, but in this specific instance i want it to be the id_rsa
+        has_exec "mv /home/hadoop/.ssh/#{hadoop_id_rsa_base} /home/hadoop/.ssh/id_rsa"
       end
 
       def build
@@ -71,6 +105,10 @@ module PoolParty
           template :plugins/:hadoop/:templates/"hadoop-site.xml"
         end
      end
+
+      def configure_master
+        create_master_and_slaves_files
+      end
 
       def format_hdfs
         has_directory "/usr/local/hadoop-datastore/hadoop-hadoop", :mode => "770"
@@ -123,6 +161,36 @@ module PoolParty
       end
 
       # open http://192.168.133.128:50070/dfshealth.jsp
+
+      def create_master_and_slaves_files
+        masters_file = ""
+        slaves_file  = ""
+
+        cloud.nodes(:status => 'running').each_with_index do |n,i| 
+          masters_file << "master#{i}"
+          slaves_file  << "master#{i}" # our masters are also slaves
+        end 
+
+        clouds[:hadoop_slave].nodes(:status => 'running').each_with_index do |n, i|
+          slaves_file << "slave#{i}"
+        end
+
+        has_file(hadoop_install_dir/:conf/:masters, :content => masters_file)
+        has_file(hadoop_install_dir/:conf/:slaves,  :content => slaves_file)
+      end
+
+      private
+      def cloud_keys_dir
+        File.dirname(pool_specfile)/:keys
+      end
+
+      def hadoop_id_rsa
+        "#{cloud_keys_dir}/#{hadoop_id_rsa_base}" 
+      end
+
+      def hadoop_id_rsa_base
+        "hadoop_id_rsa"
+      end
       
     end
   end
