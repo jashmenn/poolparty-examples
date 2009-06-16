@@ -1,4 +1,40 @@
 =begin rdoc
+
+== Convenience Helpers
+
+Adds a few handy packages and aliases for developing poolparty instances.
+
+== Usage
+
+    has_convenience_helpers
+
+== Examples
+
+    $ inspect-poolparty-recipes # => will vim the poolparty chef recipe file
+    $ cd-cookbooks              # => cd into the poolparty cookbooks directory
+    $ tree                      # => show the directory structure as a nice tree
+    /var/poolparty/dr_configure/chef/cookbooks/poolparty# tree
+    .
+    |-- attributes
+    |   `-- poolparty.rb
+    |-- recipes
+    |   `-- default.rb
+    `-- templates
+        `-- default
+            |-- etc
+            |   |-- jvm.erb
+            |   `-- motd.erb
+            |-- home
+            |   `-- hadoop
+            |       `-- ssh
+            |           `-- hadoop_id_rsa.erb
+            `-- usr
+                `-- local
+                    `-- hadoop
+                        `-- conf
+                            |-- hadoop-env.sh.erb
+                            `-- hadoop-site.xml.erb
+
 =end
 
 module PoolParty
