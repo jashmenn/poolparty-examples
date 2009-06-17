@@ -7,7 +7,7 @@ module PoolParty
       def before_load(o={}, &block)
         do_once do
           install_jdk
-          add_users_and_groups
+          # add_users_and_groups
           create_keys
           connect_keys
           build
@@ -67,19 +67,19 @@ module PoolParty
         #   :not_if => "test -e /home/hadoop/.ssh/id_rsa"
 
         # so annoying, chef/rsync/something doesn't copy over dotfiles, so upload it as non-dot
-        has_directory :name => '/home/hadoop/ssh'
-        has_directory :name => '/home/hadoop/.ssh'
-        has_file :name => "/home/hadoop/ssh/#{hadoop_id_rsa_base}", :content => open(hadoop_id_rsa).read
-        has_exec "mv /home/hadoop/ssh/hadoop_id_rsa /home/hadoop/.ssh/#{hadoop_id_rsa_base}"
-        has_exec "chmod 600 /home/hadoop/.ssh/#{hadoop_id_rsa_base}"
-        has_exec "chmod 700 /home/hadoop/.ssh"
-        has_exec "rm -rf /home/hadoop/ssh"
+        has_directory :name => "#{home_dir}/ssh"
+        has_directory :name => "#{home_dir}/.ssh"
+        has_file :name => "#{home_dir}/ssh/#{hadoop_id_rsa_base}", :content => open(hadoop_id_rsa).read
+        has_exec "mv #{home_dir}/ssh/hadoop_id_rsa #{home_dir}/.ssh/#{hadoop_id_rsa_base}"
+        has_exec "chmod 600 #{home_dir}/.ssh/#{hadoop_id_rsa_base}"
+        has_exec "chmod 700 #{home_dir}/.ssh"
+        has_exec "rm -rf #{home_dir}/ssh"
 
         # setup authorized keys
-        has_exec "touch /home/hadoop/.ssh/authorized_keys"
-        has_exec "chmod 644 /home/hadoop/.ssh/authorized_keys"
-        has_exec "chown -R hadoop /home/hadoop/.ssh"
-        has_line_in_file :file => "/home/hadoop/.ssh/authorized_keys", :line => File.read("#{hadoop_id_rsa}.pub")
+        has_exec "touch #{home_dir}/.ssh/authorized_keys"
+        has_exec "chmod 644 #{home_dir}/.ssh/authorized_keys"
+        has_exec "chown -R #{user} #{home_dir}/.ssh"
+        has_line_in_file :file => "#{home_dir}/.ssh/authorized_keys", :line => File.read("#{hadoop_id_rsa}.pub")
       end
 
       def create_reference_hosts
@@ -104,7 +104,7 @@ module PoolParty
 #        IdentityFile /home/hadoop/.ssh/#{hadoop_id_rsa_base}
 # EOF
 
-           has_exec "ssh -o 'StrictHostKeyChecking no' -i /home/hadoop/.ssh/#{hadoop_id_rsa_base} master#{i} echo", :user => "hadoop" # verify the host key
+           has_exec "ssh -o 'StrictHostKeyChecking no' -i #{home_dir}/.ssh/#{hadoop_id_rsa_base} master#{i} echo", :user => user # verify the host key
          end 
 
          clouds[:hadoop_slave].nodes(:status => 'running').each_with_index do |n,i| 
@@ -113,7 +113,7 @@ module PoolParty
 # HostName slave#{i} 
 #        IdentityFile /home/hadoop/.ssh/#{hadoop_id_rsa_base}
 # EOF
-           has_exec "ssh -o 'StrictHostKeyChecking no' -i /home/hadoop/.ssh/#{hadoop_id_rsa_base} slave#{i} echo", :user => "hadoop" # verify the host key
+           has_exec "ssh -o 'StrictHostKeyChecking no' -i #{home_dir}/.ssh/#{hadoop_id_rsa_base} slave#{i} echo", :user => user # verify the host key
          end 
 
 #            ssh_config << <<EOF
@@ -123,33 +123,26 @@ module PoolParty
 # EOF
            ssh_config << <<EOF
 Host *
-       IdentityFile /home/hadoop/.ssh/#{hadoop_id_rsa_base}
+       IdentityFile #{home_dir}/.ssh/#{hadoop_id_rsa_base}
 EOF
-        has_exec "ssh -o 'StrictHostKeyChecking no' -i /home/hadoop/.ssh/#{hadoop_id_rsa_base} localhost echo", :user => "hadoop" # verify the host key
+        has_exec "ssh -o 'StrictHostKeyChecking no' -i #{home_dir}/.ssh/#{hadoop_id_rsa_base} localhost echo", :user => user # verify the host key
 
-        has_file("/home/hadoop/ssh_config", :content => ssh_config)
-        has_exec "mv /home/hadoop/ssh_config /home/hadoop/.ssh/config"
-        has_exec "chmod 600 /home/hadoop/.ssh/config"
-        has_exec "chown hadoop:hadoop /home/hadoop/.ssh/config"
-
+        has_file("#{home_dir}/ssh_config", :content => ssh_config)
+        has_exec "mv #{home_dir}/ssh_config #{home_dir}/.ssh/config"
+        has_exec "chmod 600 #{home_dir}/.ssh/config"
+        has_exec "chown #{user}:#{group} #{home_dir}/.ssh/config"
       end
 
 
       def build
         has_directory "/usr/local/src"
-
-        # has_exec "wget http://mirror.candidhosting.com/pub/apache/hadoop/core/hadoop-0.19.1/hadoop-0.19.1.tar.gz -O /usr/local/src/hadoop-0.19.1.tar.gz", 
-          # :not_if => "test -e /usr/local/src/hadoop-0.19.1.tar.gz"
-        # has_exec "cd /usr/local/src && tar -xzf hadoop-0.19.1.tar.gz",
-          # :not_if => "test -e #{hadoop_install_dir}"
-
         has_exec "wget http://www.gossipcheck.com/mirrors/apache/hadoop/core/hadoop-0.20.0/hadoop-0.20.0.tar.gz -O /usr/local/src/hadoop-0.20.0.tar.gz", 
           :not_if => "test -e /usr/local/src/hadoop-0.20.0.tar.gz"
         has_exec "cd /usr/local/src && tar -xzf hadoop-0.20.0.tar.gz",
           :not_if => "test -e #{hadoop_install_dir}"
         has_exec "mv /usr/local/src/hadoop-0.20.0 /usr/local/src/hadoop",
           :not_if => "test -e #{hadoop_install_dir}"
-        has_exec "chown -R hadoop:hadoop /usr/local/src/hadoop",
+        has_exec "chown -R #{user}:#{group} /usr/local/src/hadoop",
           :not_if => "test -e #{hadoop_install_dir}"
         has_exec "mv /usr/local/src/hadoop #{hadoop_install_dir}",
           :not_if => "test -e #{hadoop_install_dir}"
@@ -171,8 +164,8 @@ EOF
         # has_variable "number_of_nodes", :value => lambda { %Q{ %x[/usr/bin/cloud-list --short].split("\\n").size || 1 }}
         has_variable "number_of_nodes", :value => 2 # todo
 
-        has_directory hadoop_data_dir, :owner => "hadoop", :mode => "755"
-        has_exec "chgrp hadoop #{hadoop_data_dir}"
+        has_directory hadoop_data_dir, :owner => user, :mode => "755"
+        has_exec "chgrp #{group} #{hadoop_data_dir}"
         has_variable "hadoop_data_dir",   :value => hadoop_data_dir
         has_variable "hadoop_mapred_dir", :value => hadoop_data_dir/:mapred
 
@@ -197,12 +190,12 @@ EOF
 
      def format_hdfs
        has_directory hadoop_data_dir, :mode => "770"
-       has_exec "chown -R hadoop:hadoop #{hadoop_data_dir}"
+       has_exec "chown -R #{user}:#{group} #{hadoop_data_dir}"
 
        has_exec "#{hadoop_install_dir}/bin/hadoop namenode -format", 
          # :not_if => "test -e #{hadoop_data_dir}/hadoop-hadoop/dfs", 
          :not_if => "test -e #{hadoop_data_dir}/dfs",  # this line depends on if you have user-based data directories in core-site.xml
-         :user => "hadoop"
+         :user => user
      end
 
      # stuff for examples
@@ -216,11 +209,11 @@ EOF
 
      def start_hadoop
        has_exec hadoop_install_dir/"bin/start-all.sh", 
-         :user => "hadoop"
+         :user => user
      end
 
      def download_sample_data
-       has_directory "/tmp/gutenberg", :mode => "770", :owner => "hadoop"
+       has_directory "/tmp/gutenberg", :mode => "770", :owner => user
        # todo, create has_wget
        has_exec "wget http://www.gutenberg.org/files/20417/20417.txt -O /tmp/gutenberg/outline-of-science.txt", 
          :not_if => "test -e /tmp/gutenberg/outline-of-science.txt"
@@ -228,22 +221,22 @@ EOF
          :not_if => "test -e /tmp/gutenberg/7ldvc10.txt"
        has_exec "wget http://www.gutenberg.org/files/4300/4300.txt -O /tmp/gutenberg/ulysses.txt",
          :not_if => "test -e /tmp/gutenberg/ulysses.txt"
-       has_exec "chown -R hadoop:hadoop /tmp/gutenberg"
+       has_exec "chown -R #{user}:#{group} /tmp/gutenberg"
      end
 
      def copy_sample_data_to_hdfs
-       has_exec "#{hadoop_install_dir}/bin/hadoop dfs -rmr gutenberg", :user => "hadoop", 
-         :only_if => "sudo -H -u hadoop #{hadoop_install_dir}/bin/hadoop dfs -ls gutenberg"
-       has_exec "#{hadoop_install_dir}/bin/hadoop dfs -rmr gutenberg-output", :user => "hadoop", 
-         :only_if => "sudo -H -u hadoop #{hadoop_install_dir}/bin/hadoop dfs -ls gutenberg-output"
+       has_exec "#{hadoop_install_dir}/bin/hadoop dfs -rmr gutenberg", :user => user,
+         :only_if => "sudo -H -u #{user} #{hadoop_install_dir}/bin/hadoop dfs -ls gutenberg"
+       has_exec "#{hadoop_install_dir}/bin/hadoop dfs -rmr gutenberg-output", :user => user, 
+         :only_if => "sudo -H -u #{user} #{hadoop_install_dir}/bin/hadoop dfs -ls gutenberg-output"
        has_exec "#{hadoop_install_dir}/bin/hadoop dfs -copyFromLocal /tmp/gutenberg gutenberg", 
-         :not_if => "sudo -H -u hadoop #{hadoop_install_dir}/bin/hadoop dfs -ls gutenberg | grep ulysses",
-         :user => "hadoop"
+         :not_if => "sudo -H -u #{user} #{hadoop_install_dir}/bin/hadoop dfs -ls gutenberg | grep ulysses",
+         :user => user
      end
 
      def start_the_job
        has_exec "#{hadoop_install_dir}/bin/hadoop jar #{hadoop_install_dir}/hadoop-0.20.0-examples.jar wordcount gutenberg gutenberg-output", 
-         :user => "hadoop"
+         :user => user
      end
 
      # open http://192.168.133.128:50070/dfshealth.jsp
@@ -284,6 +277,24 @@ EOF
 
       def hadoop_data_dir
         "/mnt/hadoop-data"
+      end
+
+      def home_dir
+        "/root" 
+        # or
+        # "/home/hadoop"
+      end
+
+      def user
+        "root"
+        # or
+        # hadoop
+      end
+
+      def group
+        "root"
+        # or
+        # hadoop
       end
 
       def my_line_in_file(file, line)
