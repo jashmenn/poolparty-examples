@@ -23,14 +23,6 @@ module PoolParty
         create_master_and_slaves_files
       end
 
-      # def enable(o={})
-      #   install_jdk
-      #   add_users_and_groups
-      #   build
-      #   configure
-      #   format_hdfs
-      # end
-
       def install_jdk
         # accept the sun license agreements. see: http://www.davidpashley.com/blog/debian/java-license
         has_exec "echo sun-java6-jdk shared/accepted-sun-dlj-v1-1 select true | /usr/bin/debconf-set-selections"
@@ -63,8 +55,7 @@ module PoolParty
 
       # everything below should become methods and/or plugins
       def connect_keys
-        # has_exec "ssh-keygen -t rsa -N '' -f /home/hadoop/.ssh/id_rsa", :user => "hadoop", 
-        #   :not_if => "test -e /home/hadoop/.ssh/id_rsa"
+        # has_exec "ssh-keygen -t rsa -N '' -f /home/hadoop/.ssh/id_rsa", :user => "hadoop", :not_if => "test -e /home/hadoop/.ssh/id_rsa"
 
         # so annoying, chef/rsync/something doesn't copy over dotfiles, so upload it as non-dot
         has_directory :name => "#{home_dir}/ssh"
@@ -96,32 +87,16 @@ module PoolParty
       end
 
       def create_ssh_configs
-         ssh_config = ""
-         clouds[:hadoop_master].nodes(:status => 'running').each_with_index do |n,i| 
-#            ssh_config << <<EOF
-# Host master#{i}
-# HostName master#{i} 
-#        IdentityFile /home/hadoop/.ssh/#{hadoop_id_rsa_base}
-# EOF
+        ssh_config = ""
+        clouds[:hadoop_master].nodes(:status => 'running').each_with_index do |n,i| 
+          has_exec "ssh -o 'StrictHostKeyChecking no' -i #{home_dir}/.ssh/#{hadoop_id_rsa_base} master#{i} echo", :user => user # verify the host key
+        end 
 
-           has_exec "ssh -o 'StrictHostKeyChecking no' -i #{home_dir}/.ssh/#{hadoop_id_rsa_base} master#{i} echo", :user => user # verify the host key
-         end 
+        clouds[:hadoop_slave].nodes(:status => 'running').each_with_index do |n,i| 
+          has_exec "ssh -o 'StrictHostKeyChecking no' -i #{home_dir}/.ssh/#{hadoop_id_rsa_base} slave#{i} echo", :user => user # verify the host key
+        end 
 
-         clouds[:hadoop_slave].nodes(:status => 'running').each_with_index do |n,i| 
-#            ssh_config << <<EOF
-# Host slave#{i}
-# HostName slave#{i} 
-#        IdentityFile /home/hadoop/.ssh/#{hadoop_id_rsa_base}
-# EOF
-           has_exec "ssh -o 'StrictHostKeyChecking no' -i #{home_dir}/.ssh/#{hadoop_id_rsa_base} slave#{i} echo", :user => user # verify the host key
-         end 
-
-#            ssh_config << <<EOF
-# Host localhost
-# HostName localhost
-#        IdentityFile /home/hadoop/.ssh/#{hadoop_id_rsa_base}
-# EOF
-           ssh_config << <<EOF
+        ssh_config << <<EOF
 Host *
        IdentityFile #{home_dir}/.ssh/#{hadoop_id_rsa_base}
 EOF
@@ -132,7 +107,6 @@ EOF
         has_exec "chmod 600 #{home_dir}/.ssh/config"
         has_exec "chown #{user}:#{group} #{home_dir}/.ssh/config"
       end
-
 
       def build
         has_directory "/usr/local/src"
@@ -169,7 +143,6 @@ EOF
         has_variable "hadoop_data_dir",   :value => hadoop_data_dir
         has_variable "hadoop_mapred_dir", :value => hadoop_data_dir/:mapred
 
-        # has_variable("hadoop_this_nodes_ip", :value => lambda{ %Q{%x[dig +short \#{@node[:fqdn]}]}})
         has_variable("hadoop_this_nodes_ip", :value => lambda{ %Q{%x[curl http://169.254.169.254/latest/meta-data/local-ipv4]}})
 
         %w{core hdfs mapred}.each do |config|
@@ -238,8 +211,6 @@ EOF
        has_exec "#{hadoop_install_dir}/bin/hadoop jar #{hadoop_install_dir}/hadoop-0.20.0-examples.jar wordcount gutenberg gutenberg-output", 
          :user => user
      end
-
-     # open http://192.168.133.128:50070/dfshealth.jsp
 
      def create_master_and_slaves_files
        masters_file = ""
