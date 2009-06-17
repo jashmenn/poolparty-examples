@@ -43,6 +43,7 @@ module PoolParty
       def before_load(o={}, &block)
         add_packages
         add_aliases
+        add_binaries
       end
 
       def add_packages
@@ -55,6 +56,11 @@ module PoolParty
       def add_aliases
         has_bash_alias :name => "inspect-poolparty-recipes", :value => "vi /var/poolparty/dr_configure/chef/cookbooks/poolparty/recipes/default.rb"
         has_bash_alias :name => "cd-cookbooks", :value => "pushd /var/poolparty/dr_configure/chef/cookbooks/poolparty"
+      end
+
+      def add_binaries
+        has_exec "wget http://gist.github.com/raw/131294/0622454b2cc2f787c04d20ab3d47e888e31edcd4/gistfile1 -O /usr/bin/xtail && chmod +x /usr/bin/xtail", 
+          :not_if => "test -e /usr/bin/xtail"
       end
     end
   end

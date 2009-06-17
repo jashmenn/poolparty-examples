@@ -5,7 +5,7 @@ require 'plugins/convenience_helpers'
 pool(:hadoop_cluster) do
 
   cloud(:hadoop_slave) do
-    instances 1
+    instances 2
 
     keypair "nmurray-hadoop-slave"
     using :ec2 do
@@ -44,6 +44,7 @@ pool(:hadoop_cluster) do
 
     hadoop do
       configure_master
+      # run_example_job
     end
 
     # todo, this should be a list of all the masters

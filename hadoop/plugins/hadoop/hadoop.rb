@@ -13,12 +13,14 @@ module PoolParty
           build
           configure
           format_hdfs
+          create_aliases
         end
       end
 
       def perform_just_in_time_operations
         create_reference_hosts
         create_ssh_configs
+        create_master_and_slaves_files
       end
 
       # def enable(o={})
@@ -96,27 +98,31 @@ module PoolParty
       def create_ssh_configs
          ssh_config = ""
          clouds[:hadoop_master].nodes(:status => 'running').each_with_index do |n,i| 
-           ssh_config << <<EOF
-Host master#{i}
-HostName master#{i} 
-       IdentityFile /home/hadoop/.ssh/#{hadoop_id_rsa_base}
-EOF
+#            ssh_config << <<EOF
+# Host master#{i}
+# HostName master#{i} 
+#        IdentityFile /home/hadoop/.ssh/#{hadoop_id_rsa_base}
+# EOF
 
            has_exec "ssh -o 'StrictHostKeyChecking no' -i /home/hadoop/.ssh/#{hadoop_id_rsa_base} master#{i} echo", :user => "hadoop" # verify the host key
          end 
 
          clouds[:hadoop_slave].nodes(:status => 'running').each_with_index do |n,i| 
-           ssh_config << <<EOF
-Host slave#{i}
-HostName slave#{i} 
-       IdentityFile /home/hadoop/.ssh/#{hadoop_id_rsa_base}
-EOF
+#            ssh_config << <<EOF
+# Host slave#{i}
+# HostName slave#{i} 
+#        IdentityFile /home/hadoop/.ssh/#{hadoop_id_rsa_base}
+# EOF
            has_exec "ssh -o 'StrictHostKeyChecking no' -i /home/hadoop/.ssh/#{hadoop_id_rsa_base} slave#{i} echo", :user => "hadoop" # verify the host key
          end 
 
+#            ssh_config << <<EOF
+# Host localhost
+# HostName localhost
+#        IdentityFile /home/hadoop/.ssh/#{hadoop_id_rsa_base}
+# EOF
            ssh_config << <<EOF
-Host localhost
-HostName localhost
+Host *
        IdentityFile /home/hadoop/.ssh/#{hadoop_id_rsa_base}
 EOF
         has_exec "ssh -o 'StrictHostKeyChecking no' -i /home/hadoop/.ssh/#{hadoop_id_rsa_base} localhost echo", :user => "hadoop" # verify the host key
@@ -141,8 +147,7 @@ EOF
           :not_if => "test -e /usr/local/src/hadoop-0.20.0.tar.gz"
         has_exec "cd /usr/local/src && tar -xzf hadoop-0.20.0.tar.gz",
           :not_if => "test -e #{hadoop_install_dir}"
- 
-        has_exec "mv /usr/local/src/hadoop-0.19.1 /usr/local/src/hadoop",
+        has_exec "mv /usr/local/src/hadoop-0.20.0 /usr/local/src/hadoop",
           :not_if => "test -e #{hadoop_install_dir}"
         has_exec "chown -R hadoop:hadoop /usr/local/src/hadoop",
           :not_if => "test -e #{hadoop_install_dir}"
@@ -171,9 +176,14 @@ EOF
         has_variable "hadoop_data_dir",   :value => hadoop_data_dir
         has_variable "hadoop_mapred_dir", :value => hadoop_data_dir/:mapred
 
-        has_file(:name => hadoop_install_dir/"conf/hadoop-site.xml") do
-          mode 0644
-          template :plugins/:hadoop/:templates/"hadoop-site.xml.erb"
+        # has_variable("hadoop_this_nodes_ip", :value => lambda{ %Q{%x[dig +short \#{@node[:fqdn]}]}})
+        has_variable("hadoop_this_nodes_ip", :value => lambda{ %Q{%x[curl http://169.254.169.254/latest/meta-data/local-ipv4]}})
+
+        %w{core hdfs mapred}.each do |config|
+          has_file(:name => hadoop_install_dir/"conf/#{config}-site.xml") do
+            mode 0644
+            template :plugins/:hadoop/:templates/"#{config}-site.xml.erb"
+          end
         end
      end
 
@@ -182,7 +192,7 @@ EOF
      end
 
      def configure_master
-       create_master_and_slaves_files
+       # create_master_and_slaves_files
      end
 
      def format_hdfs
@@ -190,7 +200,8 @@ EOF
        has_exec "chown -R hadoop:hadoop #{hadoop_data_dir}"
 
        has_exec "#{hadoop_install_dir}/bin/hadoop namenode -format", 
-         :not_if => "test -e #{hadoop_data_dir}/hadoop-hadoop/dfs", 
+         # :not_if => "test -e #{hadoop_data_dir}/hadoop-hadoop/dfs", 
+         :not_if => "test -e #{hadoop_data_dir}/dfs",  # this line depends on if you have user-based data directories in core-site.xml
          :user => "hadoop"
      end
 
@@ -231,7 +242,7 @@ EOF
      end
 
      def start_the_job
-       has_exec "#{hadoop_install_dir}/bin/hadoop jar #{hadoop_install_dir}/hadoop-0.19.1-examples.jar wordcount gutenberg gutenberg-output", 
+       has_exec "#{hadoop_install_dir}/bin/hadoop jar #{hadoop_install_dir}/hadoop-0.20.0-examples.jar wordcount gutenberg gutenberg-output", 
          :user => "hadoop"
      end
 
@@ -241,9 +252,9 @@ EOF
        masters_file = ""
        slaves_file  = ""
 
-       cloud.nodes(:status => 'running').each_with_index do |n,i| 
+       clouds[:hadoop_master].nodes(:status => 'running').each_with_index do |n,i| 
          masters_file << "master#{i}\n"
-         slaves_file  << "master#{i}\n" # our masters are also slaves
+         # slaves_file  << "master#{i}\n" # our masters are also slaves
        end 
 
        clouds[:hadoop_slave].nodes(:status => 'running').each_with_index do |n, i|
@@ -252,6 +263,10 @@ EOF
 
        has_file(hadoop_install_dir/:conf/:masters, :content => masters_file)
        has_file(hadoop_install_dir/:conf/:slaves,  :content => slaves_file)
+     end
+
+     def create_aliases
+        has_bash_alias :name => "cd-hadoop", :value => "pushd /usr/local/hadoop"
      end
 
       private
@@ -268,7 +283,7 @@ EOF
       end
 
       def hadoop_data_dir
-        "/mnt/hadoop"
+        "/mnt/hadoop-data"
       end
 
       def my_line_in_file(file, line)
