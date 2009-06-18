@@ -8,7 +8,7 @@
 <property>
   <name>hadoop.tmp.dir</name>
   <!--<value><%= @node[:poolparty][:hadoop_data_dir] %>/hadoop-${user.name}</value> -->
-  <value><%= @node[:poolparty][:hadoop_data_dir] %></value>
+  <value><%= @node[:poolparty][:hadoop_data_dir] %>/tmp</value>
   <description>A base for other temporary directories.</description>
 </property>
 

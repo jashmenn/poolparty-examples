@@ -27,8 +27,33 @@
 <!--
 <property>
   <name>mapred.local.dir</name>
-  <value><%= @node[:poolparty][:hadoop_mapred_dir] %></value>
+  <value><%= @node[:poolparty][:hadoop_data_dir] %>/mapred</value>
 </property>
 -->
+
+<property>
+  <name>mapred.system.dir</name>
+  <value><%= @node[:poolparty][:hadoop_data_dir] %>/mapred/system</value>
+</property>
+
+
+<property>
+  <name>mapred.child.java.opts</name>
+  <value>-Xmx200m -Djava.net.preferIPv4Stack=true</value>
+  <description>Java opts for the task tracker child processes.
+  The following symbol, if present, will be interpolated: @taskid@ is replaced
+  by current TaskID. Any other occurrences of '@' will go unchanged.
+  For example, to enable verbose gc logging to a file named for the taskid in
+  /tmp and to set the heap maximum to be a gigabyte, pass a 'value' of:
+        -Xmx1024m -verbose:gc -Xloggc:/tmp/@taskid@.gc
+
+  TaskManager.VMFlags=-Djava.net.preferIPv6Addresses=true -Djava.net.preferIPv4Stack=false
+
+  The configuration variable mapred.child.ulimit can be used to control the
+  maximum virtual memory of the child processes.
+  </description>
+</property>
+
+
 
 </configuration>

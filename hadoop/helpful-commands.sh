@@ -15,4 +15,7 @@ grep -R port *|  grep -vi import | grep -vi report | grep -vi support
 /usr/local/hadoop/bin/start-dfs.sh
 /usr/local/hadoop/bin/start-mapred.sh
 /usr/local/hadoop/bin/hadoop dfs -ls
+/usr/local/hadoop/bin/hadoop namenode -format
 
+
+http://ec2-174-129-134-128.compute-1.amazonaws.com:50030/mapOutput?job=job_200906172320_0001&map=attempt_200906172320_0001_m_000000_0&reduce=0

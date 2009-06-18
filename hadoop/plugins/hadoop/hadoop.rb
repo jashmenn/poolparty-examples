@@ -139,7 +139,17 @@ EOF
         has_variable "number_of_nodes", :value => 2 # todo
 
         has_directory hadoop_data_dir, :owner => user, :mode => "755"
-        has_exec "chgrp #{group} #{hadoop_data_dir}"
+        has_exec "chgrp -R #{group} #{hadoop_data_dir}"
+
+        %w{logs name data mapred temp}.each do |folder|
+          has_directory hadoop_data_dir/folder, :owner => user, :mode => "755"
+        end
+        has_directory hadoop_data_dir/:temp/:dfs/:data, :owner => user, :mode => "755"
+
+        %w{local system temp}.each do |folder|
+          has_directory hadoop_data_dir/:temp/:mapred/folder, :owner => user, :mode => "755"
+        end
+
         has_variable "hadoop_data_dir",   :value => hadoop_data_dir
         has_variable "hadoop_mapred_dir", :value => hadoop_data_dir/:mapred
 
@@ -167,7 +177,7 @@ EOF
 
        has_exec "#{hadoop_install_dir}/bin/hadoop namenode -format", 
          # :not_if => "test -e #{hadoop_data_dir}/hadoop-hadoop/dfs", 
-         :not_if => "test -e #{hadoop_data_dir}/dfs",  # this line depends on if you have user-based data directories in core-site.xml
+         :not_if => "test -e #{hadoop_data_dir}/dfs/name",  # this line depends on if you have user-based data directories in core-site.xml
          :user => user
      end
 
