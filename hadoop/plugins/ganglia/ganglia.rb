@@ -24,12 +24,17 @@ module PoolParty
 
       def install_dependencies
         has_package :name => "rrdtool"
+        #  libart-2.0-2 ?
         has_package :name => "libganglia1"
         has_package :name => "ganglia-monitor"
       end
 
       def install_webserver_configs
         # hmm
+      end
+
+      def master
+        has_package :name => "gmetad"
       end
 
       def configs 

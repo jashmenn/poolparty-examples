@@ -62,6 +62,7 @@ pool(:hadoop_cluster) do
     end
 
     ganglia do
+      master
     end
 
   end # cloud :hadoop_master

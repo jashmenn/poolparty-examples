@@ -17,9 +17,9 @@ module PoolParty
         has_exec "wget #{hive_dist} -O /usr/local/src/hive-0.3.0-hadoop-0.19.0-dev.tar.gz",
           :not_if => "test -e /usr/local/src/hive-0.3.0-hadoop-0.19.0-dev.tar.gz"
         has_exec "cd /usr/local/src && tar -xvvf /usr/local/src/hive-0.3.0-hadoop-0.19.0-dev.tar.gz", 
-          :not_if => "test -f #{hive_home}"
+          :not_if => "test -e #{hive_home}"
         has_exec "mv /usr/local/src/hive-0.3.0-hadoop-0.19.0-bin #{hive_home}", 
-          :not_if => "test -f #{hive_home}"
+          :not_if => "test -e #{hive_home}"
       end
 
       # doesn't really work
