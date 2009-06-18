@@ -33,7 +33,7 @@ module PoolParty
       end
 
       def configs 
-        has_variable "ganglia_cloud_name", :value => name
+        has_variable "ganglia_cloud_name", :value => cloud_name 
         has_file(:name => "/etc/gmond.conf") do
           mode 0644
           template :plugins/:ganglia/:templates/"gmond.conf.erb"
