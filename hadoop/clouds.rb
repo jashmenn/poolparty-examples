@@ -1,5 +1,6 @@
 require 'poolparty-extensions'
 require 'plugins/hadoop/hadoop'
+require 'plugins/hive/hive'
 require 'plugins/convenience_helpers'
 
 pool(:hadoop_cluster) do
@@ -18,9 +19,11 @@ pool(:hadoop_cluster) do
     has_development_gem('poolparty-extensions', :from => "~/ruby/poolparty-extensions")
 
     hadoop do
-      # run_example_job
     end
-    has_exec %Q{echo \\"export PS1='\\\\u@\\\\h \\\\A \\\\w (#{name}) $ '\\" >> /root/.profile}
+
+    # hive do
+    # end
+
 
   end # cloud :hadoop_slave
 
@@ -48,10 +51,8 @@ pool(:hadoop_cluster) do
       run_example_job
     end
 
-    has_exec %Q{echo \\"export PS1='\\\\u@\\\\h \\\\A \\\\w (#{name}) $ '\\" >> /root/.profile}
-
-    # todo, this should be a list of all the masters
-    # has_host(:name => "master0", :ip => "127.0.0.1")
+    hive do
+    end
 
   end # cloud :hadoop_master
 

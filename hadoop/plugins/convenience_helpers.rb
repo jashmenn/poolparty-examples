@@ -44,6 +44,7 @@ module PoolParty
         add_packages
         add_aliases
         add_binaries
+        add_profile_updates
       end
 
       def add_packages
@@ -62,6 +63,11 @@ module PoolParty
         has_exec "wget http://gist.github.com/raw/131294/0622454b2cc2f787c04d20ab3d47e888e31edcd4/gistfile1 -O /usr/bin/xtail && chmod +x /usr/bin/xtail", 
           :not_if => "test -e /usr/bin/xtail"
       end
+
+      def add_profile_updates
+        has_exec %Q{echo \\"export PS1='\\\\u@\\\\h \\\\A \\\\w (#{name}) $ '\\" >> /root/.profile}, :not_if => "grep PS1 /root/.profile"
+      end
+
     end
   end
 end
