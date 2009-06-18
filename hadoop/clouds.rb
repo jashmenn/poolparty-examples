@@ -20,6 +20,7 @@ pool(:hadoop_cluster) do
     hadoop do
       # run_example_job
     end
+    has_exec %Q{echo \\"export PS1='\\\\u@\\\\h \\\\A \\\\w (#{name}) $ '\\" >> /root/.profile}
 
   end # cloud :hadoop_slave
 
@@ -44,8 +45,10 @@ pool(:hadoop_cluster) do
 
     hadoop do
       configure_master
-      # run_example_job
+      run_example_job
     end
+
+    has_exec %Q{echo \\"export PS1='\\\\u@\\\\h \\\\A \\\\w (#{name}) $ '\\" >> /root/.profile}
 
     # todo, this should be a list of all the masters
     # has_host(:name => "master0", :ip => "127.0.0.1")

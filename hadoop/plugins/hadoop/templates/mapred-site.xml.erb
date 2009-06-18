@@ -24,17 +24,28 @@
   interface.</description>
 </property>
 
-<!--
 <property>
   <name>mapred.local.dir</name>
-  <value><%= @node[:poolparty][:hadoop_data_dir] %>/mapred</value>
+  <value><%= @node[:poolparty][:hadoop_data_dir] %>/mapred/local</value>
 </property>
--->
 
 <property>
   <name>mapred.system.dir</name>
   <value><%= @node[:poolparty][:hadoop_data_dir] %>/mapred/system</value>
 </property>
+
+<property>
+  <name>mapred.tasktracker.dns.interface</name>
+  <value>eth0</value>
+</property>
+
+<property>
+  <name>mapred.job.tracker.persist.jobstatus.active</name>
+  <value>true</value>
+</property>
+
+
+
 
 
 <property>

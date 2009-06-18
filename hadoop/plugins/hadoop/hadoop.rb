@@ -161,6 +161,12 @@ EOF
             template :plugins/:hadoop/:templates/"#{config}-site.xml.erb"
           end
         end
+
+        has_file(:name => hadoop_install_dir/"conf/log4j.properties") do
+          mode 0644
+          template :plugins/:hadoop/:templates/"log4j.properties.erb"
+        end
+
      end
 
      def number_of_running_nodes_in_pool
@@ -184,10 +190,10 @@ EOF
      # stuff for examples
 
      def run_example_job
-       start_hadoop
+       # start_hadoop
        download_sample_data
-       copy_sample_data_to_hdfs
-       start_the_job
+       # copy_sample_data_to_hdfs
+       # start_the_job
      end
 
      def start_hadoop
