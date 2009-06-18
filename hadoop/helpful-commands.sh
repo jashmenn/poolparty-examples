@@ -1,3 +1,5 @@
+http://www.michael-noll.com/wiki/Running_Hadoop_On_Ubuntu_Linux_(Single-Node_Cluster)
+
 sudo -u hadoop -H /usr/local/hadoop/bin/hadoop dfs -rmr gutenberg-output
 sudo -u hadoop -H /usr/local/hadoop/bin/hadoop jar /usr/local/hadoop/hadoop-0.20.0-examples.jar wordcount gutenberg gutenberg-output
 sudo -u hadoop -H ./bin/hadoop dfs -copyFromLocal /tmp/gutenberg gutenberg
