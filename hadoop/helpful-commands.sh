@@ -18,6 +18,7 @@ grep -R port *|  grep -vi import | grep -vi report | grep -vi support
 /usr/local/hadoop/bin/hadoop dfs -ls
 /usr/local/hadoop/bin/hadoop jar /usr/local/hadoop/hadoop-0.20.0-examples.jar wordcount gutenberg gutenberg-output
 /usr/local/hadoop/bin/stop-all.sh 
+/usr/local/hadoop/bin/hadoop dfs -copyToLocal gutenberg-output /tmp/gutenberg-output
 
 http://ec2-174-129-134-128.compute-1.amazonaws.com:50030/mapOutput?job=job_200906172320_0001&map=attempt_200906172320_0001_m_000000_0&reduce=0
 xtail --ansi logs/*.log

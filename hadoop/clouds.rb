@@ -9,20 +9,18 @@ require 'plugins/hive/hive'
 require 'plugins/convenience_helpers'
 
 
-pool(:hadoop) do
+pool(:cloudteam) do
 
   cloud(:hadoop_slave) do
     instances 2
 
-    keypair "hadoop_slave"
-    using :ec2 do
-      security_group ["hadoop"]
-    end
+    keypair "cloudteam_hadoop_slave"
+    using :ec2
 
     has_convenience_helpers
     has_gem_package("bjeanes-ghost")
     has_gem_package("technicalpickles-jeweler")
-    has_development_gem('poolparty-extensions', :from => "~/ruby/poolparty-extensions")
+    has_development_gem('poolparty-extensions', :from => "#{File.dirname(__FILE__)}/../../poolparty-extensions")
 
     apache do
       enable_php5
@@ -45,15 +43,13 @@ pool(:hadoop) do
     #   })
     # end
 
-    using :ec2 do
-      security_group ["super_open"]
-    end
-    keypair "hadoop_master"
+    using :ec2
+    keypair "cloudteam_hadoop_master"
 
     has_convenience_helpers
     has_gem_package("bjeanes-ghost")
     has_gem_package("technicalpickles-jeweler")
-    has_development_gem('poolparty-extensions', :from => "~/ruby/poolparty-extensions")
+    has_development_gem('poolparty-extensions', :from => "#{File.dirname(__FILE__)}/../../poolparty-extensions")
 
     apache do
       enable_php5
