@@ -1,16 +1,22 @@
+Dir["#{File.dirname(__FILE__)}/plugins/*/*"].each{|l| $:.unshift l }
+$:.unshift "/Users/stimble/Code/poolparty-extensions/lib"
+require 'rubygems'
+require "poolparty"
+
 require 'poolparty-extensions'
 require 'plugins/hadoop/hadoop'
 require 'plugins/hive/hive'
 require 'plugins/convenience_helpers'
 
-pool(:hadoop_cluster) do
+
+pool(:hadoop) do
 
   cloud(:hadoop_slave) do
     instances 2
 
-    keypair "nmurray-hadoop-slave"
+    keypair "hadoop_slave"
     using :ec2 do
-      security_group ["nmurray-hadoop"]
+      security_group ["hadoop"]
     end
 
     has_convenience_helpers
@@ -40,9 +46,9 @@ pool(:hadoop_cluster) do
     # end
 
     using :ec2 do
-      security_group ["nmurray-hadoop"]
+      security_group ["super_open"]
     end
-    keypair "nmurray-hadoop-master"
+    keypair "hadoop_master"
 
     has_convenience_helpers
     has_gem_package("bjeanes-ghost")
