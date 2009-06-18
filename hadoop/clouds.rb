@@ -18,12 +18,15 @@ pool(:hadoop_cluster) do
     has_gem_package("technicalpickles-jeweler")
     has_development_gem('poolparty-extensions', :from => "~/ruby/poolparty-extensions")
 
+    apache do
+      enable_php5
+    end
+
     hadoop do
     end
 
-    # hive do
-    # end
-
+    ganglia do
+    end
 
   end # cloud :hadoop_slave
 
@@ -46,12 +49,19 @@ pool(:hadoop_cluster) do
     has_gem_package("technicalpickles-jeweler")
     has_development_gem('poolparty-extensions', :from => "~/ruby/poolparty-extensions")
 
+    apache do
+      enable_php5
+    end
+
     hadoop do
       configure_master
       run_example_job
     end
 
     hive do
+    end
+
+    ganglia do
     end
 
   end # cloud :hadoop_master
