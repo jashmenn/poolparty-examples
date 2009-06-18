@@ -1,5 +1,5 @@
 Dir["#{File.dirname(__FILE__)}/plugins/*/*"].each{|l| $:.unshift l }
-$:.unshift "/Users/stimble/Code/poolparty-extensions/lib"
+$:.unshift "#{File.dirname(__FILE__)}/../../poolparty-extensions/lib"
 require 'rubygems'
 require "poolparty"
 
