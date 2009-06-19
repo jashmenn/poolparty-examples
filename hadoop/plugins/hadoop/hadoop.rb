@@ -190,7 +190,7 @@ EOF
      # stuff for examples
 
      def run_example_job
-       # start_hadoop
+       start_hadoop
        download_sample_data
        # copy_sample_data_to_hdfs
        # start_the_job

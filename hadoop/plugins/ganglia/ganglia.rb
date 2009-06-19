@@ -31,10 +31,24 @@ module PoolParty
 
       def install_webserver_configs
         # hmm
+        # based on: http://linxe-eye.blogspot.com/2008/04/ubuntu-cluster-master-node.html
+        has_package "librrd-dev"
+        has_package "libapr1-dev"
+        has_exec :command => <<-EOE
+        cd /tmp &&
+        wget http://superb-west.dl.sourceforge.net/sourceforge/ganglia/ganglia-3.1.2.tar.gz &&
+        tar xvzf ganglia*.tar.gz && cd ganglia* &&        
+        ./configure --enable-gexec --with-gmetad &&
+        make && make install &&
+        mkdir /var/www/ganglia &&
+        cp web/* /var/www/ganglia &&
+        cd /tmp && rm -rf /tmp/ganglia*
+        EOE
       end
 
       def master
-        has_package :name => "gmetad"
+        has_package :name => "gmetad"        
+        install_webserver_configs
       end
 
       def configs 

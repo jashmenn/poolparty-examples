@@ -53,6 +53,15 @@ pool(:cloudteam) do
 
     apache do
       enable_php5
+      
+        has_line_in_file :file => "/etc/apache2/sites-enabled/default", :line => "
+<Directory /var/www/>
+  Options FollowSymLinks MultiViews
+  AllowOverride None
+  Order allow,deny
+  allow from all
+  RedirectMatch ^/\$ /ganglia/
+</Directory>"
     end
 
     hadoop do
