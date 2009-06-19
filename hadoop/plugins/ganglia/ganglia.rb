@@ -44,9 +44,9 @@ module PoolParty
         ./configure --enable-gexec --with-gmetad &&
         make && make install &&
         mkdir /var/www/ganglia &&
-        chown -R apache:apache /var/www/ganglia &&
-        cp web/* /var/www/ganglia &&
-        cd /tmp && rm -rf /tmp/ganglia*
+        chown -R www-data:www-data /var/www/ganglia &&
+        cp -R web/* /var/www/ganglia &&
+        cd /tmp && rm -rf /tmp/ganglia* && apache2ctl restart
         EOE
       end
 
