@@ -36,6 +36,7 @@ module PoolParty
         has_package "librrd-dev"
         has_package "libapr1-dev"
         has_package "libconfuse-dev"
+        has_package "python2.6-dev"
         has_exec :command => <<-EOE
         cd /tmp &&
         wget http://superb-west.dl.sourceforge.net/sourceforge/ganglia/ganglia-3.1.2.tar.gz &&
