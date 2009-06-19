@@ -32,8 +32,10 @@ module PoolParty
       def install_webserver_configs
         # hmm
         # based on: http://linxe-eye.blogspot.com/2008/04/ubuntu-cluster-master-node.html
+        # and https://wiki.appnexus.com/display/documentation/Monitoring+Instances+Using+Ganglia
         has_package "librrd-dev"
         has_package "libapr1-dev"
+        has_package "libconfuse-dev"
         has_exec :command => <<-EOE
         cd /tmp &&
         wget http://superb-west.dl.sourceforge.net/sourceforge/ganglia/ganglia-3.1.2.tar.gz &&
@@ -41,6 +43,7 @@ module PoolParty
         ./configure --enable-gexec --with-gmetad &&
         make && make install &&
         mkdir /var/www/ganglia &&
+        chown -R apache:apache /var/www/ganglia &&
         cp web/* /var/www/ganglia &&
         cd /tmp && rm -rf /tmp/ganglia*
         EOE
