@@ -65,7 +65,7 @@ module PoolParty
       def gmond
         has_directory "/etc/ganglia"
         has_variable "ganglia_cloud_name", :value => cloud_name 
-        has_variable "ganglia_masters_ip", :value => lambda { %Q{\`dig master0 | grep 'SERVER:' | awk -F '[()]' '{ print $2 }'\`}}
+        has_variable "ganglia_masters_ip", :value => lambda { %Q{\`dig master0 | grep 'SERVER:' | awk -F '[()]' '{ print $2 }'\`.strip}}
         has_file(:name => "/etc/ganglia/gmond.conf") do
           mode 0644
           template :plugins/:ganglia/:templates/"gmond.conf.erb"
