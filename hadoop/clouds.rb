@@ -26,6 +26,7 @@ pool(:hadoop_cluster) do
     end
 
     ganglia do
+      slave
     end
 
   end # cloud :hadoop_slave
@@ -55,11 +56,11 @@ pool(:hadoop_cluster) do
 
     hadoop do
       configure_master
-      run_example_job
+      # run_example_job
     end
 
-    hive do
-    end
+    # hive do
+    # end
 
     ganglia do
       master
