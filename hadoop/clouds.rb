@@ -20,6 +20,7 @@ pool(:hadoop_cluster) do
 
     apache do
       enable_php5
+      # todo, write a phpinfo.php verifier
     end
 
     hadoop do

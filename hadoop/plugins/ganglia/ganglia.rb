@@ -50,7 +50,7 @@ module PoolParty
       def master
         has_exec "cd /usr/local/src/ganglia-3.1.2 && ./configure --with-gmetad && make && make install",
           :not_if => "test -e /usr/lib/ganglia"
-        has_exec "mv /usr/local/src/ganglia-3.1.2 /var/www/ganglia",
+        has_exec "mv /usr/local/src/ganglia-3.1.2/web /var/www/ganglia",
           :not_if => "test -e /var/www/ganglia"
         gmond
         gmetad
@@ -65,7 +65,7 @@ module PoolParty
       def gmond
         has_directory "/etc/ganglia"
         has_variable "ganglia_cloud_name", :value => cloud_name 
-        # has_variable "ganglia_masters_ip", :value => lambda { %Q{\`dig +short master0\`"}}
+        has_variable "ganglia_masters_ip", :value => lambda { %Q{\`dig master0 | grep 'SERVER:' | awk -F '[()]' '{ print $2 }'\`}}
         has_file(:name => "/etc/ganglia/gmond.conf") do
           mode 0644
           template :plugins/:ganglia/:templates/"gmond.conf.erb"
@@ -77,22 +77,15 @@ module PoolParty
         has_group "ganglia", :action => :create
         has_user "ganglia", :gid => "ganglia"
         has_directory "/var/lib/ganglia/rrds"
+        has_exec "chmod 755 /var/lib/ganglia/rrds"
         has_exec "chown -R ganglia:ganglia /var/lib/ganglia/rrds"
-        # has_exec "/usr/sbin/gmetad", :not_if => "ps aux | grep gmetad | grep -v grep"
 
         has_file(:name => "/etc/ganglia/gmetad.conf") do
           mode 0644
           template :plugins/:ganglia/:templates/"gmetad.conf.erb"
         end
- 
-      end
 
-      def configs 
-        # has_variable "ganglia_cloud_name", :value => cloud_name 
-        # has_file(:name => "/etc/gmond.conf") do
-          # mode 0644
-          # template :plugins/:ganglia/:templates/"gmond.conf.erb"
-        # end
+        has_exec "/usr/sbin/gmetad", :not_if => "ps aux | grep gmetad | grep -v grep"
       end
 
       # todo, add a verifier
