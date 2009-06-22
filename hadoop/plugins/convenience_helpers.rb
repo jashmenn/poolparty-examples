@@ -65,7 +65,7 @@ module PoolParty
       end
 
       def add_profile_updates
-        has_exec %Q{echo \\"export PS1='\\\\u@\\\\h \\\\A \\\\w (#{name}) $ '\\" >> /root/.profile}, :not_if => "grep PS1 /root/.profile"
+        has_exec %Q{echo \\"export PS1='\\\\u@\\\\h \\\\A \\\\w (#{cloud_name}) $ '\\" >> /root/.profile}, :not_if => "grep PS1 /root/.profile | grep #{cloud_name}"
       end
 
     end
