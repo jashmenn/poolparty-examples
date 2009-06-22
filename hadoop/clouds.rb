@@ -64,6 +64,7 @@ pool(:hadoop_cluster) do
     # end
 
     ganglia do
+      monitor "hadoop_slave", "hadoop_master" # what cloud names to monitor
       master
     end
 
@@ -77,6 +78,7 @@ pool(:hadoop_cluster) do
 
     clouds[:hadoop_master].run_in_context do
       hadoop.perform_just_in_time_operations
+      ganglia.perform_after_all_loaded_for_master
     end
   end
 
