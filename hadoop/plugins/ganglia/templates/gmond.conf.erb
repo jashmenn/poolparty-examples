@@ -35,18 +35,21 @@ host {
    used to only support having a single channel */
 udp_send_channel {
   /* mcast_join = <%= @node[:poolparty][:ganglia_masters_ip] %> */
-  host = <%= @node[:poolparty][:ganglia_masters_ip] %>
+  /* host = <%= @node[:poolparty][:ganglia_masters_ip] %> */
+  host = <%= @node[:poolparty][:ganglia_first_node_in_clusters_ip] %>
   port = 8649
   ttl = 1
 }
 
-<% if @node[:poolparty][:ganglia_gmond_is_master] %>
 /* You can specify as many udp_recv_channels as you like as well. */
 udp_recv_channel {
   /* mcast_join = <%= @node[:poolparty][:ganglia_this_nodes_private_ip] %> */
   port = 8649
-  bind = <%= @node[:poolparty][:ganglia_this_nodes_private_ip] %>
+  bind = <%= @node[:poolparty][:ganglia_this_nodes_private_ip] %> 
 }
+
+<%# if @node[:poolparty][:ganglia_gmond_is_master] %>
+<%# end %>
 
 /* You can specify as many tcp_accept_channels as you like to share
    an xml description of the state of the cluster */
@@ -55,7 +58,6 @@ tcp_accept_channel {
   bind = <%= @node[:poolparty][:ganglia_this_nodes_private_ip] %>
 }
 
-<% end %>
 
 /* Each metrics module that is referenced by gmond must be specified and
    loaded. If the module has been statically linked with gmond, it does

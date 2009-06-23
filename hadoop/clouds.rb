@@ -74,6 +74,7 @@ pool(:hadoop_cluster) do
     # get the master ips on the slaves
     clouds[:hadoop_slave].run_in_context do
       hadoop.perform_just_in_time_operations
+      ganglia.perform_after_all_loaded_for_slave
     end
 
     clouds[:hadoop_master].run_in_context do
