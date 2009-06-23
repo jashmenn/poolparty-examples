@@ -7,7 +7,9 @@ Install Ganglia cloud monitoring system
 You'll need apache and php enabled in your clouds.rb. For example:
 
     apache do
-      enable_php5
+      enable_php5 do
+        extras :gd
+      end
     end
 
 Because the configs need to know about every node in the cloud *after* it has

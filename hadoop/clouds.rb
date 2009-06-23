@@ -52,7 +52,9 @@ pool(:hadoop_cluster) do
     has_development_gem('poolparty-extensions', :from => "~/ruby/poolparty-extensions")
 
     apache do
-      enable_php5
+      enable_php5 do
+        extras :gd
+      end
     end
 
     hadoop do
