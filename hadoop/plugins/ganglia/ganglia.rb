@@ -25,6 +25,11 @@ ganglia.perform_after_all_loaded_for_master. For example:
 Currently the tasks only need to be run for master, so simply call this on your
 "master" cloud. Note: replace hadoop_master with the name of your cloud above.
 
+== EC2 Firewall
+
+ec2-authorize -P udp -p 8649 nmurray-hadoop
+ec2-authorize -P tcp -p 8649 nmurray-hadoop
+
 == References
 * http://www.ibm.com/developerworks/wikis/display/WikiPtype/ganglia?decorator=printable
 * http://docs.google.com/Doc?id=dgmmft5s_45hr7hmggr
@@ -55,8 +60,6 @@ module PoolParty
         has_user "ganglia", :gid => "ganglia"
  
         # libart-2.0-2 ?
-        # has_package :name => "libganglia1"
-        # has_package :name => "ganglia-monitor"
       end
 
       def download
@@ -94,7 +97,6 @@ module PoolParty
           calls get_exec("restart-gmond")
         end
 
-        has_service "gmond", :enabled => true, :running => true, :supports => [:restart]
       end
 
       def gmetad
@@ -107,7 +109,6 @@ module PoolParty
           template :plugins/:ganglia/:templates/:bin/"gmetad.erb"
           calls get_exec("restart-gmetad")
         end
-        has_service "gmetad", :enabled => true, :running => true, :supports => [:restart]
       end
 
       def monitor(*cloud_names)
@@ -139,6 +140,7 @@ module PoolParty
           template :plugins/:ganglia/:templates/"gmetad.conf.erb"
           # calls get_exec("restart-gmetad")
         end
+        has_service "gmetad", :enabled => true, :running => true, :supports => [:restart]
       end
 
       def gmond_after_all_loaded
@@ -154,6 +156,7 @@ module PoolParty
           template :plugins/:ganglia/:templates/"gmond.conf.erb"
           # calls get_exec("restart-gmond")
         end
+        has_service "gmond", :enabled => true, :running => true, :supports => [:restart]
 
       end
 

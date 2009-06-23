@@ -45,7 +45,9 @@ udp_send_channel {
 udp_recv_channel {
   /* mcast_join = <%= @node[:poolparty][:ganglia_this_nodes_private_ip] %> */
   port = 8649
-  bind = <%= @node[:poolparty][:ganglia_this_nodes_private_ip] %> 
+  /* bind = <%= @node[:poolparty][:ganglia_this_nodes_private_ip] %>  */
+  bind = 0.0.0.0 
+  family = inet4
 
   acl {
     default = "allow"

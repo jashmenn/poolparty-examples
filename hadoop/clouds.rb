@@ -30,6 +30,8 @@ pool(:hadoop_cluster) do
       slave
     end
 
+    has_package "nmap"
+
   end # cloud :hadoop_slave
 
   cloud(:hadoop_master) do
@@ -69,6 +71,8 @@ pool(:hadoop_cluster) do
       monitor "hadoop_slave", "hadoop_master" # what cloud names to monitor
       master
     end
+
+    has_package "nmap"
 
   end # cloud :hadoop_master
 
