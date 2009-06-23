@@ -14,7 +14,7 @@ pool(:cloudteam) do
   cloud(:hadoop_slave) do
     instances 2
 
-    keypair "cloudteam_hadoop_slave"
+    keypair "nmurray-hadoop-slave"
     using :ec2
 
     has_convenience_helpers
@@ -48,7 +48,7 @@ pool(:cloudteam) do
     # end
 
     using :ec2
-    keypair "cloudteam_hadoop_master"
+    keypair "nmurray-hadoop-master"
 
     has_convenience_helpers
     has_gem_package("bjeanes-ghost")
@@ -100,5 +100,6 @@ pool(:cloudteam) do
   end
 
 end # pool
+
 
 # vim: ft=ruby
