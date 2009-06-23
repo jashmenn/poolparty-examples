@@ -1,5 +1,22 @@
 =begin rdoc
+
+== Overview
+Install a hadoop cluster
+
+== Requirements
+You'll need apache and php enabled in your clouds.rb. For example:
+
+    apache do
+      enable_php5
+    end
+
+== Bugs
+This assumes your clouds are named "hadoop_master" and "hadoop_slave". That sucks. TODO: pass these in as variables
+
+== References
 =end
+
+
 
 module PoolParty
   module Plugin

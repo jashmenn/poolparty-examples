@@ -2,3 +2,4 @@
 .DS_Store
 .session
 hadoop/keys
+hadoop/hadoop.vim

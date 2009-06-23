@@ -24,13 +24,17 @@ pool(:cloudteam) do
 
     apache do
       enable_php5
+      # todo, write a phpinfo.php verifier
     end
 
     hadoop do
     end
 
     ganglia do
+      slave
     end
+
+    has_package "nmap"
 
   end # cloud :hadoop_slave
 
@@ -52,8 +56,6 @@ pool(:cloudteam) do
     has_development_gem('poolparty-extensions', :from => "#{File.dirname(__FILE__)}/../../poolparty-extensions")
 
     apache do
-      enable_php5
-      
         has_line_in_file :file => "/etc/apache2/sites-enabled/default", :line => "
 <Directory /var/www/>
   Options FollowSymLinks MultiViews
@@ -62,19 +64,25 @@ pool(:cloudteam) do
   allow from all
   RedirectMatch ^/\$ /ganglia/
 </Directory>"
+      enable_php5 do
+        extras :gd
+      end
     end
 
     hadoop do
       configure_master
-      run_example_job
+      # run_example_job
     end
 
-    hive do
-    end
+    # hive do
+    # end
 
     ganglia do
+      monitor "hadoop_slave", "hadoop_master" # what cloud names to monitor
       master
     end
+
+    has_package "nmap"
 
   end # cloud :hadoop_master
 
@@ -82,10 +90,12 @@ pool(:cloudteam) do
     # get the master ips on the slaves
     clouds[:hadoop_slave].run_in_context do
       hadoop.perform_just_in_time_operations
+      ganglia.perform_after_all_loaded_for_slave
     end
 
     clouds[:hadoop_master].run_in_context do
       hadoop.perform_just_in_time_operations
+      ganglia.perform_after_all_loaded_for_master
     end
   end
 
