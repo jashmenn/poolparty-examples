@@ -46,6 +46,10 @@ udp_recv_channel {
   /* mcast_join = <%= @node[:poolparty][:ganglia_this_nodes_private_ip] %> */
   port = 8649
   bind = <%= @node[:poolparty][:ganglia_this_nodes_private_ip] %> 
+
+  acl {
+    default = "allow"
+  }
 }
 
 <%# if @node[:poolparty][:ganglia_gmond_is_master] %>
@@ -54,8 +58,13 @@ udp_recv_channel {
 /* You can specify as many tcp_accept_channels as you like to share
    an xml description of the state of the cluster */
 tcp_accept_channel {
-  port = 8650
+  port = 8649
   bind = <%= @node[:poolparty][:ganglia_this_nodes_private_ip] %>
+
+  acl {
+    default = "allow"
+  }
+
 }
 
 

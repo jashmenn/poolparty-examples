@@ -127,7 +127,7 @@ module PoolParty
           line = "data_source \\\"#{cloud_name}\\\" "
           ips = []
           clouds[cloud_name.intern].nodes(:status => 'running').each_with_index do |n, i|
-            ips << n[:private_dns_name] + ":8650"
+            ips << n[:private_dns_name] + ":8649"
           end
           data_sources << (line + ips.join(" ") + "\n")
         end
