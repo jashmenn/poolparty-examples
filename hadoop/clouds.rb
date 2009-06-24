@@ -79,8 +79,8 @@ pool(:cloudteam) do
       run_example_job
     end
 
-    # hive do
-    # end
+    hive do
+    end
 
     ganglia do
       monitor "hadoop_slave", "hadoop_master" # what cloud names to monitor
