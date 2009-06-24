@@ -15,7 +15,9 @@ pool(:cloudteam) do
     instances 2
 
     keypair "cloudteam_hadoop_slave"
-    using :ec2
+    using :ec2 do
+      security_group ["nmurray-hadoop"]
+    end
 
     has_convenience_helpers
     has_gem_package("bjeanes-ghost")
@@ -47,7 +49,10 @@ pool(:cloudteam) do
     #   })
     # end
 
-    using :ec2
+    using :ec2 do
+      security_group ["nmurray-hadoop"]
+    end
+
     keypair "cloudteam_hadoop_master"
 
     has_convenience_helpers
