@@ -2,20 +2,17 @@ Dir["#{File.dirname(__FILE__)}/plugins/*/*"].each{|l| $:.unshift l }
 $:.unshift "#{File.dirname(__FILE__)}/../../poolparty-extensions/lib"
 require 'rubygems'
 require "poolparty"
-
 require 'poolparty-extensions'
-require 'plugins/hadoop/hadoop'
-require 'plugins/hive/hive'
-require 'plugins/convenience_helpers'
 
-
-pool(:cloudteam) do
+pool(:cloud) do
 
   cloud(:hadoop_slave) do
     instances 2
 
-    keypair "cloudteam_hadoop_slave"
-    using :ec2
+    keypair "cloud_hadoop_slave"
+    using :ec2 do
+      security_group ["hadoop_pool"]
+    end
 
     has_convenience_helpers
     has_gem_package("bjeanes-ghost")
@@ -47,8 +44,11 @@ pool(:cloudteam) do
     #   })
     # end
 
-    using :ec2
-    keypair "cloudteam_hadoop_master"
+    using :ec2 do
+      security_group ["hadoop_pool"]
+    end
+
+    keypair "cloud_hadoop_master"
 
     has_convenience_helpers
     has_gem_package("bjeanes-ghost")
@@ -71,11 +71,16 @@ pool(:cloudteam) do
 
     hadoop do
       configure_master
+      prep_example_job
       # run_example_job
     end
 
-    # hive do
-    # end
+    hive do
+      has_package "ant"
+      has_package "jruby1.1"
+      # need to buid jdbc jar?
+      has_gem_package "sequel", :jruby => true
+    end
 
     ganglia do
       monitor "hadoop_slave", "hadoop_master" # what cloud names to monitor
@@ -83,6 +88,13 @@ pool(:cloudteam) do
     end
 
     has_package "nmap"
+    has_package "git-core"
+
+    # for internal log processing scripts
+    has_gem_package "ruby-debug"
+    has_gem_package "sequel" # not jruby as above
+    has_package "libsqlite3-dev"
+    has_gem_package "sqlite3-ruby"
 
   end # cloud :hadoop_master
 
@@ -100,5 +112,6 @@ pool(:cloudteam) do
   end
 
 end # pool
+
 
 # vim: ft=ruby

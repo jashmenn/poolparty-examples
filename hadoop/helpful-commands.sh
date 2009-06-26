@@ -23,3 +23,7 @@ grep -R port *|  grep -vi import | grep -vi report | grep -vi support
 http://ec2-174-129-134-128.compute-1.amazonaws.com:50030/mapOutput?job=job_200906172320_0001&map=attempt_200906172320_0001_m_000000_0&reduce=0
 xtail --ansi logs/*.log
 scp -o "IdentityFile ~/.ssh/nmurray-hadoop-master"  root@xx.xx.xx.xx:/usr/local/hadoop/conf.tar.bz2 .
+scp -r -o "IdentityFile ~/.ssh/cloudteam_hadoop_master" root@xxx.xxx.xxx.xx:/usr/local/src/jruby-jdbc jruby-jdbc
+
+# hive
+HIVE_PORT=10000 hive --service hiveserver
