@@ -85,10 +85,59 @@ Start your cloud
     cloud-list # sanity check, no instances should show up, no exceptions should be raised
     cloud-start -vd
 
+*Tons*  of information will fly by. Be patient, this could take upwards of 15 minutes. 
+
+Everything done? Good. Now you're going to need to configure a second time. Now that all the nodes are booted they can be configured to talk to each other properly.
+
+    cloud-configure -vd
+
+Again, tons of output should fly by. Wait for it to finish.
+
+Now what we want to do is actually run our hadoop sample job. Open up the `hadoop/clouds.rb` and find the lines that look like this:
+
+    hadoop do
+      configure_master
+      prep_example_job
+      # run_example_job
+    end
+
+Uncomment the `run_example_job` line and configure, but this time we only need to configure master.
+
+    cloud-configure -vd -c hadoop_master
+
+This _should_ work, but there is a chance the hdfs wont be started in time to load the sample job. If that happens, just configure one more time.
+You know it worked if you see output like the following (it wont be at the bottom):
+
+    [Fri, 26 Jun 2009 20:09:50 +0000] DEBUG: STDERR: 09/06/26 20:09:11 INFO input.FileInputFormat: Total input paths to process : 3
+    09/06/26 20:09:12 INFO mapred.JobClient: Running job: job_200906262006_0001
+    09/06/26 20:09:13 INFO mapred.JobClient:  map 0% reduce 0%
+    09/06/26 20:09:32 INFO mapred.JobClient:  map 66% reduce 0%
+    09/06/26 20:09:38 INFO mapred.JobClient:  map 100% reduce 0%
+    09/06/26 20:09:47 INFO mapred.JobClient:  map 100% reduce 100%
+    09/06/26 20:09:49 INFO mapred.JobClient: Job complete: job_200906262006_0001
+    09/06/26 20:09:49 INFO mapred.JobClient: Counters: 17
+
+Congradulations! You now have a scalable Hadoop cluster at your disposal!
 
 What to do when something goes wrong
 ====================================
 * Checkout the [PoolParty IRC channel](http://auser.github.com/poolparty/community.html), we're always around and ready to help #poolpartyrb. 
+
+This plugin was based on a number of helpful sites on the web. Checkout the following links:
+Hadoop
+------
+------
+* [Michael Noll's Haddop Tutorial](http://www.michael-noll.com/wiki/Running_Hadoop_On_Ubuntu_Linux_(Multi-Node_Cluster))
+
+Hive
+----
+----
+* [Apache's Hive website](http://wiki.apache.org/hadoop/Hive)
+
+Ganglia
+-------
+-------
+* [IBM's Ganglia Tutorial](http://www.ibm.com/developerworks/wikis/display/WikiPtype/ganglia)
 
 References
 ==========
