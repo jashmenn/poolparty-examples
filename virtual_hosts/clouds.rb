@@ -24,7 +24,7 @@ pool(:adams) do
         owner "www-data"
       end
 
-      has_virtualhost do
+      has_virtual_host do
         name "handkerchief.com"
 
         has_file :name => "/var/www/handkerchief.com/index.html" do
@@ -34,7 +34,7 @@ pool(:adams) do
         end
       end
 
-      has_virtualhost do
+      has_virtual_host do
         name "tissues.com"
 
         has_file :name => "/var/www/tissues.com/index.html" do

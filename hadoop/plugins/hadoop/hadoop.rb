@@ -47,7 +47,7 @@ module PoolParty
         has_package(:name => "sun-java6-jdk")
         has_file(:name => "/etc/jvm") do
             mode 0644
-            template :plugins/:hadoop/:templates/"jvm.conf"
+            template "jvm.conf"
          end
       end
 
@@ -146,7 +146,7 @@ EOF
       def configure
         has_file(:name => hadoop_install_dir/"conf/hadoop-env.sh") do
           mode 0644
-          template :plugins/:hadoop/:templates/"hadoop-env.sh"
+          template "hadoop-env.sh"
         end
 
         has_variable "current_master", :value => "master0" # todo, could eventually be made more dynamic here
@@ -175,13 +175,13 @@ EOF
         %w{core hdfs mapred}.each do |config|
           has_file(:name => hadoop_install_dir/"conf/#{config}-site.xml") do
             mode 0644
-            template :plugins/:hadoop/:templates/"#{config}-site.xml.erb"
+            template "#{config}-site.xml.erb"
           end
         end
 
         has_file(:name => hadoop_install_dir/"conf/log4j.properties") do
           mode 0644
-          template :plugins/:hadoop/:templates/"log4j.properties.erb"
+          template "log4j.properties.erb"
         end
 
      end
