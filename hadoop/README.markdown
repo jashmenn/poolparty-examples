@@ -39,7 +39,7 @@ This tutorial assumes that:
 
 1. **You have Amazon EC2 java tools installed**. See [EC2: Getting Started with the Command Line Tools](http://docs.amazonwebservices.com/AWSEC2/latest/GettingStartedGuide/index.html?StartCLI.html)
 1. **You have the proper EC2 environment variables setup**. See [Setting up EC2](http://auser.github.com/poolparty/amazon_ec2_setup.html) on the PoolParty website. For instance, a typical PoolParty install would have these variables in `$HOME/.ec2/keys_and_secrets.sh`.
-1. **You have PoolParty installed from source**. In theory, you should be able to install the gem. However, _today_  you should probably install from source. Make sure you have `git://github.com/auser/poolparty.git` checked out and then follow the "Installing" directions on [the PoolParty wiki](http://wiki.github.com/auser/poolparty/installing). You only need to complete the two sections **Dependencies required to build gem locally** and **Instructions** . This will install all the development dependency gems and then make sure you have all of the submodules.
+1. **You have PoolParty installed from source**. In theory, you should be able to install the gem. However, _today_  you should probably install from source. Make sure you have `git://github.com/auser/poolparty.git` checked out and then follow the "Installing" directions on [the PoolParty wiki](http://wiki.github.com/auser/poolparty/installing). You only need to complete the two sections **Dependencies required to build gem locally** and **Instructions** . This will install all the development dependency gems and then make sure you have all of the submodules. **NOTE** PoolParty deploys ruby gem versions based on the versions on your *local* machine. So make sure you have the most recent versions of the required gems installed locally.
 1. **You have the [jashmenn/poolparty-examples](http://github.com/jashmenn/poolparty-examples/tree/master) repository**. `git checkout git://github.com/jashmenn/poolparty-examples.git /path/to/poolparty-examples` 
 1. **You have the [jashmenn/poolparty-extensions](http://github.com/jashmenn/poolparty-extensions/tree/master) repository**. Note that this directory must be a *sibling* directory to the `poolparty-examples` directory. `git clone git://github.com/jashmenn/poolparty-extensions.git /path/to/poolparty-extensions`
 
@@ -56,6 +56,7 @@ So run the following commands:
 
     ec2-add-keypair cloud_hadoop_slave > ~/.ssh/cloud_hadoop_slave
     ec2-add-keypair cloud_hadoop_master > ~/.ssh/cloud_hadoop_master
+    chmod 600 ~/.ssh/cloud_hadoop_*
 
 Security Groups
 ---------------
@@ -68,16 +69,22 @@ You'll also want to create a security group for our _pool_ .
 
 We also need to open a number of ports for this security group:
 
-           ec2-authorize -p 22 hadoop_pool               # ssh
-           ec2-authorize -p 8642 hadoop_pool             # poolparty internal daemons
-           ec2-authorize -P icmp -t -1:-1 hadoop_pool    # if you want to ping (optional, i guess)
-           ec2-authorize -p 80 hadoop_pool               # apache
-
-           ec2-authorize -p 8649 -P udp hadoop_pool      # ganglia UDP
-           ec2-authorize hadoop_pool -o hadoop_pool -u xxxxxxxxxxxx # xxxxxxxxxxxx is your amazon account id. ugly but true
+    ec2-authorize -p 22 hadoop_pool               # ssh
+    ec2-authorize -p 8642 hadoop_pool             # poolparty internal daemons
+    ec2-authorize -P icmp -t -1:-1 hadoop_pool    # if you want to ping (optional, i guess)
+    ec2-authorize -p 80 hadoop_pool               # apache
+ 
+    ec2-authorize -p 8649 -P udp hadoop_pool      # ganglia UDP
+    ec2-authorize hadoop_pool -o hadoop_pool -u xxxxxxxxxxxx # xxxxxxxxxxxx is your amazon account id. ugly but true
 
 Start your cloud
 ================
+**NOTE** : There are a number of configurations that rely on the whole cloud being booted. This means that the first time you run `cloud-start` you may see a few shell errors. This is okay as long as it goes away after subsequent configures. The idea is that all nodes need to be started before the whole configuration will work properly.
+
+    cd /path/to/poolparty-examples/hadoop
+    cloud-list # sanity check, no instances should show up, no exceptions should be raised
+    cloud-start -vd
+
 
 What to do when something goes wrong
 ====================================
