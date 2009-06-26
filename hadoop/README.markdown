@@ -7,6 +7,24 @@ Summary
 Setting up a scalable Hadoop cluster isn't easy, but PoolParty makes it easier
 and manageable.
 
+By the time we're done with this tutorial you'll have a Hadoop cluster consisting of one master node and two slaves.  The slaves are formatted with HDFS and process MapReduce jobs that are delegated to them from the master.  
+
+The whole cluster is monitored by Ganglia.
+
+Benefits of PoolParty
+=====================
+The nodes are very interdependent. By that I mean that each node needs to have 2 or 3 configuration files that are based on the other currently running nodes in the cluster. As nodes are joining and leaving the cluster each of these files on every node needs to be updated. PoolParty handles this process for you more-or-less automatically. The benefit is that you don't have roll your own methods to do this every time you want to setup a cluster. 
+
+In PoolParty plugins are first-class citizens. This means you can write your own plugins and they are every bit as powerful as the resources that make up PoolParty core itself. This makes it easy to break up server functionality into _modules of code_ . PoolParty, in a sense, gives you object-oriented server configurations. You can, for instance, take a Ganglia object, call a few methods and PoolParty takes care of executing the required commands to deploy a configured Ganglia cluster.
+
+Architecture 
+============
+PoolParty is built around the notion of _pools_ and _clouds_ . A pool is simply a collection of clouds. A cloud is a homogeneous set of nodes. i.e. **every node in a cloud is _configured_ the same way** . Obviously nodes in a cloud will have different sets of working data as they run, but the idea is any node in a cloud could be substituted for any other node in that same cloud.  
+
+PoolParty itself is designed to be fully distributed and masterless. There is no required concept of "master" and "slave" in PoolParty itself. That said, many pieces of software, such as Hadoop, do have this concept and PoolParty can be configured to take advantage of that. 
+
+We'll be setting up our pool as two clouds `hadoop_master` and `hadoop_slave`. Obviously, `hadoop_slave` will be a cloud (cluster) of nodes configured to be Hadoop slaves. `hadoop_master` will also be a cloud of masters. In our example we're only going to use 1 node as the master. But  you could relatively easily configure everything to have more than one master.  
+
 Software involved
 =================
 
@@ -24,6 +42,7 @@ This tutorial assumes that:
 1. **You have PoolParty installed from source**. In theory, you should be able to install the gem. However, _today_  you should probably install from source. Make sure you have `git://github.com/auser/poolparty.git` checked out and then follow the "Installing" directions on [the PoolParty wiki](http://wiki.github.com/auser/poolparty/installing). You only need to complete the two sections **Dependencies required to build gem locally** and **Instructions** . This will install all the development dependency gems and then make sure you have all of the submodules.
 1. **You have the [jashmenn/poolparty-examples](http://github.com/jashmenn/poolparty-examples/tree/master) repository**. `git checkout git://github.com/jashmenn/poolparty-examples.git /path/to/poolparty-examples` 
 1. **You have the [jashmenn/poolparty-extensions](http://github.com/jashmenn/poolparty-extensions/tree/master) repository**. Note that this directory must be a *sibling* directory to the `poolparty-examples` directory. `git clone git://github.com/jashmenn/poolparty-extensions.git /path/to/poolparty-extensions`
+
 
 
 
