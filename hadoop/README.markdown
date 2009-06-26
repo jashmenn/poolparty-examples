@@ -43,7 +43,41 @@ This tutorial assumes that:
 1. **You have the [jashmenn/poolparty-examples](http://github.com/jashmenn/poolparty-examples/tree/master) repository**. `git checkout git://github.com/jashmenn/poolparty-examples.git /path/to/poolparty-examples` 
 1. **You have the [jashmenn/poolparty-extensions](http://github.com/jashmenn/poolparty-extensions/tree/master) repository**. Note that this directory must be a *sibling* directory to the `poolparty-examples` directory. `git clone git://github.com/jashmenn/poolparty-extensions.git /path/to/poolparty-extensions`
 
+EC2 Security
+============
+Now that we have the code issue complete, we now need to deal with Amazon's security. (See [here](http://auser.github.com/poolparty/amazon.html) if you are unclear on how EC2 security works.)
 
+Setup Keypairs
+--------------
+--------------
+Every cloud in PoolParty must have its own unique keypair. Thats important enough it's worth repeating: _every cloud in PoolParty must have its own unique keypair_ .
+
+So run the following commands:
+
+    ec2-add-keypair cloud_hadoop_slave > ~/.ssh/cloud_hadoop_slave
+    ec2-add-keypair cloud_hadoop_master > ~/.ssh/cloud_hadoop_master
+
+Security Groups
+---------------
+---------------
+You'll also want to create a security group for our _pool_ . 
+
+    ec2-add-group hadoop_pool -d "the pool of hadoop masters and slaves"
+
+**NOTICE:** Hadoop has a crazy number of ports that it requires. The ports below will _work_ but may not be the most secure configuration. If you understand this better than I please recommend better settings. Otherwise proceed knowing that these ports are probably a little _too_ open.
+
+We also need to open a number of ports for this security group:
+
+           ec2-authorize -p 22 hadoop_pool               # ssh
+           ec2-authorize -p 8642 hadoop_pool             # poolparty internal daemons
+           ec2-authorize -P icmp -t -1:-1 hadoop_pool    # if you want to ping (optional, i guess)
+           ec2-authorize -p 80 hadoop_pool               # apache
+
+           ec2-authorize -p 8649 -P udp hadoop_pool      # ganglia UDP
+           ec2-authorize hadoop_pool -o hadoop_pool -u xxxxxxxxxxxx # xxxxxxxxxxxx is your amazon account id. ugly but true
+
+Start your cloud
+================
 
 What to do when something goes wrong
 ====================================
