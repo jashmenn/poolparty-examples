@@ -6,8 +6,6 @@ require "poolparty"
 require 'poolparty-extensions'
 require 'plugins/hadoop/hadoop'
 require 'plugins/hive/hive'
-require 'plugins/convenience_helpers'
-
 
 pool(:cloudteam) do
 
@@ -80,6 +78,10 @@ pool(:cloudteam) do
     end
 
     hive do
+      has_package "ant"
+      has_package "jruby1.1"
+      # need to buid jdbc jar?
+      has_gem_package "sequel", :jruby => true
     end
 
     ganglia do
@@ -88,6 +90,13 @@ pool(:cloudteam) do
     end
 
     has_package "nmap"
+    has_package "git-core"
+
+    # for internal log processing scripts
+    has_gem_package "ruby-debug"
+    has_gem_package "sequel" # not jruby as above
+    has_package "libsqlite3-dev"
+    has_gem_package "sqlite3-ruby"
 
   end # cloud :hadoop_master
 
