@@ -45,7 +45,6 @@ This tutorial assumes that:
 
 
 
-
 What to do when something goes wrong
 ====================================
 * Checkout the [PoolParty IRC channel](http://auser.github.com/poolparty/community.html), we're always around and ready to help #poolpartyrb. 

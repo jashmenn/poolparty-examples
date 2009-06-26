@@ -4,8 +4,6 @@ require 'rubygems'
 require "poolparty"
 
 require 'poolparty-extensions'
-require 'plugins/hadoop/hadoop'
-require 'plugins/hive/hive'
 
 pool(:cloudteam) do
 
