@@ -2,17 +2,16 @@ Dir["#{File.dirname(__FILE__)}/plugins/*/*"].each{|l| $:.unshift l }
 $:.unshift "#{File.dirname(__FILE__)}/../../poolparty-extensions/lib"
 require 'rubygems'
 require "poolparty"
-
 require 'poolparty-extensions'
 
-pool(:cloudteam) do
+pool(:cloud) do
 
   cloud(:hadoop_slave) do
     instances 2
 
-    keypair "cloudteam_hadoop_slave"
+    keypair "cloud_hadoop_slave"
     using :ec2 do
-      security_group ["nmurray-hadoop"]
+      security_group ["hadoop_pool"]
     end
 
     has_convenience_helpers
@@ -46,10 +45,10 @@ pool(:cloudteam) do
     # end
 
     using :ec2 do
-      security_group ["nmurray-hadoop"]
+      security_group ["hadoop_pool"]
     end
 
-    keypair "cloudteam_hadoop_master"
+    keypair "cloud_hadoop_master"
 
     has_convenience_helpers
     has_gem_package("bjeanes-ghost")
@@ -72,7 +71,8 @@ pool(:cloudteam) do
 
     hadoop do
       configure_master
-      run_example_job
+      prep_example_job
+      # run_example_job
     end
 
     hive do
