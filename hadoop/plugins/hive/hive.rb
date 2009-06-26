@@ -40,6 +40,15 @@ module PoolParty
           :not_if => "test -e #{src_dir}/build/dist/README.txt"
       end
 
+
+      def tmp
+        "svn co http://svn.apache.org/repos/asf/hadoop/hive/trunk hive -r781069"
+        "cd /usr/local/hive && wget --no-check-certificate https://issues.apache.org/jira/secure/attachment/12409779/hive-487.3.patch"
+        "root@domU-12-31-38-00-41-F5 18:38 /usr/local/src/hive (hadoop_master) $ patch -p0 < hive-487.3.patch"
+        "rm -rf /usr/local/hive"
+        "mv /usr/local/src/hive/build/dist/ /usr/local/hive"
+      end
+
       # todo, pull from parent
       def set_environment_variables
         has_file :name => "/root/.hadoop-etc-env.sh", :content => <<-EOF
