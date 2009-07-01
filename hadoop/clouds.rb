@@ -4,12 +4,15 @@ require 'rubygems'
 require "poolparty"
 require 'poolparty-extensions'
 
+# KEYPAIR_PREFIX = "cloud_hadoop"
+KEYPAIR_PREFIX = "cloudteam_hadoop"
+
 pool(:cloud) do
 
   cloud(:hadoop_slave) do
     instances 2
 
-    keypair "cloud_hadoop_slave"
+    keypair "#{KEYPAIR_PREFIX}_slave"
     using :ec2 do
       security_group ["hadoop_pool"]
     end
@@ -48,7 +51,7 @@ pool(:cloud) do
       security_group ["hadoop_pool"]
     end
 
-    keypair "cloud_hadoop_master"
+    keypair "#{KEYPAIR_PREFIX}_master"
 
     has_convenience_helpers
     has_gem_package("bjeanes-ghost")
