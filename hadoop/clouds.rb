@@ -10,7 +10,7 @@ KEYPAIR_PREFIX = "cloudteam_hadoop"
 pool(:cloud) do
 
   cloud(:hadoop_slave) do
-    instances 2
+    instances 3
 
     keypair "#{KEYPAIR_PREFIX}_slave"
     using :ec2 do

@@ -1,0 +1,19 @@
+--- !ditz.rubyforge.org,2008-03-06/issue 
+title: ganglia master0 keeps disappearing
+desc: ""
+type: :task
+component: hadoop_cloud
+release: 
+reporter: Nate Murray <nate@natemurray.com>
+status: :unstarted
+disposition: 
+creation_time: 2009-07-06 16:58:23.412466 Z
+references: []
+
+id: 69ca9d9364f971214bdf729a23fffa76b3f992df
+log_events: 
+- - 2009-07-06 16:58:23.900725 Z
+  - Nate Murray <nate@natemurray.com>
+  - created
+  - ""
+claimer: 

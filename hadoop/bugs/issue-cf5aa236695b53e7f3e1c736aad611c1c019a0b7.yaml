@@ -1,0 +1,19 @@
+--- !ditz.rubyforge.org,2008-03-06/issue 
+title: hadoop nodes need to have a service and config that will auto-run the hdfs and task tracker
+desc: ""
+type: :task
+component: hadoop_cloud
+release: 
+reporter: Nate Murray <nate@natemurray.com>
+status: :unstarted
+disposition: 
+creation_time: 2009-07-06 16:58:05.797140 Z
+references: []
+
+id: cf5aa236695b53e7f3e1c736aad611c1c019a0b7
+log_events: 
+- - 2009-07-06 16:58:06.605396 Z
+  - Nate Murray <nate@natemurray.com>
+  - created
+  - ""
+claimer: 
