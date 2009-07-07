@@ -1,0 +1,19 @@
+--- !ditz.rubyforge.org,2008-03-06/issue 
+title: "figure out the hosts/records for the canonical name "
+desc: ""
+type: :task
+component: hadoop_cloud
+release: 
+reporter: Nate Murray <nate@natemurray.com>
+status: :unstarted
+disposition: 
+creation_time: 2009-07-07 14:27:32.603392 Z
+references: []
+
+id: fd7da05594a9990b0bd4f2fbf9880779fab6a114
+log_events: 
+- - 2009-07-07 14:27:32.979674 Z
+  - Nate Murray <nate@natemurray.com>
+  - created
+  - ""
+claimer: 

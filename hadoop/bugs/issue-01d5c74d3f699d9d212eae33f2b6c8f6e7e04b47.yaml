@@ -1,0 +1,19 @@
+--- !ditz.rubyforge.org,2008-03-06/issue 
+title: mv everything back to a hadoop user rather than root
+desc: ""
+type: :task
+component: hadoop_cloud
+release: 
+reporter: Nate Murray <nate@natemurray.com>
+status: :unstarted
+disposition: 
+creation_time: 2009-07-07 17:48:34.541242 Z
+references: []
+
+id: 01d5c74d3f699d9d212eae33f2b6c8f6e7e04b47
+log_events: 
+- - 2009-07-07 17:48:35.077525 Z
+  - Nate Murray <nate@natemurray.com>
+  - created
+  - ""
+claimer: 

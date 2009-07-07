@@ -1,0 +1,19 @@
+--- !ditz.rubyforge.org,2008-03-06/issue 
+title: add hosts whitelist
+desc: ""
+type: :task
+component: hadoop_cloud
+release: 
+reporter: Nate Murray <nate@natemurray.com>
+status: :unstarted
+disposition: 
+creation_time: 2009-07-07 14:29:07.224483 Z
+references: []
+
+id: d37a125d58db117b2b357b6dacb21997c28aa5cf
+log_events: 
+- - 2009-07-07 14:29:07.616843 Z
+  - Nate Murray <nate@natemurray.com>
+  - created
+  - ""
+claimer: 

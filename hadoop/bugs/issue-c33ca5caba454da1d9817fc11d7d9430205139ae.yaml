@@ -1,0 +1,19 @@
+--- !ditz.rubyforge.org,2008-03-06/issue 
+title: figure out how to submit hadoop jobs in a more restrictive environment
+desc: ""
+type: :task
+component: hadoop_cloud
+release: 
+reporter: Nate Murray <nate@natemurray.com>
+status: :unstarted
+disposition: 
+creation_time: 2009-07-07 14:03:09.653708 Z
+references: []
+
+id: c33ca5caba454da1d9817fc11d7d9430205139ae
+log_events: 
+- - 2009-07-07 14:03:10.029878 Z
+  - Nate Murray <nate@natemurray.com>
+  - created
+  - ""
+claimer: 
