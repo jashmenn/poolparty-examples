@@ -5,7 +5,9 @@ require "poolparty"
 require 'poolparty-extensions'
 
 # KEYPAIR_PREFIX = "cloud_hadoop"
+# SECURITY_GROUP = "hadoop_pool"
 KEYPAIR_PREFIX = "cloudteam_hadoop"
+SECURITY_GROUP = "nmurray-hadoop"
 
 pool(:cloud) do
 
@@ -14,7 +16,7 @@ pool(:cloud) do
 
     keypair "#{KEYPAIR_PREFIX}_slave"
     using :ec2 do
-      security_group ["hadoop_pool"]
+      security_group [SECURITY_GROUP]
     end
 
     has_convenience_helpers
@@ -28,10 +30,12 @@ pool(:cloud) do
     end
 
     hadoop do
+      configure_slave
     end
 
     ganglia do
       slave
+      track :hadoop
     end
 
     has_package "nmap"
@@ -48,7 +52,7 @@ pool(:cloud) do
     # end
 
     using :ec2 do
-      security_group ["hadoop_pool"]
+      security_group [SECURITY_GROUP]
     end
 
     keypair "#{KEYPAIR_PREFIX}_master"
