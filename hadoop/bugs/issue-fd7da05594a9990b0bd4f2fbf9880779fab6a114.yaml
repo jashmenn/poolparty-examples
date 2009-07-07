@@ -5,8 +5,8 @@ type: :task
 component: hadoop_cloud
 release: 
 reporter: Nate Murray <nate@natemurray.com>
-status: :unstarted
-disposition: 
+status: :closed
+disposition: :wontfix
 creation_time: 2009-07-07 14:27:32.603392 Z
 references: []
 
@@ -16,4 +16,8 @@ log_events:
   - Nate Murray <nate@natemurray.com>
   - created
   - ""
+- - 2009-07-07 22:44:34.572120 Z
+  - Nate Murray <nate@natemurray.com>
+  - closed with disposition wontfix
+  - doesn't matter. just force everyone to put the local ip address in their local configs
 claimer: 

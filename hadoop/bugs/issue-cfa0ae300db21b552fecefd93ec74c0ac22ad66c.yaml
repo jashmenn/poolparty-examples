@@ -5,8 +5,8 @@ type: :task
 component: hadoop_cloud
 release: 
 reporter: Nate Murray <nate@natemurray.com>
-status: :unstarted
-disposition: 
+status: :closed
+disposition: :fixed
 creation_time: 2009-07-07 14:02:53.102262 Z
 references: []
 
@@ -15,5 +15,9 @@ log_events:
 - - 2009-07-07 14:02:53.718460 Z
   - Nate Murray <nate@natemurray.com>
   - created
+  - ""
+- - 2009-07-07 22:45:58.497398 Z
+  - Nate Murray <nate@natemurray.com>
+  - closed with disposition fixed
   - ""
 claimer: 

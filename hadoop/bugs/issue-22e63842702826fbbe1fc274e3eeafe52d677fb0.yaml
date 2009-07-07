@@ -1,0 +1,19 @@
+--- !ditz.rubyforge.org,2008-03-06/issue 
+title: writeup how an atti-er could get up and running with this hadoop cluster
+desc: ""
+type: :task
+component: hadoop_cloud
+release: 
+reporter: Nate Murray <nate@natemurray.com>
+status: :unstarted
+disposition: 
+creation_time: 2009-07-07 22:51:05.511752 Z
+references: []
+
+id: 22e63842702826fbbe1fc274e3eeafe52d677fb0
+log_events: 
+- - 2009-07-07 22:51:05.903993 Z
+  - Nate Murray <nate@natemurray.com>
+  - created
+  - ""
+claimer: 
