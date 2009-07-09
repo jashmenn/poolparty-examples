@@ -1,0 +1,19 @@
+--- !ditz.rubyforge.org,2008-03-06/issue 
+title: try cloudera's ebs scripts
+desc: http://www.cloudera.com/hadoop-ec2-ebs-beta
+type: :task
+component: hadoop_cloud
+release: 
+reporter: Nate Murray <nate@natemurray.com>
+status: :unstarted
+disposition: 
+creation_time: 2009-07-07 23:05:42.678180 Z
+references: []
+
+id: 967c30939812823966f3c7581b40de0fbd1e5314
+log_events: 
+- - 2009-07-07 23:05:43.270400 Z
+  - Nate Murray <nate@natemurray.com>
+  - created
+  - ""
+claimer: 

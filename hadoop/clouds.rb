@@ -80,6 +80,8 @@ pool(:cloud) do
       configure_master
       prep_example_job
       # run_example_job
+      create_client_user('hadoop_client') # NOTE! this creates a hadoop_client user! no password 
+                                          # login or authorized keys though, just thought you should know
     end
 
     hive do
