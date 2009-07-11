@@ -20,7 +20,6 @@ pool(:cloud) do
     # using :ec2 do
     #   security_group [SECURITY_GROUP]
     # end
-
     # keypair "#{KEYPAIR_PREFIX}_master"
 
     has_convenience_helpers
@@ -35,11 +34,7 @@ pool(:cloud) do
   AllowOverride None
   Order allow,deny
   allow from all
-  RedirectMatch ^/\$ /ganglia/
 </Directory>"
-      enable_php5 do
-        extras :gd
-      end
     end
 
     has_package "nmap"
@@ -58,22 +53,8 @@ pool(:cloud) do
 
     has_package "denyhosts"
 
-  end # cloud :hadoop_master
-
-  after_all_loaded do
-    # get the master ips on the slaves
-    # clouds[:hadoop_slave].run_in_context do
-    #   hadoop.perform_just_in_time_operations
-    #   ganglia.perform_after_all_loaded_for_slave
-    # end
-
-    # clouds[:hadoop_master].run_in_context do
-    #   hadoop.perform_just_in_time_operations
-    #   ganglia.perform_after_all_loaded_for_master
-    # end
-  end
+  end # cloud :secure
 
 end # pool
-
 
 # vim: ft=ruby
