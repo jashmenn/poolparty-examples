@@ -56,6 +56,8 @@ pool(:cloud) do
       rule "SSH/ACCEPT net $FW"
     end
 
+    has_package "denyhosts"
+
   end # cloud :hadoop_master
 
   after_all_loaded do
