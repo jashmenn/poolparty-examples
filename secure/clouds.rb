@@ -6,6 +6,32 @@ require 'poolparty-extensions'
 require 'extensions/tripwire/tripwire.rb'
 require 'extensions/shorewall/shorewall.rb'
 
+=begin rdoc
+
+== Overview
+The beginnings of a security-focused EC2/ubuntu/poolparty image
+
+== Description
+Software:
+
+* shorewall  - firewall, very restrictive default settings
+* tripwire   - verify file integrity
+* denyhosts  - block bruteforce ssh attacks
+
+This setup is not complete by any stretch. 
+
+== PLANS
+
+* Have the file integrity checksums be distributed across the clouds
+* Be more specific about if authorized keys + amazon ec2 keys being in
+  /var/poolpary and in ~/.ssh/authorized_keys. If we make this more restrictive
+  then nodes won't be able to provision each other.
+
+== References
+=end
+
+
+
 pool(:cloud) do
 
   cloud(:secure) do
