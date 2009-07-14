@@ -28,6 +28,7 @@ This setup is not complete by any stretch.
   then nodes won't be able to provision each other.
 
 == References
+
 =end
 
 
@@ -75,9 +76,11 @@ pool(:cloud) do
     shorewall do
       rule "Web/ACCEPT net $FW"
       rule "SSH/ACCEPT net $FW"
+      rule "ACCEPT net:10.0.0.0/8 $FW"    # allow local EC2 traffic OR
+      rule "ACCEPT net:192.168.0.0/8 $FW" # allow local class C traffic
     end
 
-    has_package "denyhosts"
+    denyhosts
 
   end # cloud :secure
 

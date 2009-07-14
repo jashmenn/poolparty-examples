@@ -40,6 +40,20 @@ pool(:cloud) do
 
     has_package "nmap"
 
+    denyhosts
+
+    tripwire do
+      root_dir "/usr/wpt" # CHANGE THIS to something obscure. The idea is you *dont* want tripwire to be in a standard location.
+      mailto   "admin@emaildomain"
+      smtp_settings "host", "username", "password"
+    end
+
+    shorewall do
+      rule "Web/ACCEPT net $FW"
+      rule "SSH/ACCEPT net $FW"
+      rule "ACCEPT net:10.0.0.0/8 $FW"    # allow local EC2 traffic OR
+    end
+
   end # cloud :hadoop_slave
 
   cloud(:hadoop_master) do
@@ -94,6 +108,7 @@ pool(:cloud) do
     ganglia do
       monitor "hadoop_slave", "hadoop_master" # what cloud names to monitor
       master
+      # other things id like to monitor:
     end
 
     has_package "nmap"
@@ -104,6 +119,20 @@ pool(:cloud) do
     has_gem_package "sequel" # not jruby as above
     has_package "libsqlite3-dev"
     has_gem_package "sqlite3-ruby"
+
+    denyhosts
+
+    tripwire do
+      root_dir "/usr/wpt" # CHANGE THIS to something obscure. The idea is you *dont* want tripwire to be in a standard location.
+      mailto   "admin@emaildomain"
+      smtp_settings "host", "username", "password"
+    end
+
+    shorewall do
+      rule "Web/ACCEPT net $FW"
+      rule "SSH/ACCEPT net $FW"
+      rule "ACCEPT net:10.0.0.0/8 $FW"    # allow local EC2 traffic OR
+    end
 
   end # cloud :hadoop_master
 
