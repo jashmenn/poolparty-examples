@@ -4,10 +4,10 @@ require 'rubygems'
 require "poolparty"
 require 'poolparty-extensions'
 
-# KEYPAIR_PREFIX = "cloud_hadoop"
-# SECURITY_GROUP = "hadoop_pool"
-KEYPAIR_PREFIX = "cloudteam_hadoop"
-SECURITY_GROUP = "nmurray-hadoop"
+KEYPAIR_PREFIX = "cloud_hadoop"
+SECURITY_GROUP = "hadoop_pool"
+# KEYPAIR_PREFIX = "cloudteam_hadoop"
+# SECURITY_GROUP = "nmurray-hadoop"
 
 pool(:cloud) do
 
@@ -25,8 +25,7 @@ pool(:cloud) do
     has_development_gem('poolparty-extensions', :from => "#{File.dirname(__FILE__)}/../../poolparty-extensions")
 
     apache do
-      enable_php5
-      # todo, write a phpinfo.php verifier
+      enable_php5 # todo, write a phpinfo.php verifier
     end
 
     hadoop do
@@ -40,8 +39,6 @@ pool(:cloud) do
 
     has_package "nmap"
 
-    denyhosts
-
     tripwire do
       root_dir "/usr/wpt" # CHANGE THIS to something obscure. The idea is you *dont* want tripwire to be in a standard location.
       mailto   "admin@emaildomain"
@@ -53,6 +50,7 @@ pool(:cloud) do
       rule "SSH/ACCEPT net $FW"
       rule "ACCEPT net:10.0.0.0/8 $FW"    # allow local EC2 traffic OR
     end
+    denyhosts
 
   end # cloud :hadoop_slave
 
@@ -120,8 +118,6 @@ pool(:cloud) do
     has_package "libsqlite3-dev"
     has_gem_package "sqlite3-ruby"
 
-    denyhosts
-
     tripwire do
       root_dir "/usr/wpt" # CHANGE THIS to something obscure. The idea is you *dont* want tripwire to be in a standard location.
       mailto   "admin@emaildomain"
@@ -132,6 +128,16 @@ pool(:cloud) do
       rule "Web/ACCEPT net $FW"
       rule "SSH/ACCEPT net $FW"
       rule "ACCEPT net:10.0.0.0/8 $FW"    # allow local EC2 traffic OR
+    end
+    denyhosts
+
+    mysql do
+      master
+      root_password "angrybobby123"
+      database do
+        create_database "hive_metastore" 
+        grant_permissions_on_cloud_with_keypair_for_user "cloudteam_hadoop_master", "bobby", "abbyzabby17"
+      end
     end
 
   end # cloud :hadoop_master

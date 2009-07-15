@@ -65,8 +65,6 @@ You'll also want to create a security group for our _pool_ .
 
     ec2-add-group hadoop_pool -d "the pool of hadoop masters and slaves"
 
-**NOTICE:** Hadoop has a crazy number of ports that it requires. The ports below will _work_ but may not be the most secure configuration. If you understand this better than I please recommend better settings. Otherwise proceed knowing that these ports are probably a little _too_ open.
-
 We also need to open a number of ports for this security group:
 
     ec2-authorize -p 22 hadoop_pool               # ssh
@@ -74,7 +72,7 @@ We also need to open a number of ports for this security group:
     ec2-authorize -P icmp -t -1:-1 hadoop_pool    # if you want to ping (optional, i guess)
     ec2-authorize -p 80 hadoop_pool               # apache
  
-    ec2-authorize -p 8649 -P udp hadoop_pool      # ganglia UDP
+    # this line allows network access in nodes in the same security group
     ec2-authorize hadoop_pool -o hadoop_pool -u xxxxxxxxxxxx # xxxxxxxxxxxx is your amazon account id. ugly but true
 
 Start your cloud
