@@ -135,8 +135,9 @@ pool(:cloud) do
       master
       root_password "angrybobby123"
       database do
-        create_database "hive_metastore" 
+        create_database "metastore_db" 
         grant_permissions_on_cloud_with_keypair_for_user "cloudteam_hadoop_master", "bobby", "abbyzabby17"
+        grant_permissions_on_host_for_user "localhost", "bobby", "abbyzabby17"
       end
     end
 
