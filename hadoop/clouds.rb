@@ -1,13 +1,14 @@
 Dir["#{File.dirname(__FILE__)}/plugins/*/*"].each{|l| $:.unshift l }
 $:.unshift "#{File.dirname(__FILE__)}/../../poolparty-extensions/lib"
 require 'rubygems'
+$:.unshift "#{File.dirname(__FILE__)}/../../poolparty.lite/lib"
 require "poolparty"
 require 'poolparty-extensions'
 
 # KEYPAIR_PREFIX = "cloud_hadoop"
 # SECURITY_GROUP = "hadoop_pool"
 KEYPAIR_PREFIX = "cloudteam_hadoop"
-SECURITY_GROUP = "nmurray-hadoop"
+SECURITY_GROUP = "default"
 
 pool(:cloud) do
 
@@ -17,6 +18,7 @@ pool(:cloud) do
     keypair "#{KEYPAIR_PREFIX}_slave"
     using :ec2 do
       security_group [SECURITY_GROUP]
+      image_id 'emi-39CA160F'
     end
 
     has_convenience_helpers
@@ -25,18 +27,18 @@ pool(:cloud) do
     has_development_gem('poolparty-extensions', :from => "#{File.dirname(__FILE__)}/../../poolparty-extensions")
 
     apache do
-      enable_php5
+      # enable_php5
       # todo, write a phpinfo.php verifier
     end
 
     hadoop do
       configure_slave
     end
-
-    ganglia do
-      slave
-      track :hadoop
-    end
+    # 
+    # ganglia do
+    #   slave
+    #   track :hadoop
+    # end
 
     has_package "nmap"
 
@@ -64,12 +66,10 @@ pool(:cloud) do
     #     "/Users/nmurray/Documents/VMware/Ubuntu-jaunty.vmwarevm/Ubuntu-jaunty.vmx" => "192.168.133.128"
     #   })
     # end
-
+    keypair "#{KEYPAIR_PREFIX}_master"
     using :ec2 do
       security_group [SECURITY_GROUP]
     end
-
-    keypair "#{KEYPAIR_PREFIX}_master"
 
     has_convenience_helpers
     has_gem_package("bjeanes-ghost")
@@ -85,7 +85,7 @@ pool(:cloud) do
   allow from all
   RedirectMatch ^/\$ /ganglia/
 </Directory>"
-      enable_php5 do
+      has_php do
         extras :gd
       end
     end
@@ -136,20 +136,19 @@ pool(:cloud) do
 
   end # cloud :hadoop_master
 
-  after_all_loaded do
+  def after_loaded
     # get the master ips on the slaves
-    clouds[:hadoop_slave].run_in_context do
+    clouds['hadoop_slave'].instance_eval do
       hadoop.perform_just_in_time_operations
       ganglia.perform_after_all_loaded_for_slave
     end
 
-    clouds[:hadoop_master].run_in_context do
+    clouds['hadoop_master'].instance_eval do
       hadoop.perform_just_in_time_operations
       ganglia.perform_after_all_loaded_for_master
     end
   end
 
 end # pool
-
 
 # vim: ft=ruby
