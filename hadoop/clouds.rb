@@ -1,7 +1,7 @@
 Dir["#{File.dirname(__FILE__)}/plugins/*/*"].each{|l| $:.unshift l }
 $:.unshift "#{File.dirname(__FILE__)}/../../poolparty-extensions/lib"
 require 'rubygems'
-$:.unshift "#{File.dirname(__FILE__)}/../../poolparty.lite/lib"
+$:.unshift "#{File.dirname(__FILE__)}/../../poolparty/lib"
 require "poolparty"
 require 'poolparty-extensions'
 
@@ -106,7 +106,8 @@ pool(:cloud) do
     end
 
     ganglia do
-      monitor "hadoop_slave", "hadoop_master" # what cloud names to monitor
+      monitored_clouds << clouds["hadoop_slave"]
+      monitored_clouds << clouds["hadoop_master"] # what cloud names to monitor
       master
       # other things id like to monitor:
     end
@@ -138,15 +139,17 @@ pool(:cloud) do
 
   def after_loaded
     # get the master ips on the slaves
-    clouds['hadoop_slave'].instance_eval do
-      hadoop.perform_just_in_time_operations
-      ganglia.perform_after_all_loaded_for_slave
-    end
-
-    clouds['hadoop_master'].instance_eval do
-      hadoop.perform_just_in_time_operations
-      ganglia.perform_after_all_loaded_for_master
-    end
+    # context_stack.push self
+    # clouds['hadoop_slave'].run_in_context do
+    #   hadoop.perform_just_in_time_operations
+    #   ganglia.perform_after_all_loaded_for_slave
+    # end
+    # 
+    # clouds['hadoop_master'].run_in_context do
+    #   hadoop.perform_just_in_time_operations
+    #   ganglia.perform_after_all_loaded_for_master
+    # end
+    # context_stack.pop
   end
 
 end # pool
