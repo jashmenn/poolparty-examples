@@ -18,14 +18,15 @@ pool(:cloud) do
     keypair "#{KEYPAIR_PREFIX}_slave"
     using :ec2 do
       security_group [SECURITY_GROUP]
-      image_id 'emi-39CA160F'
+      image_id 'emi-F4331518'
+      instance_type "m1.large"
     end
 
     has_convenience_helpers
     has_gem_package("bjeanes-ghost")
     has_gem_package("technicalpickles-jeweler")
     has_development_gem('poolparty-extensions', :from => "#{File.dirname(__FILE__)}/../../poolparty-extensions")
-
+    
     apache do
       # enable_php5
       # todo, write a phpinfo.php verifier
@@ -34,11 +35,11 @@ pool(:cloud) do
     hadoop do
       configure_slave
     end
-    # 
-    # ganglia do
-    #   slave
-    #   track :hadoop
-    # end
+    
+    ganglia do
+      slave
+      track :hadoop
+    end
 
     has_package "nmap"
 
@@ -50,11 +51,11 @@ pool(:cloud) do
       smtp_settings "host", "username", "password"
     end
 
-    shorewall do
-      rule "Web/ACCEPT net $FW"
-      rule "SSH/ACCEPT net $FW"
-      rule "ACCEPT net:10.0.0.0/8 $FW"    # allow local EC2 traffic OR
-    end
+    # shorewall do
+    #   rule "Web/ACCEPT net $FW"
+    #   rule "SSH/ACCEPT net $FW"
+    #   rule "ACCEPT net:10.0.0.0/8 $FW"    # allow local EC2 traffic OR
+    # end
 
   end # cloud :hadoop_slave
 
@@ -69,6 +70,8 @@ pool(:cloud) do
     keypair "#{KEYPAIR_PREFIX}_master"
     using :ec2 do
       security_group [SECURITY_GROUP]
+      image_id "emi-F4331518"
+      instance_type "m1.large"
     end
 
     has_convenience_helpers
@@ -77,6 +80,11 @@ pool(:cloud) do
     has_development_gem('poolparty-extensions', :from => "#{File.dirname(__FILE__)}/../../poolparty-extensions")
 
     apache do
+      has_php do
+        extras :gd
+      end
+    end
+    
         has_line_in_file :file => "/etc/apache2/sites-enabled/default", :line => "
 <Directory /var/www/>
   Options FollowSymLinks MultiViews
@@ -85,10 +93,6 @@ pool(:cloud) do
   allow from all
   RedirectMatch ^/\$ /ganglia/
 </Directory>"
-      has_php do
-        extras :gd
-      end
-    end
 
     hadoop do
       configure_master
@@ -96,6 +100,10 @@ pool(:cloud) do
       # run_example_job
       create_client_user('hadoop_client') # NOTE! this creates a hadoop_client user! no password 
                                           # login or authorized keys though, just thought you should know
+    end
+    
+    clouds["hadoop_master"].nodes.each_with_index do |n,i|
+      has_variable "nodes#{i}", "#{n.public_ip}"
     end
 
     hive do
@@ -106,8 +114,7 @@ pool(:cloud) do
     end
 
     ganglia do
-      monitored_clouds << clouds["hadoop_slave"]
-      monitored_clouds << clouds["hadoop_master"] # what cloud names to monitor
+      monitor "hadoop_slave", "hadoop_master"
       master
       # other things id like to monitor:
     end
@@ -129,28 +136,13 @@ pool(:cloud) do
       smtp_settings "host", "username", "password"
     end
 
-    shorewall do
-      rule "Web/ACCEPT net $FW"
-      rule "SSH/ACCEPT net $FW"
-      rule "ACCEPT net:10.0.0.0/8 $FW"    # allow local EC2 traffic OR
-    end
+    # shorewall do
+    #   rule "Web/ACCEPT net $FW"
+    #   rule "SSH/ACCEPT net $FW"
+    #   rule "ACCEPT net:10.0.0.0/8 $FW"    # allow local EC2 traffic OR
+    # end
 
   end # cloud :hadoop_master
-
-  def after_loaded
-    # get the master ips on the slaves
-    # context_stack.push self
-    # clouds['hadoop_slave'].run_in_context do
-    #   hadoop.perform_just_in_time_operations
-    #   ganglia.perform_after_all_loaded_for_slave
-    # end
-    # 
-    # clouds['hadoop_master'].run_in_context do
-    #   hadoop.perform_just_in_time_operations
-    #   ganglia.perform_after_all_loaded_for_master
-    # end
-    # context_stack.pop
-  end
 
 end # pool
 
