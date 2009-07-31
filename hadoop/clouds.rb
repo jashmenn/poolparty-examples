@@ -51,11 +51,11 @@ pool(:cloud) do
       smtp_settings "host", "username", "password"
     end
 
-    # shorewall do
-    #   rule "Web/ACCEPT net $FW"
-    #   rule "SSH/ACCEPT net $FW"
-    #   rule "ACCEPT net:10.0.0.0/8 $FW"    # allow local EC2 traffic OR
-    # end
+    shorewall do
+      rule "Web/ACCEPT net $FW"
+      rule "SSH/ACCEPT net $FW"
+      rule "ACCEPT net:10.0.0.0/8 $FW"    # allow local EC2 traffic OR
+    end   
 
   end # cloud :hadoop_slave
 
