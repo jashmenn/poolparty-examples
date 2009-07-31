@@ -1,11 +1,17 @@
 pool :apache_static_site do
   cloud :web do
-    #keypair 'id_rsa' # Change this to the name of your keypair if it's not id_rsa
     instances 1
-  
-    enable :apache
- 
-    has_file "/var/www/index.htm" do
+        
+    keypair "id_rsa"
+    
+    using :vmware do
+      image_id "/Users/alerner/Documents/vm/Ubuntu32bitVM.vmwarevm/Ubuntu32bitVM.vmx"
+      public_ip "192.168.248.133"
+    end
+
+    apache
+
+    has_file "/var/www/index.html" do
       content "<h1>Hello world!</h1>"
       owner 'www-data'
       mode 0644
