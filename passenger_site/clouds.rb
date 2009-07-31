@@ -25,7 +25,8 @@ pool(:passenger_site) do
 
     apache do
       install_passenger
-      has_passenger_site "paparazzi.com", :with_deployment_directories => true
+      has_passenger_site "sample_app.com", :with_deployment_directories => true
+      install_site("sample_app.com", :no_file => true)
     end
 
   end # cloud :app
