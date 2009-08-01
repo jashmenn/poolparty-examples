@@ -10,37 +10,36 @@ pool(:adams) do
     end
 
     instances 1
-    # enable :haproxy
 
     has_package "tree"
     has_package "vim-nox"
 
     apache do
       enable_default
-      has_file :name => "/var/www/index.html" do
+      
+      has_file "/var/www/index.html" do
         content "<h1>Welcome to your new poolparty instance</h1>"
         mode 0644
         owner "www-data"
       end
-
+      
       has_virtual_host "handkerchief.com" do
       
         has_file :name => "/var/www/handkerchief.com/index.html" do
           content "<h1>Welcome to handkerchief.com</h1>"
-          mode 0644
+          mode "0644"
           owner "www-data"
         end
       end
-      # 
-      # has_virtual_host do
-      #   name "tissues.com"
-      # 
-      #   has_file :name => "/var/www/tissues.com/index.html" do
-      #     content "<h1>Welcome to tissues.com</h1>"
-      #     mode 0644
-      #     owner "www-data"
-      #   end
-      # end 
+      
+      has_virtual_host "tissues.com" do
+      
+        has_file :name => "/var/www/tissues.com/index.html" do
+          content "<h1>Welcome to tissues.com</h1>"
+          mode 0644
+          owner "www-data"
+        end
+      end  
 
     end
 
