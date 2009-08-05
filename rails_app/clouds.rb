@@ -14,26 +14,25 @@ pool :application do
       public_ip "192.168.248.133"
     end
     
-    git do
-      has_git_repository( :name       => "handkerchief.com",
-                          :source     => "git://github.com/auser/xnot.org.git", 
-                          :dir        => "/var/www",
-                          :owner      => 'www-data')
-    end
-    apache
-    
-    has_package "libsqlite3-dev"
-    # include_chef_recipe "sqlite"
-    
-    has_gem_package "rails", :version => "2.3.2"
-    has_gem_package "sqlite3-ruby"
-    
-    # chef do
-    #   include_recipes "~/.poolparty/chef/cookbooks/*"
-    #   
-    #   recipe "#{::File.dirname(__FILE__)}/chef_recipe.rb"
-    #   templates "#{::File.dirname(__FILE__)}/templates"
+    # git do
+    #   has_git_repository( :name       => "paparazzi.com",
+    #                       :source     => "git://github.com/auser/paparazzi.git", 
+    #                       :dir        => "/var/www/paparazzi",
+    #                       :owner      => 'www-data')
     # end
+    
+    has_directory "/var/log"
+    has_file "/etc/motd"    
+    
+    rails do
+      deployer_user "deployer"
+      app "paparazzi.com" do
+        on :passenger
+        at "/var/www"
+      end
+    end
+    
+    has_file "/var/www/index.html"
     
   end
 
