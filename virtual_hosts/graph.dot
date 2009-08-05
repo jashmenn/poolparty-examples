@@ -1,0 +1,1048 @@
+digraph GRATR__Digraph {
+    label = "app"
+    rankdir = LR
+    fontsize = 30
+    bgcolor = white
+    "virtual_host:tissues.com" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "virtual_host:tissues.com"
+    ]
+
+    "directory:/etc/apache2" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "directory:/etc/apache2"
+    ]
+
+    "file:/var/www/handkerchief.com/index.html" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "file:/var/www/handkerchief.com/index.html"
+    ]
+
+    "file:/var/www/index.html" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "file:/var/www/index.html"
+    ]
+
+    "exec:mod-mime" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:mod-mime"
+    ]
+
+    "file:/etc/apache2/apache2.conf" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "file:/etc/apache2/apache2.conf"
+    ]
+
+    "exec:mod-mime" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:mod-mime"
+    ]
+
+    "file:/etc/apache2/conf.d/browser_fixes.conf" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "file:/etc/apache2/conf.d/browser_fixes.conf"
+    ]
+
+    "file:/etc/apache2/apache2.conf" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "file:/etc/apache2/apache2.conf"
+    ]
+
+    "virtual_host:handkerchief.com" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "virtual_host:handkerchief.com"
+    ]
+
+    "directory:/etc/apache2" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "directory:/etc/apache2"
+    ]
+
+    "exec:/usr/sbin/a2dissite default" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:/usr/sbin/a2dissite default"
+    ]
+
+    "file:/etc/apache2/conf.d/browser_fixes.conf" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "file:/etc/apache2/conf.d/browser_fixes.conf"
+    ]
+
+    "directory:/etc/apache2" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "directory:/etc/apache2"
+    ]
+
+    "exec:/usr/sbin/a2dissite default" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:/usr/sbin/a2dissite default"
+    ]
+
+    "exec:mod-mime" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:mod-mime"
+    ]
+
+    "file:/etc/apache2/conf.d/base.conf" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "file:/etc/apache2/conf.d/base.conf"
+    ]
+
+    "file:/etc/apache2/conf.d/base.conf" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "file:/etc/apache2/conf.d/base.conf"
+    ]
+
+    "exec:/usr/sbin/a2dissite default" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:/usr/sbin/a2dissite default"
+    ]
+
+    "directory:/etc/apache2/conf.d" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "directory:/etc/apache2/conf.d"
+    ]
+
+    "package:tree" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "package:tree"
+    ]
+
+    "file:/etc/apache2/conf.d/browser_fixes.conf" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "file:/etc/apache2/conf.d/browser_fixes.conf"
+    ]
+
+    "package:apache2" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "package:apache2"
+    ]
+
+    "package:apache2" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "package:apache2"
+    ]
+
+    "file:/etc/apache2/conf.d/base.conf" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "file:/etc/apache2/conf.d/base.conf"
+    ]
+
+    "directory:/etc/apache2/conf.d" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "directory:/etc/apache2/conf.d"
+    ]
+
+    "exec:force-reload-apache2" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:force-reload-apache2"
+    ]
+
+    "exec:restart-apache2" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:restart-apache2"
+    ]
+
+    "exec:force-reload-apache2" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:force-reload-apache2"
+    ]
+
+    "directory:/etc/apache2/conf.d" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "directory:/etc/apache2/conf.d"
+    ]
+
+    "variable:port" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "variable:port"
+    ]
+
+    "package:apache2" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "package:apache2"
+    ]
+
+    "exec:restart-apache2" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:restart-apache2"
+    ]
+
+    "chef_attributes_file:/Users/alerner/Development/ruby/mine/poolparty/bin/../lib/../vendor/chef/apache2/attributes/apache.rb" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "chef_attributes_file:/Users/alerner/Development/ruby/mine/poolparty/bin/../lib/../vendor/chef/apache2/attributes/apache.rb"
+    ]
+
+    "exec:restart-apache2" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:restart-apache2"
+    ]
+
+    "directory:/var/www/handkerchief.com" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "directory:/var/www/handkerchief.com"
+    ]
+
+    "exec:force-reload-apache2" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:force-reload-apache2"
+    ]
+
+    "directory:/etc/apache2/site-includes" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "directory:/etc/apache2/site-includes"
+    ]
+
+    "variable:port" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "variable:port"
+    ]
+
+    "directory:/var/www/tissues.com/logs" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "directory:/var/www/tissues.com/logs"
+    ]
+
+    "chef_attributes_file:/Users/alerner/Development/ruby/mine/poolparty/bin/../lib/../vendor/chef/apache2/attributes/apache.rb" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "chef_attributes_file:/Users/alerner/Development/ruby/mine/poolparty/bin/../lib/../vendor/chef/apache2/attributes/apache.rb"
+    ]
+
+    "variable:port" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "variable:port"
+    ]
+
+    "directory:/var/www" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "directory:/var/www"
+    ]
+
+    "exec:insert-site-handkerchief.com" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:insert-site-handkerchief.com"
+    ]
+
+    "directory:/etc/apache2/site-includes" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "directory:/etc/apache2/site-includes"
+    ]
+
+    "file:/etc/apache2/sites-available/tissues.com" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "file:/etc/apache2/sites-available/tissues.com"
+    ]
+
+    "directory:/etc/apache2/site-includes" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "directory:/etc/apache2/site-includes"
+    ]
+
+    "apache:" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "apache:"
+    ]
+
+    "chef_attributes_file:/Users/alerner/Development/ruby/mine/poolparty/bin/../lib/../vendor/chef/apache2/attributes/apache.rb" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "chef_attributes_file:/Users/alerner/Development/ruby/mine/poolparty/bin/../lib/../vendor/chef/apache2/attributes/apache.rb"
+    ]
+
+    "directory:/var/www" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "directory:/var/www"
+    ]
+
+    "variable:sitename" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "variable:sitename"
+    ]
+
+    "directory:/var/www" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "directory:/var/www"
+    ]
+
+    "exec:mod-rewrite" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:mod-rewrite"
+    ]
+
+    "exec:mod-rewrite" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:mod-rewrite"
+    ]
+
+    "directory:/etc/apache2/sites-available" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "directory:/etc/apache2/sites-available"
+    ]
+
+    "file:/etc/apache2/conf.d/mime.conf" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "file:/etc/apache2/conf.d/mime.conf"
+    ]
+
+    "file:/etc/apache2/conf.d/mime.conf" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "file:/etc/apache2/conf.d/mime.conf"
+    ]
+
+    "service:apache2" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "service:apache2"
+    ]
+
+    "exec:mod-rewrite" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:mod-rewrite"
+    ]
+
+    "service:apache2" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "service:apache2"
+    ]
+
+    "file:/etc/apache2/conf.d/mime.conf" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "file:/etc/apache2/conf.d/mime.conf"
+    ]
+
+    "user:www-data" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "user:www-data"
+    ]
+
+    "user:www-data" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "user:www-data"
+    ]
+
+    "service:apache2" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "service:apache2"
+    ]
+
+    "directory:/var/www/tissues.com" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "directory:/var/www/tissues.com"
+    ]
+
+    "user:www-data" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "user:www-data"
+    ]
+
+    "exec:reload-apache2" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:reload-apache2"
+    ]
+
+    "file:/etc/apache2/sites-available/default-site" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "file:/etc/apache2/sites-available/default-site"
+    ]
+
+    "package:vim-nox" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "package:vim-nox"
+    ]
+
+    "exec:reload-apache2" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:reload-apache2"
+    ]
+
+    "exec:insert-site-tissues.com" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:insert-site-tissues.com"
+    ]
+
+    "exec:reload-apache2" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:reload-apache2"
+    ]
+
+    "exec:/usr/sbin/a2ensite default-site" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:/usr/sbin/a2ensite default-site"
+    ]
+
+    "variable:port" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "variable:port"
+    ]
+
+    "directory:/var/www/handkerchief.com/logs" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "directory:/var/www/handkerchief.com/logs"
+    ]
+
+    "variable:sitename" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "variable:sitename"
+    ]
+
+    "file:/var/www/tissues.com/index.html" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "file:/var/www/tissues.com/index.html"
+    ]
+
+    "file:/etc/apache2/sites-available/handkerchief.com" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "file:/etc/apache2/sites-available/handkerchief.com"
+    ]
+
+    "file:/etc/apache2/apache2.conf" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "file:/etc/apache2/apache2.conf"
+    ]
+
+    "file:/var/www/tissues.com/index.html" -> "virtual_host:tissues.com" [
+        fontsize = 30
+    ]
+
+    "exec:/usr/sbin/a2dissite default" -> "virtual_host:tissues.com" [
+        fontsize = 30
+    ]
+
+    "directory:/var/www/handkerchief.com" -> "virtual_host:handkerchief.com" [
+        fontsize = 30
+    ]
+
+    "package:apache2" -> "service:apache2" [
+        fontsize = 30
+    ]
+
+    "package:vim-nox" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "variable:port" -> "virtual_host:tissues.com" [
+        fontsize = 30
+    ]
+
+    "virtual_host:tissues.com" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "directory:/etc/apache2/conf.d" -> "file:/etc/apache2/apache2.conf" [
+        fontsize = 30
+    ]
+
+    "chef_attributes_file:/Users/alerner/Development/ruby/mine/poolparty/bin/../lib/../vendor/chef/apache2/attributes/apache.rb" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "directory:/etc/apache2/sites-available" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "file:/etc/apache2/apache2.conf" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "variable:port" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "directory:/etc/apache2/conf.d" -> "virtual_host:handkerchief.com" [
+        fontsize = 30
+    ]
+
+    "exec:insert-site-tissues.com" -> "virtual_host:tissues.com" [
+        fontsize = 30
+    ]
+
+    "exec:force-reload-apache2" -> "exec:mod-mime" [
+        fontsize = 30
+    ]
+
+    "directory:/etc/apache2/site-includes" -> "virtual_host:tissues.com" [
+        fontsize = 30
+    ]
+
+    "file:/etc/apache2/conf.d/base.conf" -> "virtual_host:handkerchief.com" [
+        fontsize = 30
+    ]
+
+    "package:apache2" -> "exec:reload-apache2" [
+        fontsize = 30
+    ]
+
+    "package:tree" -> "package:vim-nox" [
+        fontsize = 30
+    ]
+
+    "exec:mod-rewrite" -> "virtual_host:tissues.com" [
+        fontsize = 30
+    ]
+
+    "directory:/var/www" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "exec:force-reload-apache2" -> "exec:mod-mime" [
+        fontsize = 30
+    ]
+
+    "directory:/var/www/handkerchief.com/logs" -> "virtual_host:handkerchief.com" [
+        fontsize = 30
+    ]
+
+    "package:apache2" -> "service:apache2" [
+        fontsize = 30
+    ]
+
+    "package:apache2" -> "exec:insert-site-handkerchief.com" [
+        fontsize = 30
+    ]
+
+    "file:/var/www/index.html" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "file:/etc/apache2/apache2.conf" -> "virtual_host:handkerchief.com" [
+        fontsize = 30
+    ]
+
+    "exec:restart-apache2" -> "virtual_host:handkerchief.com" [
+        fontsize = 30
+    ]
+
+    "exec:reload-apache2" -> "file:/etc/apache2/conf.d/browser_fixes.conf" [
+        fontsize = 30
+    ]
+
+    "exec:mod-rewrite" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "exec:mod-mime" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "exec:force-reload-apache2" -> "exec:mod-rewrite" [
+        fontsize = 30
+    ]
+
+    "directory:/etc/apache2" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "exec:force-reload-apache2" -> "exec:mod-rewrite" [
+        fontsize = 30
+    ]
+
+    "package:apache2" -> "service:apache2" [
+        fontsize = 30
+    ]
+
+    "package:apache2" -> "exec:mod-rewrite" [
+        fontsize = 30
+    ]
+
+    "package:apache2" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "service:apache2" -> "virtual_host:tissues.com" [
+        fontsize = 30
+    ]
+
+    "exec:reload-apache2" -> "virtual_host:handkerchief.com" [
+        fontsize = 30
+    ]
+
+    "directory:/var/www" -> "virtual_host:tissues.com" [
+        fontsize = 30
+    ]
+
+    "exec:/usr/sbin/a2dissite default" -> "virtual_host:handkerchief.com" [
+        fontsize = 30
+    ]
+
+    "exec:force-reload-apache2" -> "virtual_host:handkerchief.com" [
+        fontsize = 30
+    ]
+
+    "exec:reload-apache2" -> "file:/etc/apache2/conf.d/browser_fixes.conf" [
+        fontsize = 30
+    ]
+
+    "directory:/etc/apache2/site-includes" -> "virtual_host:handkerchief.com" [
+        fontsize = 30
+    ]
+
+    "service:apache2" -> "virtual_host:handkerchief.com" [
+        fontsize = 30
+    ]
+
+    "file:/etc/apache2/conf.d/base.conf" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "exec:reload-apache2" -> "file:/etc/apache2/conf.d/browser_fixes.conf" [
+        fontsize = 30
+    ]
+
+    "file:/etc/apache2/sites-available/default-site" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "directory:/etc/apache2/conf.d" -> "virtual_host:tissues.com" [
+        fontsize = 30
+    ]
+
+    "directory:/var/www/tissues.com" -> "virtual_host:tissues.com" [
+        fontsize = 30
+    ]
+
+    "exec:reload-apache2" -> "file:/etc/apache2/conf.d/mime.conf" [
+        fontsize = 30
+    ]
+
+    "directory:/etc/apache2" -> "virtual_host:handkerchief.com" [
+        fontsize = 30
+    ]
+
+    "package:apache2" -> "file:/etc/apache2/sites-available/handkerchief.com" [
+        fontsize = 30
+    ]
+
+    "file:/etc/apache2/conf.d/browser_fixes.conf" -> "virtual_host:tissues.com" [
+        fontsize = 30
+    ]
+
+    "exec:force-reload-apache2" -> "exec:mod-mime" [
+        fontsize = 30
+    ]
+
+    "package:apache2" -> "virtual_host:tissues.com" [
+        fontsize = 30
+    ]
+
+    "exec:/usr/sbin/a2dissite default" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "file:/etc/apache2/conf.d/base.conf" -> "virtual_host:tissues.com" [
+        fontsize = 30
+    ]
+
+    "directory:/var/www" -> "virtual_host:handkerchief.com" [
+        fontsize = 30
+    ]
+
+    "package:apache2" -> "file:/etc/apache2/apache2.conf" [
+        fontsize = 30
+    ]
+
+    "directory:/etc/apache2/site-includes" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "file:/etc/apache2/sites-available/tissues.com" -> "virtual_host:tissues.com" [
+        fontsize = 30
+    ]
+
+    "directory:/etc/apache2/conf.d" -> "file:/etc/apache2/apache2.conf" [
+        fontsize = 30
+    ]
+
+    "virtual_host:handkerchief.com" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "user:www-data" -> "virtual_host:handkerchief.com" [
+        fontsize = 30
+    ]
+
+    "exec:reload-apache2" -> "file:/etc/apache2/conf.d/mime.conf" [
+        fontsize = 30
+    ]
+
+    "file:/etc/apache2/sites-available/tissues.com" -> "exec:insert-site-tissues.com" [
+        fontsize = 30
+    ]
+
+    "file:/etc/apache2/conf.d/mime.conf" -> "virtual_host:handkerchief.com" [
+        fontsize = 30
+    ]
+
+    "file:/etc/apache2/conf.d/mime.conf" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "file:/etc/apache2/apache2.conf" -> "virtual_host:tissues.com" [
+        fontsize = 30
+    ]
+
+    "exec:restart-apache2" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "file:/etc/apache2/sites-available/handkerchief.com" -> "exec:insert-site-handkerchief.com" [
+        fontsize = 30
+    ]
+
+    "exec:force-reload-apache2" -> "virtual_host:tissues.com" [
+        fontsize = 30
+    ]
+
+    "variable:port" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "chef_attributes_file:/Users/alerner/Development/ruby/mine/poolparty/bin/../lib/../vendor/chef/apache2/attributes/apache.rb" -> "virtual_host:tissues.com" [
+        fontsize = 30
+    ]
+
+    "file:/etc/apache2/conf.d/browser_fixes.conf" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "variable:sitename" -> "virtual_host:handkerchief.com" [
+        fontsize = 30
+    ]
+
+    "file:/etc/apache2/sites-available/handkerchief.com" -> "virtual_host:handkerchief.com" [
+        fontsize = 30
+    ]
+
+    "exec:restart-apache2" -> "virtual_host:tissues.com" [
+        fontsize = 30
+    ]
+
+    "exec:force-reload-apache2" -> "exec:mod-rewrite" [
+        fontsize = 30
+    ]
+
+    "package:apache2" -> "exec:mod-mime" [
+        fontsize = 30
+    ]
+
+    "exec:/usr/sbin/a2ensite default-site" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "file:/etc/apache2/conf.d/mime.conf" -> "virtual_host:tissues.com" [
+        fontsize = 30
+    ]
+
+    "exec:reload-apache2" -> "file:/etc/apache2/conf.d/mime.conf" [
+        fontsize = 30
+    ]
+
+    "file:/etc/apache2/conf.d/browser_fixes.conf" -> "virtual_host:handkerchief.com" [
+        fontsize = 30
+    ]
+
+    "package:apache2" -> "exec:reload-apache2" [
+        fontsize = 30
+    ]
+
+    "user:www-data" -> "virtual_host:tissues.com" [
+        fontsize = 30
+    ]
+
+    "exec:reload-apache2" -> "file:/etc/apache2/conf.d/base.conf" [
+        fontsize = 30
+    ]
+
+    "package:apache2" -> "exec:mod-rewrite" [
+        fontsize = 30
+    ]
+
+    "exec:reload-apache2" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "directory:/etc/apache2" -> "virtual_host:tissues.com" [
+        fontsize = 30
+    ]
+
+    "exec:reload-apache2" -> "file:/etc/apache2/conf.d/base.conf" [
+        fontsize = 30
+    ]
+
+    "exec:reload-apache2" -> "exec:/usr/sbin/a2dissite default" [
+        fontsize = 30
+    ]
+
+    "package:apache2" -> "file:/etc/apache2/apache2.conf" [
+        fontsize = 30
+    ]
+
+    "package:apache2" -> "virtual_host:handkerchief.com" [
+        fontsize = 30
+    ]
+
+    "variable:sitename" -> "virtual_host:tissues.com" [
+        fontsize = 30
+    ]
+
+    "service:apache2" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "exec:reload-apache2" -> "exec:/usr/sbin/a2dissite default" [
+        fontsize = 30
+    ]
+
+    "directory:/var/www/tissues.com/logs" -> "virtual_host:tissues.com" [
+        fontsize = 30
+    ]
+
+    "package:apache2" -> "exec:mod-mime" [
+        fontsize = 30
+    ]
+
+    "user:www-data" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "chef_attributes_file:/Users/alerner/Development/ruby/mine/poolparty/bin/../lib/../vendor/chef/apache2/attributes/apache.rb" -> "virtual_host:handkerchief.com" [
+        fontsize = 30
+    ]
+
+    "package:apache2" -> "file:/etc/apache2/apache2.conf" [
+        fontsize = 30
+    ]
+
+    "file:/etc/apache2/sites-available/default-site" -> "exec:/usr/sbin/a2ensite default-site" [
+        fontsize = 30
+    ]
+
+    "exec:reload-apache2" -> "exec:/usr/sbin/a2ensite default-site" [
+        fontsize = 30
+    ]
+
+    "exec:mod-mime" -> "virtual_host:tissues.com" [
+        fontsize = 30
+    ]
+
+    "exec:reload-apache2" -> "virtual_host:tissues.com" [
+        fontsize = 30
+    ]
+
+    "exec:reload-apache2" -> "file:/etc/apache2/conf.d/base.conf" [
+        fontsize = 30
+    ]
+
+    "package:apache2" -> "exec:insert-site-tissues.com" [
+        fontsize = 30
+    ]
+
+    "exec:reload-apache2" -> "exec:/usr/sbin/a2dissite default" [
+        fontsize = 30
+    ]
+
+    "package:apache2" -> "exec:reload-apache2" [
+        fontsize = 30
+    ]
+
+    "package:apache2" -> "exec:mod-mime" [
+        fontsize = 30
+    ]
+
+    "exec:mod-rewrite" -> "virtual_host:handkerchief.com" [
+        fontsize = 30
+    ]
+
+    "file:/var/www/handkerchief.com/index.html" -> "virtual_host:handkerchief.com" [
+        fontsize = 30
+    ]
+
+    "exec:force-reload-apache2" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "directory:/etc/apache2/conf.d" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "package:apache2" -> "exec:mod-rewrite" [
+        fontsize = 30
+    ]
+
+    "exec:insert-site-handkerchief.com" -> "virtual_host:handkerchief.com" [
+        fontsize = 30
+    ]
+
+    "directory:/etc/apache2/conf.d" -> "file:/etc/apache2/apache2.conf" [
+        fontsize = 30
+    ]
+
+    "package:apache2" -> "file:/etc/apache2/sites-available/tissues.com" [
+        fontsize = 30
+    ]
+
+    "exec:mod-mime" -> "virtual_host:handkerchief.com" [
+        fontsize = 30
+    ]
+
+    "variable:port" -> "virtual_host:handkerchief.com" [
+        fontsize = 30
+    ]
+
+}
+

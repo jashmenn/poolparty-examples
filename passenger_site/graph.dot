@@ -1,0 +1,637 @@
+digraph GRATR__Digraph {
+    label = "app"
+    rankdir = LR
+    fontsize = 30
+    bgcolor = white
+    "directory:/var/www/sample_app.com/shared/config" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "directory:/var/www/sample_app.com/shared/config"
+    ]
+
+    "variable:passenger_module_path" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "variable:passenger_module_path"
+    ]
+
+    "package:build-essential" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "package:build-essential"
+    ]
+
+    "exec:mod-rewrite" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:mod-rewrite"
+    ]
+
+    "file:/etc/apache2/conf.d/base.conf" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "file:/etc/apache2/conf.d/base.conf"
+    ]
+
+    "exec:/usr/sbin/a2dissite default" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:/usr/sbin/a2dissite default"
+    ]
+
+    "user:www-data" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "user:www-data"
+    ]
+
+    "directory:/var/www/sample_app.com/logs" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "directory:/var/www/sample_app.com/logs"
+    ]
+
+    "file:/etc/apache2/apache2.conf" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "file:/etc/apache2/apache2.conf"
+    ]
+
+    "directory:/etc/apache2/site-includes" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "directory:/etc/apache2/site-includes"
+    ]
+
+    "apache:" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "apache:"
+    ]
+
+    "package: irb" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "package: irb"
+    ]
+
+    "directory:/var/www/sample_app.com/shared/log" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "directory:/var/www/sample_app.com/shared/log"
+    ]
+
+    "file:/etc/apache2/conf.d/mime.conf" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "file:/etc/apache2/conf.d/mime.conf"
+    ]
+
+    "directory:/etc/apache2/conf.d" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "directory:/etc/apache2/conf.d"
+    ]
+
+    "variable:port" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "variable:port"
+    ]
+
+    "exec:reload-apache2" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:reload-apache2"
+    ]
+
+    "package: screen" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "package: screen"
+    ]
+
+    "exec:install_passenger_script" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:install_passenger_script"
+    ]
+
+    "exec:mod-passenger" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:mod-passenger"
+    ]
+
+    "file:/etc/apache2/mods-available/passenger.load" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "file:/etc/apache2/mods-available/passenger.load"
+    ]
+
+    "directory:/etc/apache2" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "directory:/etc/apache2"
+    ]
+
+    "directory:/var/www" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "directory:/var/www"
+    ]
+
+    "package:vim-nox" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "package:vim-nox"
+    ]
+
+    "package:tree" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "package:tree"
+    ]
+
+    "directory:/var/www/sample_app.com/shared" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "directory:/var/www/sample_app.com/shared"
+    ]
+
+    "directory:/var/www/sample_app.com/releases" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "directory:/var/www/sample_app.com/releases"
+    ]
+
+    "exec:/usr/sbin/a2ensite sample_app.com" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:/usr/sbin/a2ensite sample_app.com"
+    ]
+
+    "directory:/etc/apache2/sites-available" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "directory:/etc/apache2/sites-available"
+    ]
+
+    "file:/etc/apache2/mods-available/passenger.conf" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "file:/etc/apache2/mods-available/passenger.conf"
+    ]
+
+    "file:/etc/apache2/conf.d/browser_fixes.conf" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "file:/etc/apache2/conf.d/browser_fixes.conf"
+    ]
+
+    "passenger_site:sample_app.com" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "passenger_site:sample_app.com"
+    ]
+
+    "variable:passenger_version" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "variable:passenger_version"
+    ]
+
+    "package:apache2" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "package:apache2"
+    ]
+
+    "exec:/usr/sbin/a2ensite sample_app.com" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:/usr/sbin/a2ensite sample_app.com"
+    ]
+
+    "directory:/etc/apache2/sites-available" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "directory:/etc/apache2/sites-available"
+    ]
+
+    "directory:/var/www/sample_app.com/shared/public" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "directory:/var/www/sample_app.com/shared/public"
+    ]
+
+    "file:/etc/apache2/sites-available/sample_app.com" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "file:/etc/apache2/sites-available/sample_app.com"
+    ]
+
+    "gem_package:passenger" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "gem_package:passenger"
+    ]
+
+    "variable:passenger_root_path" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "variable:passenger_root_path"
+    ]
+
+    "gem_package:fastthread" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "gem_package:fastthread"
+    ]
+
+    "chef_attributes_file:/Users/alerner/Development/ruby/mine/poolparty/bin/../lib/../vendor/chef/apache2/attributes/apache.rb" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "chef_attributes_file:/Users/alerner/Development/ruby/mine/poolparty/bin/../lib/../vendor/chef/apache2/attributes/apache.rb"
+    ]
+
+    "service:apache2" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "service:apache2"
+    ]
+
+    "exec:force-reload-apache2" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:force-reload-apache2"
+    ]
+
+    "directory:/var/www/sample_app.com/releases/initial/public" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "directory:/var/www/sample_app.com/releases/initial/public"
+    ]
+
+    "directory:/var/www/sample_app.com" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "directory:/var/www/sample_app.com"
+    ]
+
+    "directory:/var/www" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "directory:/var/www"
+    ]
+
+    "package:apache2-prefork-dev" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "package:apache2-prefork-dev"
+    ]
+
+    "exec:mod-mime" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:mod-mime"
+    ]
+
+    "exec:restart-apache2" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:restart-apache2"
+    ]
+
+    "package:apache2" -> "exec:install_passenger_script" [
+        fontsize = 30
+    ]
+
+    "exec:/usr/sbin/a2dissite default" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "package:build-essential" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "directory:/var/www" -> "passenger_site:sample_app.com" [
+        fontsize = 30
+    ]
+
+    "file:/etc/apache2/sites-available/sample_app.com" -> "passenger_site:sample_app.com" [
+        fontsize = 30
+    ]
+
+    "user:www-data" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "file:/etc/apache2/mods-available/passenger.load" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "package:apache2" -> "exec:mod-rewrite" [
+        fontsize = 30
+    ]
+
+    "exec:force-reload-apache2" -> "exec:mod-passenger" [
+        fontsize = 30
+    ]
+
+    "package:apache2" -> "file:/etc/apache2/apache2.conf" [
+        fontsize = 30
+    ]
+
+    "passenger_site:sample_app.com" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "file:/etc/apache2/sites-available/sample_app.com" -> "exec:/usr/sbin/a2ensite sample_app.com" [
+        fontsize = 30
+    ]
+
+    "variable:passenger_version" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "directory:/var/www/sample_app.com/shared/public" -> "passenger_site:sample_app.com" [
+        fontsize = 30
+    ]
+
+    "exec:force-reload-apache2" -> "exec:mod-rewrite" [
+        fontsize = 30
+    ]
+
+    "gem_package:passenger" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "directory:/var/www" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "exec:reload-apache2" -> "file:/etc/apache2/conf.d/base.conf" [
+        fontsize = 30
+    ]
+
+    "variable:passenger_root_path" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "service:apache2" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "exec:install_passenger_script" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "exec:mod-rewrite" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "variable:port" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "directory:/etc/apache2" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "directory:/var/www/sample_app.com" -> "passenger_site:sample_app.com" [
+        fontsize = 30
+    ]
+
+    "file:/etc/apache2/mods-available/passenger.conf" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "package: irb" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "gem_package:fastthread" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "directory:/etc/apache2/sites-available" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "package:apache2-prefork-dev" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "exec:force-reload-apache2" -> "exec:mod-mime" [
+        fontsize = 30
+    ]
+
+    "package:apache2" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "directory:/var/www/sample_app.com/shared" -> "passenger_site:sample_app.com" [
+        fontsize = 30
+    ]
+
+    "directory:/var/www/sample_app.com/logs" -> "passenger_site:sample_app.com" [
+        fontsize = 30
+    ]
+
+    "package:apache2" -> "service:apache2" [
+        fontsize = 30
+    ]
+
+    "exec:mod-passenger" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "gem_package:passenger" -> "exec:install_passenger_script" [
+        fontsize = 30
+    ]
+
+    "exec:reload-apache2" -> "exec:/usr/sbin/a2dissite default" [
+        fontsize = 30
+    ]
+
+    "chef_attributes_file:/Users/alerner/Development/ruby/mine/poolparty/bin/../lib/../vendor/chef/apache2/attributes/apache.rb" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "package:tree" -> "package:vim-nox" [
+        fontsize = 30
+    ]
+
+    "package:vim-nox" -> "package: screen" [
+        fontsize = 30
+    ]
+
+    "variable:passenger_module_path" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "directory:/etc/apache2/conf.d" -> "file:/etc/apache2/apache2.conf" [
+        fontsize = 30
+    ]
+
+    "exec:restart-apache2" -> "exec:install_passenger_script" [
+        fontsize = 30
+    ]
+
+    "exec:mod-mime" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "directory:/var/www/sample_app.com/shared/log" -> "passenger_site:sample_app.com" [
+        fontsize = 30
+    ]
+
+    "package: screen" -> "package: irb" [
+        fontsize = 30
+    ]
+
+    "directory:/var/www/sample_app.com/shared/config" -> "passenger_site:sample_app.com" [
+        fontsize = 30
+    ]
+
+    "file:/etc/apache2/sites-available/sample_app.com" -> "exec:/usr/sbin/a2ensite sample_app.com" [
+        fontsize = 30
+    ]
+
+    "exec:restart-apache2" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "directory:/etc/apache2/site-includes" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "file:/etc/apache2/conf.d/mime.conf" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "exec:reload-apache2" -> "exec:/usr/sbin/a2ensite sample_app.com" [
+        fontsize = 30
+    ]
+
+    "package:apache2" -> "exec:mod-mime" [
+        fontsize = 30
+    ]
+
+    "exec:reload-apache2" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "exec:force-reload-apache2" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "directory:/etc/apache2/conf.d" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "exec:reload-apache2" -> "exec:/usr/sbin/a2ensite sample_app.com" [
+        fontsize = 30
+    ]
+
+    "directory:/etc/apache2/sites-available" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "file:/etc/apache2/apache2.conf" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "exec:reload-apache2" -> "file:/etc/apache2/conf.d/browser_fixes.conf" [
+        fontsize = 30
+    ]
+
+    "directory:/var/www/sample_app.com/releases/initial/public" -> "passenger_site:sample_app.com" [
+        fontsize = 30
+    ]
+
+    "exec:reload-apache2" -> "file:/etc/apache2/conf.d/mime.conf" [
+        fontsize = 30
+    ]
+
+    "exec:/usr/sbin/a2ensite sample_app.com" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "directory:/var/www/sample_app.com/releases" -> "passenger_site:sample_app.com" [
+        fontsize = 30
+    ]
+
+    "file:/etc/apache2/conf.d/browser_fixes.conf" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "exec:/usr/sbin/a2ensite sample_app.com" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "package:apache2" -> "exec:reload-apache2" [
+        fontsize = 30
+    ]
+
+    "file:/etc/apache2/conf.d/base.conf" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "package:apache2" -> "exec:mod-passenger" [
+        fontsize = 30
+    ]
+
+}
+

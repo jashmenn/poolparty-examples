@@ -1,0 +1,2983 @@
+digraph GRATR__Digraph {
+    label = "hadoop_master"
+    rankdir = LR
+    fontsize = 30
+    bgcolor = white
+    "file:/tmp/tripwire_password" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "file:/tmp/tripwire_password"
+    ]
+
+    "exec:mv /usr/local/src/ganglia-3.1.2/web /var/www/ganglia" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:mv /usr/local/src/ganglia-3.1.2/web /var/www/ganglia"
+    ]
+
+    "exec:mv /usr/local/src/hive/build/dist /usr/local/hive" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:mv /usr/local/src/hive/build/dist /usr/local/hive"
+    ]
+
+    "file:/etc/apache2/conf.d/mime.conf" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "file:/etc/apache2/conf.d/mime.conf"
+    ]
+
+    "directory:/var/www" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "directory:/var/www"
+    ]
+
+    "exec:restart-apache2" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:restart-apache2"
+    ]
+
+    "exec:chmod 600 /root/.ssh/hadoop_id_rsa" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:chmod 600 /root/.ssh/hadoop_id_rsa"
+    ]
+
+    "exec:reload-apache2" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:reload-apache2"
+    ]
+
+    "line_in_file:" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "line_in_file:"
+    ]
+
+    "file:/usr/local/hadoop/conf/mapred-site.xml" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "file:/usr/local/hadoop/conf/mapred-site.xml"
+    ]
+
+    "apache:" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "apache:"
+    ]
+
+    "exec:/usr/local/hadoop/bin/hadoop fs -mkdir /user/hadoop_client" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:/usr/local/hadoop/bin/hadoop fs -mkdir /user/hadoop_client"
+    ]
+
+    "exec:wget http://www.gossipcheck.com/mirrors/apache/hadoop/core/hadoop-0.20.0/hadoop-0.20.0.tar.gz -O /usr/local/src/hadoop-0.20.0.tar.gz" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:wget http://www.gossipcheck.com/mirrors/apache/hadoop/core/hadoop-0.20.0/hadoop-0.20.0.tar.gz -O /usr/local/src/hadoop-0.20.0.tar.gz"
+    ]
+
+    "exec:configure_tripwire" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:configure_tripwire"
+    ]
+
+    "variable:ganglia_gmond_is_master" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "variable:ganglia_gmond_is_master"
+    ]
+
+    "variable:hadoop_this_nodes_ip" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "variable:hadoop_this_nodes_ip"
+    ]
+
+    "exec:cd /usr/local/src/hadoop && for PATCH in `find patches -type f | grep -v applied`; do (patch -p0 < ${PATCH}); mv ${PATCH} ${PATCH}.applied ; done" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:cd /usr/local/src/hadoop && for PATCH in `find patches -type f | grep -v applied`; do (patch -p0 < ${PATCH}); mv ${PATCH} ${PATCH}.applied ; done"
+    ]
+
+    "directory:/etc/apache2" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "directory:/etc/apache2"
+    ]
+
+    "exec:chmod 700 /root/.ssh" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:chmod 700 /root/.ssh"
+    ]
+
+    "exec:rm -f /var/poolparty/dr_configure/chef/cookbooks/poolparty/templates/default/tmp/tripwire_password.erb" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:rm -f /var/poolparty/dr_configure/chef/cookbooks/poolparty/templates/default/tmp/tripwire_password.erb"
+    ]
+
+    "exec:rm -f /var/poolparty/dr_configure/etc/poolparty/secure/templates/tripwire/tripwire_passwords" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:rm -f /var/poolparty/dr_configure/etc/poolparty/secure/templates/tripwire/tripwire_passwords"
+    ]
+
+    "directory:/tmp" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "directory:/tmp"
+    ]
+
+    "exec:line_in_/root/.profile" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:line_in_/root/.profile"
+    ]
+
+    "exec:chgrp -R root /mnt/hadoop-data" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:chgrp -R root /mnt/hadoop-data"
+    ]
+
+    "service:hadoop-jobtracker" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "service:hadoop-jobtracker"
+    ]
+
+    "exec:mv /usr/local/src/hadoop-0.20.0 /usr/local/src/hadoop" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:mv /usr/local/src/hadoop-0.20.0 /usr/local/src/hadoop"
+    ]
+
+    "exec:line_in_/etc/apache2/sites-enabled/default" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:line_in_/etc/apache2/sites-enabled/default"
+    ]
+
+    "package:git-core" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "package:git-core"
+    ]
+
+    "exec:restart-gmond" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:restart-gmond"
+    ]
+
+    "exec:upgrade-core-hadoop-jar" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:upgrade-core-hadoop-jar"
+    ]
+
+    "exec:wget http://www.gutenberg.org/files/20417/20417.txt -O /tmp/gutenberg/outline-of-science.txt" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:wget http://www.gutenberg.org/files/20417/20417.txt -O /tmp/gutenberg/outline-of-science.txt"
+    ]
+
+    "service:hadoop-secondarynamenode" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "service:hadoop-secondarynamenode"
+    ]
+
+    "chef_attributes_file:/Users/alerner/Development/ruby/mine/poolparty/bin/../lib/../vendor/chef/apache2/attributes/apache.rb" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "chef_attributes_file:/Users/alerner/Development/ruby/mine/poolparty/bin/../lib/../vendor/chef/apache2/attributes/apache.rb"
+    ]
+
+    "hive:" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "hive:"
+    ]
+
+    "exec:chown -R root /root/.ssh" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:chown -R root /root/.ssh"
+    ]
+
+    "exec:cd /usr/local/src/hive && wget --no-check-certificate https://issues.apache.org/jira/secure/attachment/12409779/hive-487.3.patch" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:cd /usr/local/src/hive && wget --no-check-certificate https://issues.apache.org/jira/secure/attachment/12409779/hive-487.3.patch"
+    ]
+
+    "exec:rm -rf /root/ssh" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:rm -rf /root/ssh"
+    ]
+
+    "directory:/usr/local/src" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "directory:/usr/local/src"
+    ]
+
+    "user:www-data" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "user:www-data"
+    ]
+
+    "variable:port" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "variable:port"
+    ]
+
+    "exec:mv /root/ssh/hadoop_id_rsa /root/.ssh/hadoop_id_rsa" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:mv /root/ssh/hadoop_id_rsa /root/.ssh/hadoop_id_rsa"
+    ]
+
+    "line_in_file:" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "line_in_file:"
+    ]
+
+    "exec:wget http://www.gutenberg.org/files/4300/4300.txt -O /tmp/gutenberg/ulysses.txt" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:wget http://www.gutenberg.org/files/4300/4300.txt -O /tmp/gutenberg/ulysses.txt"
+    ]
+
+    "directory:/mnt/hadoop-data/logs" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "directory:/mnt/hadoop-data/logs"
+    ]
+
+    "development_gem:poolparty-extensions" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "development_gem:poolparty-extensions"
+    ]
+
+    "directory:/var/lib/ganglia/rrds" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "directory:/var/lib/ganglia/rrds"
+    ]
+
+    "package:libapr1-dev" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "package:libapr1-dev"
+    ]
+
+    "package:rrdtool" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "package:rrdtool"
+    ]
+
+    "line_in_file:" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "line_in_file:"
+    ]
+
+    "exec:mod-rewrite" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:mod-rewrite"
+    ]
+
+    "exec:touch /root/.ssh/authorized_keys" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:touch /root/.ssh/authorized_keys"
+    ]
+
+    "package:screen" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "package:screen"
+    ]
+
+    "variable:hadoop_data_dir" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "variable:hadoop_data_dir"
+    ]
+
+    "exec:wget --no-check-certificate https://issues.apache.org/jira/secure/attachment/12407207/HADOOP-4675-v7.patch -O /usr/local/src/hadoop/patches/0001-ganglia31-HADOOP-4675-v7.patch" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:wget --no-check-certificate https://issues.apache.org/jira/secure/attachment/12407207/HADOOP-4675-v7.patch -O /usr/local/src/hadoop/patches/0001-ganglia31-HADOOP-4675-v7.patch"
+    ]
+
+    "service:gmetad" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "service:gmetad"
+    ]
+
+    "variable:ganglia_this_nodes_private_ip" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "variable:ganglia_this_nodes_private_ip"
+    ]
+
+    "exec:wget http://superb-west.dl.sourceforge.net/sourceforge/ganglia/ganglia-3.1.2.tar.gz -O /usr/local/src/ganglia-3.1.2.tar.gz" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:wget http://superb-west.dl.sourceforge.net/sourceforge/ganglia/ganglia-3.1.2.tar.gz -O /usr/local/src/ganglia-3.1.2.tar.gz"
+    ]
+
+    "package:ant" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "package:ant"
+    ]
+
+    "file:/usr/local/hadoop/conf/log4j.properties" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "file:/usr/local/hadoop/conf/log4j.properties"
+    ]
+
+    "file:/etc/init.d/hadoop-datanode" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "file:/etc/init.d/hadoop-datanode"
+    ]
+
+    "variable:tripwire_smtp_port" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "variable:tripwire_smtp_port"
+    ]
+
+    "service:gmond" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "service:gmond"
+    ]
+
+    "file:/etc/init.d/gmetad" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "file:/etc/init.d/gmetad"
+    ]
+
+    "package:python-dev" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "package:python-dev"
+    ]
+
+    "hadoop:" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "hadoop:"
+    ]
+
+    "file:/etc/init.d/hadoop-namenode" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "file:/etc/init.d/hadoop-namenode"
+    ]
+
+    "directory:/mnt/hadoop-data/temp/mapred/local" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "directory:/mnt/hadoop-data/temp/mapred/local"
+    ]
+
+    "directory:/etc/ganglia" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "directory:/etc/ganglia"
+    ]
+
+    "exec:/usr/local/hadoop/bin/hadoop fs -chmod g+w /tmp" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:/usr/local/hadoop/bin/hadoop fs -chmod g+w /tmp"
+    ]
+
+    "exec:chmod 644 /root/.ssh/authorized_keys" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:chmod 644 /root/.ssh/authorized_keys"
+    ]
+
+    "gem_package:bjeanes-ghost" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "gem_package:bjeanes-ghost"
+    ]
+
+    "file:/usr/local/hadoop/conf/hdfs-site.xml" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "file:/usr/local/hadoop/conf/hdfs-site.xml"
+    ]
+
+    "file:/etc/apache2/conf.d/browser_fixes.conf" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "file:/etc/apache2/conf.d/browser_fixes.conf"
+    ]
+
+    "directory:/mnt/hadoop-data" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "directory:/mnt/hadoop-data"
+    ]
+
+    "exec:cd /usr/wpt && echo `cat /tmp/tripwire_password | head -n 1` | ./sbin/twadmin --create-polfile /usr/wpt/etc/twpol.txt" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:cd /usr/wpt && echo `cat /tmp/tripwire_password | head -n 1` | ./sbin/twadmin --create-polfile /usr/wpt/etc/twpol.txt"
+    ]
+
+    "gem_package:sequel" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "gem_package:sequel"
+    ]
+
+    "package:jruby1.1" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "package:jruby1.1"
+    ]
+
+    "package:ant" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "package:ant"
+    ]
+
+    "exec:rm -f /tmp/tripwire_password" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:rm -f /tmp/tripwire_password"
+    ]
+
+    "exec:line_in_/root/.profile" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:line_in_/root/.profile"
+    ]
+
+    "exec:echo sun-java6-jdk shared/accepted-sun-dlj-v1-1 select true | /usr/bin/debconf-set-selections" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:echo sun-java6-jdk shared/accepted-sun-dlj-v1-1 select true | /usr/bin/debconf-set-selections"
+    ]
+
+    "convenience_helpers:" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "convenience_helpers:"
+    ]
+
+    "exec:mod-mime" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:mod-mime"
+    ]
+
+    "directory:/usr/local/src/hadoop/orig" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "directory:/usr/local/src/hadoop/orig"
+    ]
+
+    "package:expect" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "package:expect"
+    ]
+
+    "exec:curl http://timkay.com/aws/aws -o /usr/bin/aws" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:curl http://timkay.com/aws/aws -o /usr/bin/aws"
+    ]
+
+    "directory:/mnt/hadoop-data/name" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "directory:/mnt/hadoop-data/name"
+    ]
+
+    "exec:svn co http://svn.apache.org/repos/asf/hadoop/hive/trunk /usr/local/src/hive -r781069" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:svn co http://svn.apache.org/repos/asf/hadoop/hive/trunk /usr/local/src/hive -r781069"
+    ]
+
+    "exec:mv /usr/local/src/hadoop /usr/local/hadoop" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:mv /usr/local/src/hadoop /usr/local/hadoop"
+    ]
+
+    "directory:/etc/apache2/conf.d" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "directory:/etc/apache2/conf.d"
+    ]
+
+    "directory:/mnt/hadoop-data/temp/mapred/temp" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "directory:/mnt/hadoop-data/temp/mapred/temp"
+    ]
+
+    "directory:/usr/wpt" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "directory:/usr/wpt"
+    ]
+
+    "exec:cd /usr/local/src/ganglia-3.1.2 && ./configure --with-gmetad && make && make install" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:cd /usr/local/src/ganglia-3.1.2 && ./configure --with-gmetad && make && make install"
+    ]
+
+    "exec:/usr/local/hadoop/bin/hadoop fs -mkdir /tmp" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:/usr/local/hadoop/bin/hadoop fs -mkdir /tmp"
+    ]
+
+    "ganglia:" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "ganglia:"
+    ]
+
+    "exec:cp /usr/local/src/hadoop/hadoop-0.20.0-core.jar /usr/local/src/hadoop/orig/hadoop-0.20.0-core.jar" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:cp /usr/local/src/hadoop/hadoop-0.20.0-core.jar /usr/local/src/hadoop/orig/hadoop-0.20.0-core.jar"
+    ]
+
+    "exec:force-reload-apache2" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:force-reload-apache2"
+    ]
+
+    "exec:echo sun-java6-jre shared/accepted-sun-dlj-v1-1 select true | /usr/bin/debconf-set-selections" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:echo sun-java6-jre shared/accepted-sun-dlj-v1-1 select true | /usr/bin/debconf-set-selections"
+    ]
+
+    "exec:line_in_/root/.profile" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:line_in_/root/.profile"
+    ]
+
+    "bash_alias:inspect-poolparty-recipes" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "bash_alias:inspect-poolparty-recipes"
+    ]
+
+    "exec:chown -R root:root /tmp/gutenberg" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:chown -R root:root /tmp/gutenberg"
+    ]
+
+    "exec:make_tripwire" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:make_tripwire"
+    ]
+
+    "variable:ganglia_gmetad_data_sources" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "variable:ganglia_gmetad_data_sources"
+    ]
+
+    "cron:ganglia_monitor_sshd_ganglia" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "cron:ganglia_monitor_sshd_ganglia"
+    ]
+
+    "variable:hadoop_this_nodes_hostname" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "variable:hadoop_this_nodes_hostname"
+    ]
+
+    "file:/usr/local/src/tripwire-2.4.1.2-src/make-install-tripwire.tcl" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "file:/usr/local/src/tripwire-2.4.1.2-src/make-install-tripwire.tcl"
+    ]
+
+    "variable:tripwire_smtp_username" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "variable:tripwire_smtp_username"
+    ]
+
+    "gem_package:ruby-debug" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "gem_package:ruby-debug"
+    ]
+
+    "package:build-essential" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "package:build-essential"
+    ]
+
+    "package:nmap" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "package:nmap"
+    ]
+
+    "package:sun-java6-jdk" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "package:sun-java6-jdk"
+    ]
+
+    "exec:/usr/sbin/a2dissite default" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:/usr/sbin/a2dissite default"
+    ]
+
+    "package:php5-gd" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "package:php5-gd"
+    ]
+
+    "exec:line_in_/root/.profile" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:line_in_/root/.profile"
+    ]
+
+    "file:/etc/ganglia/gmetad.conf" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "file:/etc/ganglia/gmetad.conf"
+    ]
+
+    "exec:cd /usr/local/src && tar -xzf hadoop-0.20.0.tar.gz" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:cd /usr/local/src && tar -xzf hadoop-0.20.0.tar.gz"
+    ]
+
+    "user:hadoop_client" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "user:hadoop_client"
+    ]
+
+    "exec:download_tripwire" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:download_tripwire"
+    ]
+
+    "exec:chmod 755 /var/lib/ganglia/rrds" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:chmod 755 /var/lib/ganglia/rrds"
+    ]
+
+    "package:libconfuse-dev" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "package:libconfuse-dev"
+    ]
+
+    "directory:/mnt/hadoop-data/data" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "directory:/mnt/hadoop-data/data"
+    ]
+
+    "package:irb" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "package:irb"
+    ]
+
+    "service:hadoop-datanode" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "service:hadoop-datanode"
+    ]
+
+    "exec:export JAVA_HOME=/usr/lib/jvm/java-6-sun && cd /usr/local/src/hadoop && ant jar" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:export JAVA_HOME=/usr/lib/jvm/java-6-sun && cd /usr/local/src/hadoop && ant jar"
+    ]
+
+    "bash_alias:cd-hadoop" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "bash_alias:cd-hadoop"
+    ]
+
+    "exec:chown -R root:root /mnt/hadoop-data" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:chown -R root:root /mnt/hadoop-data"
+    ]
+
+    "directory:/tmp/gutenberg" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "directory:/tmp/gutenberg"
+    ]
+
+    "line_in_file:" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "line_in_file:"
+    ]
+
+    "exec:cd /usr/wpt && echo `cat /tmp/tripwire_password | tail -n 1` | ./sbin/tripwire --init" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:cd /usr/wpt && echo `cat /tmp/tripwire_password | tail -n 1` | ./sbin/tripwire --init"
+    ]
+
+    "file:/usr/wpt/etc/twpol.txt" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "file:/usr/wpt/etc/twpol.txt"
+    ]
+
+    "file:/usr/local/src/tripwire-2.4.1.2-src/install/install.cfg" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "file:/usr/local/src/tripwire-2.4.1.2-src/install/install.cfg"
+    ]
+
+    "exec:restart_gmetad2" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:restart_gmetad2"
+    ]
+
+    "file:/root/.hadoop-etc-env.sh" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "file:/root/.hadoop-etc-env.sh"
+    ]
+
+    "file:/etc/jvm" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "file:/etc/jvm"
+    ]
+
+    "service:hadoop-namenode" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "service:hadoop-namenode"
+    ]
+
+    "file:/usr/local/hadoop/conf/core-site.xml" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "file:/usr/local/hadoop/conf/core-site.xml"
+    ]
+
+    "package:zlib1g-dev" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "package:zlib1g-dev"
+    ]
+
+    "variable:tripwire_smtp_password" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "variable:tripwire_smtp_password"
+    ]
+
+    "file:/root/ssh/hadoop_id_rsa" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "file:/root/ssh/hadoop_id_rsa"
+    ]
+
+    "directory:/home/hadoop_client/.ssh" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "directory:/home/hadoop_client/.ssh"
+    ]
+
+    "file:/etc/init.d/gmond" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "file:/etc/init.d/gmond"
+    ]
+
+    "gem_package:technicalpickles-jeweler" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "gem_package:technicalpickles-jeweler"
+    ]
+
+    "exec:echo \"export PS1='\\u@\\h \\A \\w (hadoop_master) $ '\" >> /root/.profile" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:echo \"export PS1='\\u@\\h \\A \\w (hadoop_master) $ '\" >> /root/.profile"
+    ]
+
+    "bash_alias:cd-cookbooks" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "bash_alias:cd-cookbooks"
+    ]
+
+    "exec:/usr/local/hadoop/bin/hadoop fs -chown hadoop_client /user/hadoop_client" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:/usr/local/hadoop/bin/hadoop fs -chown hadoop_client /user/hadoop_client"
+    ]
+
+    "exec:wget http://www.gutenberg.org/dirs/etext04/7ldvc10.txt -O /tmp/gutenberg/7ldvc10.txt" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:wget http://www.gutenberg.org/dirs/etext04/7ldvc10.txt -O /tmp/gutenberg/7ldvc10.txt"
+    ]
+
+    "file:/etc/apache2/conf.d/base.conf" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "file:/etc/apache2/conf.d/base.conf"
+    ]
+
+    "denyhosts:" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "denyhosts:"
+    ]
+
+    "exec:cd /usr/local/src/hive && ant -Dhadoop.version=\"0.20.0\" package" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:cd /usr/local/src/hive && ant -Dhadoop.version=\"0.20.0\" package"
+    ]
+
+    "variable:hadoop_fs_default_port" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "variable:hadoop_fs_default_port"
+    ]
+
+    "variable:ganglia_cloud_name" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "variable:ganglia_cloud_name"
+    ]
+
+    "file:/var/www/ganglia/conf.php" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "file:/var/www/ganglia/conf.php"
+    ]
+
+    "user:ganglia" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "user:ganglia"
+    ]
+
+    "directory:/root/ssh" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "directory:/root/ssh"
+    ]
+
+    "package:apache2" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "package:apache2"
+    ]
+
+    "variable:tripwire_smtp_settings" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "variable:tripwire_smtp_settings"
+    ]
+
+    "gem_package:sequel" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "gem_package:sequel"
+    ]
+
+    "exec:restart-gmetad" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:restart-gmetad"
+    ]
+
+    "package:subversion" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "package:subversion"
+    ]
+
+    "exec:line_in_/root/.ssh/authorized_keys" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:line_in_/root/.ssh/authorized_keys"
+    ]
+
+    "directory:/mnt/hadoop-data/mapred" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "directory:/mnt/hadoop-data/mapred"
+    ]
+
+    "directory:/etc/apache2/site-includes" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "directory:/etc/apache2/site-includes"
+    ]
+
+    "file:/etc/init.d/hadoop-jobtracker" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "file:/etc/init.d/hadoop-jobtracker"
+    ]
+
+    "exec:touch_password" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:touch_password"
+    ]
+
+    "variable:tripwire_smtp_host" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "variable:tripwire_smtp_host"
+    ]
+
+    "variable:ganglia_masters_ip" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "variable:ganglia_masters_ip"
+    ]
+
+    "exec:cd /usr/local/src && tar -xvvf /usr/local/src/ganglia-3.1.2.tar.gz" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:cd /usr/local/src && tar -xvvf /usr/local/src/ganglia-3.1.2.tar.gz"
+    ]
+
+    "package:ant" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "package:ant"
+    ]
+
+    "directory:/mnt/hadoop-data/temp/dfs/data" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "directory:/mnt/hadoop-data/temp/dfs/data"
+    ]
+
+    "package:curl" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "package:curl"
+    ]
+
+    "directory:/root/.ssh" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "directory:/root/.ssh"
+    ]
+
+    "package:dnsutils" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "package:dnsutils"
+    ]
+
+    "file:/etc/init.d/hadoop-secondarynamenode" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "file:/etc/init.d/hadoop-secondarynamenode"
+    ]
+
+    "line_in_file:" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "line_in_file:"
+    ]
+
+    "variable:ganglia_pool_name" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "variable:ganglia_pool_name"
+    ]
+
+    "exec:/usr/local/hadoop/bin/hadoop fs -mkdir /user/hive/warehouse" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:/usr/local/hadoop/bin/hadoop fs -mkdir /user/hive/warehouse"
+    ]
+
+    "directory:/mnt/hadoop-data" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "directory:/mnt/hadoop-data"
+    ]
+
+    "exec:chown -R root:root /usr/local/src/hadoop" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:chown -R root:root /usr/local/src/hadoop"
+    ]
+
+    "variable:block_replication_level" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "variable:block_replication_level"
+    ]
+
+    "package:libsqlite3-dev" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "package:libsqlite3-dev"
+    ]
+
+    "exec:cd /usr/local/src/hive && patch -p0 < hive-487.3.patch && mv hive-487.3.patch hive-487.3.patch.applied" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:cd /usr/local/src/hive && patch -p0 < hive-487.3.patch && mv hive-487.3.patch hive-487.3.patch.applied"
+    ]
+
+    "directory:/mnt/hadoop-data/temp/mapred/system" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "directory:/mnt/hadoop-data/temp/mapred/system"
+    ]
+
+    "exec:wget http://gist.github.com/raw/131294/0622454b2cc2f787c04d20ab3d47e888e31edcd4/gistfile1 -O /usr/bin/xtail && chmod +x /usr/bin/xtail" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:wget http://gist.github.com/raw/131294/0622454b2cc2f787c04d20ab3d47e888e31edcd4/gistfile1 -O /usr/bin/xtail && chmod +x /usr/bin/xtail"
+    ]
+
+    "exec:/usr/local/hadoop/bin/hadoop namenode -format" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:/usr/local/hadoop/bin/hadoop namenode -format"
+    ]
+
+    "file:/etc/apache2/apache2.conf" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "file:/etc/apache2/apache2.conf"
+    ]
+
+    "package:librrd-dev" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "package:librrd-dev"
+    ]
+
+    "package:tree" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "package:tree"
+    ]
+
+    "variable:current_master" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "variable:current_master"
+    ]
+
+    "file:/usr/wpt/etc/twcfg.txt" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "file:/usr/wpt/etc/twcfg.txt"
+    ]
+
+    "gem_package:sqlite3-ruby" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "gem_package:sqlite3-ruby"
+    ]
+
+    "file:/etc/ganglia/bin/monitors/sshd_ganglia" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "file:/etc/ganglia/bin/monitors/sshd_ganglia"
+    ]
+
+    "directory:/etc/ganglia/bin/monitors" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "directory:/etc/ganglia/bin/monitors"
+    ]
+
+    "group:ganglia" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "group:ganglia"
+    ]
+
+    "service:apache2" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "service:apache2"
+    ]
+
+    "line_in_file:" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "line_in_file:"
+    ]
+
+    "exec:chown -R ganglia:ganglia /var/lib/ganglia/rrds" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:chown -R ganglia:ganglia /var/lib/ganglia/rrds"
+    ]
+
+    "package:libexpat1-dev" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "package:libexpat1-dev"
+    ]
+
+    "exec:/usr/local/hadoop/bin/hadoop fs -chmod g+w /user/hive/warehouse" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:/usr/local/hadoop/bin/hadoop fs -chmod g+w /user/hive/warehouse"
+    ]
+
+    "directory:/usr/local/src" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "directory:/usr/local/src"
+    ]
+
+    "php:" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "php:"
+    ]
+
+    "package:vim-nox" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "package:vim-nox"
+    ]
+
+    "exec:unpack_tripwire" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:unpack_tripwire"
+    ]
+
+    "tripwire:" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "tripwire:"
+    ]
+
+    "file:/usr/local/hadoop/conf/hadoop-env.sh" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "file:/usr/local/hadoop/conf/hadoop-env.sh"
+    ]
+
+    "directory:/mnt/hadoop-data/temp" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "directory:/mnt/hadoop-data/temp"
+    ]
+
+    "gem_package:bjeanes-ghost" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "gem_package:bjeanes-ghost"
+    ]
+
+    "variable:hadoop_mapred_dir" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "variable:hadoop_mapred_dir"
+    ]
+
+    "directory:/usr/local/src/hadoop/patches" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "directory:/usr/local/src/hadoop/patches"
+    ]
+
+    "directory:/usr/local/src" -> "exec:wget http://www.gossipcheck.com/mirrors/apache/hadoop/core/hadoop-0.20.0/hadoop-0.20.0.tar.gz -O /usr/local/src/hadoop-0.20.0.tar.gz" [
+        fontsize = 30
+    ]
+
+    "group:ganglia" -> "ganglia:" [
+        fontsize = 30
+    ]
+
+    "exec:configure_tripwire" -> "tripwire:" [
+        fontsize = 30
+    ]
+
+    "variable:port" -> "directory:/var/www" [
+        fontsize = 30
+    ]
+
+    "package:apache2" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "file:/root/.hadoop-etc-env.sh" -> "line_in_file:" [
+        fontsize = 30
+    ]
+
+    "user:www-data" -> "chef_attributes_file:/Users/alerner/Development/ruby/mine/poolparty/bin/../lib/../vendor/chef/apache2/attributes/apache.rb" [
+        fontsize = 30
+    ]
+
+    "exec:make_tripwire" -> "exec:cd /usr/wpt && echo `cat /tmp/tripwire_password | tail -n 1` | ./sbin/tripwire --init" [
+        fontsize = 30
+    ]
+
+    "exec:restart-gmetad" -> "file:/etc/init.d/gmetad" [
+        fontsize = 30
+    ]
+
+    "package:apache2" -> "exec:mod-mime" [
+        fontsize = 30
+    ]
+
+    "directory:/root/ssh" -> "hadoop:" [
+        fontsize = 30
+    ]
+
+    "user:ganglia" -> "exec:wget http://superb-west.dl.sourceforge.net/sourceforge/ganglia/ganglia-3.1.2.tar.gz -O /usr/local/src/ganglia-3.1.2.tar.gz" [
+        fontsize = 30
+    ]
+
+    "variable:ganglia_cloud_name" -> "ganglia:" [
+        fontsize = 30
+    ]
+
+    "exec:/usr/local/hadoop/bin/hadoop fs -chown hadoop_client /user/hadoop_client" -> "hadoop:" [
+        fontsize = 30
+    ]
+
+    "file:/usr/local/hadoop/conf/core-site.xml" -> "file:/usr/local/hadoop/conf/hdfs-site.xml" [
+        fontsize = 30
+    ]
+
+    "exec:cd /usr/local/src && tar -xzf hadoop-0.20.0.tar.gz" -> "hadoop:" [
+        fontsize = 30
+    ]
+
+    "directory:/mnt/hadoop-data" -> "exec:chown -R root:root /mnt/hadoop-data" [
+        fontsize = 30
+    ]
+
+    "package:jruby1.1" -> "hive:" [
+        fontsize = 30
+    ]
+
+    "package:ant" -> "hadoop:" [
+        fontsize = 30
+    ]
+
+    "exec:chmod 600 /root/.ssh/hadoop_id_rsa" -> "hadoop:" [
+        fontsize = 30
+    ]
+
+    "exec:wget http://www.gutenberg.org/dirs/etext04/7ldvc10.txt -O /tmp/gutenberg/7ldvc10.txt" -> "hadoop:" [
+        fontsize = 30
+    ]
+
+    "line_in_file:" -> "exec:/usr/local/hadoop/bin/hadoop fs -mkdir /tmp" [
+        fontsize = 30
+    ]
+
+    "exec:make_tripwire" -> "exec:touch_password" [
+        fontsize = 30
+    ]
+
+    "hive:" -> "ganglia:" [
+        fontsize = 30
+    ]
+
+    "directory:/usr/local/src/hadoop/orig" -> "hadoop:" [
+        fontsize = 30
+    ]
+
+    "exec:cd /usr/local/src/hive && ant -Dhadoop.version=\"0.20.0\" package" -> "hive:" [
+        fontsize = 30
+    ]
+
+    "directory:/mnt/hadoop-data/logs" -> "directory:/mnt/hadoop-data/name" [
+        fontsize = 30
+    ]
+
+    "exec:wget --no-check-certificate https://issues.apache.org/jira/secure/attachment/12407207/HADOOP-4675-v7.patch -O /usr/local/src/hadoop/patches/0001-ganglia31-HADOOP-4675-v7.patch" -> "hadoop:" [
+        fontsize = 30
+    ]
+
+    "exec:svn co http://svn.apache.org/repos/asf/hadoop/hive/trunk /usr/local/src/hive -r781069" -> "exec:cd /usr/local/src/hive && wget --no-check-certificate https://issues.apache.org/jira/secure/attachment/12409779/hive-487.3.patch" [
+        fontsize = 30
+    ]
+
+    "service:hadoop-jobtracker" -> "file:/etc/init.d/hadoop-namenode" [
+        fontsize = 30
+    ]
+
+    "file:/usr/local/src/tripwire-2.4.1.2-src/make-install-tripwire.tcl" -> "tripwire:" [
+        fontsize = 30
+    ]
+
+    "exec:cp /usr/local/src/hadoop/hadoop-0.20.0-core.jar /usr/local/src/hadoop/orig/hadoop-0.20.0-core.jar" -> "hadoop:" [
+        fontsize = 30
+    ]
+
+    "directory:/etc/apache2/site-includes" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "variable:ganglia_cloud_name" -> "variable:ganglia_this_nodes_private_ip" [
+        fontsize = 30
+    ]
+
+    "exec:rm -f /var/poolparty/dr_configure/chef/cookbooks/poolparty/templates/default/tmp/tripwire_password.erb" -> "tripwire:" [
+        fontsize = 30
+    ]
+
+    "exec:cd /usr/local/src && tar -xzf hadoop-0.20.0.tar.gz" -> "exec:mv /usr/local/src/hadoop-0.20.0 /usr/local/src/hadoop" [
+        fontsize = 30
+    ]
+
+    "service:gmond" -> "ganglia:" [
+        fontsize = 30
+    ]
+
+    "directory:/mnt/hadoop-data/temp/mapred/system" -> "hadoop:" [
+        fontsize = 30
+    ]
+
+    "directory:/home/hadoop_client/.ssh" -> "hadoop:" [
+        fontsize = 30
+    ]
+
+    "development_gem:poolparty-extensions" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "exec:mv /root/ssh/hadoop_id_rsa /root/.ssh/hadoop_id_rsa" -> "exec:chmod 600 /root/.ssh/hadoop_id_rsa" [
+        fontsize = 30
+    ]
+
+    "exec:/usr/local/hadoop/bin/hadoop fs -chmod g+w /user/hive/warehouse" -> "hive:" [
+        fontsize = 30
+    ]
+
+    "package:apache2" -> "exec:reload-apache2" [
+        fontsize = 30
+    ]
+
+    "service:hadoop-datanode" -> "file:/etc/init.d/hadoop-jobtracker" [
+        fontsize = 30
+    ]
+
+    "exec:/usr/sbin/a2dissite default" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "exec:wget http://www.gutenberg.org/files/4300/4300.txt -O /tmp/gutenberg/ulysses.txt" -> "exec:chown -R root:root /tmp/gutenberg" [
+        fontsize = 30
+    ]
+
+    "exec:wget http://gist.github.com/raw/131294/0622454b2cc2f787c04d20ab3d47e888e31edcd4/gistfile1 -O /usr/bin/xtail && chmod +x /usr/bin/xtail" -> "convenience_helpers:" [
+        fontsize = 30
+    ]
+
+    "exec:chown -R root:root /usr/local/src/hadoop" -> "hadoop:" [
+        fontsize = 30
+    ]
+
+    "exec:mv /usr/local/src/ganglia-3.1.2/web /var/www/ganglia" -> "ganglia:" [
+        fontsize = 30
+    ]
+
+    "file:/usr/local/hadoop/conf/mapred-site.xml" -> "file:/usr/local/hadoop/conf/log4j.properties" [
+        fontsize = 30
+    ]
+
+    "package:python-dev" -> "group:ganglia" [
+        fontsize = 30
+    ]
+
+    "exec:cd /usr/local/src/hive && wget --no-check-certificate https://issues.apache.org/jira/secure/attachment/12409779/hive-487.3.patch" -> "hive:" [
+        fontsize = 30
+    ]
+
+    "exec:unpack_tripwire" -> "exec:configure_tripwire" [
+        fontsize = 30
+    ]
+
+    "gem_package:technicalpickles-jeweler" -> "development_gem:poolparty-extensions" [
+        fontsize = 30
+    ]
+
+    "exec:chmod 644 /root/.ssh/authorized_keys" -> "exec:chown -R root /root/.ssh" [
+        fontsize = 30
+    ]
+
+    "exec:restart-gmond" -> "file:/etc/init.d/gmond" [
+        fontsize = 30
+    ]
+
+    "package:apache2" -> "file:/etc/apache2/apache2.conf" [
+        fontsize = 30
+    ]
+
+    "exec:download_tripwire" -> "exec:unpack_tripwire" [
+        fontsize = 30
+    ]
+
+    "directory:/var/www" -> "directory:/etc/apache2" [
+        fontsize = 30
+    ]
+
+    "gem_package:bjeanes-ghost" -> "file:/usr/local/hadoop/conf/hadoop-env.sh" [
+        fontsize = 30
+    ]
+
+    "exec:/usr/local/hadoop/bin/hadoop namenode -format" -> "bash_alias:cd-hadoop" [
+        fontsize = 30
+    ]
+
+    "package:subversion" -> "hive:" [
+        fontsize = 30
+    ]
+
+    "cron:ganglia_monitor_sshd_ganglia" -> "ganglia:" [
+        fontsize = 30
+    ]
+
+    "exec:reload-apache2" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "cron:ganglia_monitor_sshd_ganglia" -> "directory:/var/lib/ganglia/rrds" [
+        fontsize = 30
+    ]
+
+    "exec:wget http://www.gutenberg.org/files/20417/20417.txt -O /tmp/gutenberg/outline-of-science.txt" -> "hadoop:" [
+        fontsize = 30
+    ]
+
+    "exec:force-reload-apache2" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "package:sun-java6-jdk" -> "file:/etc/jvm" [
+        fontsize = 30
+    ]
+
+    "file:/root/ssh/hadoop_id_rsa" -> "exec:mv /root/ssh/hadoop_id_rsa /root/.ssh/hadoop_id_rsa" [
+        fontsize = 30
+    ]
+
+    "directory:/etc/apache2/conf.d" -> "file:/etc/apache2/apache2.conf" [
+        fontsize = 30
+    ]
+
+    "variable:current_master" -> "variable:hadoop_fs_default_port" [
+        fontsize = 30
+    ]
+
+    "exec:chown -R root:root /mnt/hadoop-data" -> "exec:/usr/local/hadoop/bin/hadoop namenode -format" [
+        fontsize = 30
+    ]
+
+    "directory:/tmp" -> "tripwire:" [
+        fontsize = 30
+    ]
+
+    "exec:wget http://www.gossipcheck.com/mirrors/apache/hadoop/core/hadoop-0.20.0/hadoop-0.20.0.tar.gz -O /usr/local/src/hadoop-0.20.0.tar.gz" -> "exec:cd /usr/local/src && tar -xzf hadoop-0.20.0.tar.gz" [
+        fontsize = 30
+    ]
+
+    "variable:tripwire_smtp_username" -> "tripwire:" [
+        fontsize = 30
+    ]
+
+    "variable:hadoop_data_dir" -> "hadoop:" [
+        fontsize = 30
+    ]
+
+    "package:screen" -> "package:irb" [
+        fontsize = 30
+    ]
+
+    "package:vim-nox" -> "bash_alias:inspect-poolparty-recipes" [
+        fontsize = 30
+    ]
+
+    "directory:/mnt/hadoop-data" -> "hadoop:" [
+        fontsize = 30
+    ]
+
+    "exec:cd /usr/local/src/hive && ant -Dhadoop.version=\"0.20.0\" package" -> "exec:mv /usr/local/src/hive/build/dist /usr/local/hive" [
+        fontsize = 30
+    ]
+
+    "directory:/tmp/gutenberg" -> "exec:wget http://www.gutenberg.org/files/20417/20417.txt -O /tmp/gutenberg/outline-of-science.txt" [
+        fontsize = 30
+    ]
+
+    "service:gmond" -> "variable:ganglia_gmetad_data_sources" [
+        fontsize = 30
+    ]
+
+    "exec:reload-apache2" -> "file:/etc/apache2/conf.d/base.conf" [
+        fontsize = 30
+    ]
+
+    "directory:/usr/local/src" -> "hadoop:" [
+        fontsize = 30
+    ]
+
+    "directory:/home/hadoop_client/.ssh" -> "exec:/usr/local/hadoop/bin/hadoop fs -mkdir /user/hadoop_client" [
+        fontsize = 30
+    ]
+
+    "exec:make_tripwire" -> "tripwire:" [
+        fontsize = 30
+    ]
+
+    "gem_package:sequel" -> "hive:" [
+        fontsize = 30
+    ]
+
+    "directory:/mnt/hadoop-data/logs" -> "hadoop:" [
+        fontsize = 30
+    ]
+
+    "directory:/mnt/hadoop-data/temp/mapred/temp" -> "hadoop:" [
+        fontsize = 30
+    ]
+
+    "directory:/etc/ganglia/bin/monitors" -> "ganglia:" [
+        fontsize = 30
+    ]
+
+    "exec:echo \"export PS1='\\u@\\h \\A \\w (hadoop_master) $ '\" >> /root/.profile" -> "convenience_helpers:" [
+        fontsize = 30
+    ]
+
+    "exec:echo sun-java6-jdk shared/accepted-sun-dlj-v1-1 select true | /usr/bin/debconf-set-selections" -> "exec:echo sun-java6-jre shared/accepted-sun-dlj-v1-1 select true | /usr/bin/debconf-set-selections" [
+        fontsize = 30
+    ]
+
+    "exec:wget http://superb-west.dl.sourceforge.net/sourceforge/ganglia/ganglia-3.1.2.tar.gz -O /usr/local/src/ganglia-3.1.2.tar.gz" -> "exec:cd /usr/local/src && tar -xvvf /usr/local/src/ganglia-3.1.2.tar.gz" [
+        fontsize = 30
+    ]
+
+    "exec:wget http://www.gossipcheck.com/mirrors/apache/hadoop/core/hadoop-0.20.0/hadoop-0.20.0.tar.gz -O /usr/local/src/hadoop-0.20.0.tar.gz" -> "hadoop:" [
+        fontsize = 30
+    ]
+
+    "exec:/usr/local/hadoop/bin/hadoop fs -mkdir /user/hadoop_client" -> "exec:/usr/local/hadoop/bin/hadoop fs -chown hadoop_client /user/hadoop_client" [
+        fontsize = 30
+    ]
+
+    "package:zlib1g-dev" -> "hadoop:" [
+        fontsize = 30
+    ]
+
+    "directory:/mnt/hadoop-data" -> "hadoop:" [
+        fontsize = 30
+    ]
+
+    "exec:echo sun-java6-jre shared/accepted-sun-dlj-v1-1 select true | /usr/bin/debconf-set-selections" -> "hadoop:" [
+        fontsize = 30
+    ]
+
+    "service:hadoop-secondarynamenode" -> "hadoop:" [
+        fontsize = 30
+    ]
+
+    "exec:line_in_/root/.profile" -> "line_in_file:" [
+        fontsize = 30
+    ]
+
+    "exec:/usr/local/hadoop/bin/hadoop fs -mkdir /user/hadoop_client" -> "hadoop:" [
+        fontsize = 30
+    ]
+
+    "package:subversion" -> "package:ant" [
+        fontsize = 30
+    ]
+
+    "file:/etc/init.d/gmond" -> "directory:/etc/ganglia/bin/monitors" [
+        fontsize = 30
+    ]
+
+    "service:hadoop-namenode" -> "hadoop:" [
+        fontsize = 30
+    ]
+
+    "exec:/usr/sbin/a2dissite default" -> "file:/etc/apache2/conf.d/base.conf" [
+        fontsize = 30
+    ]
+
+    "exec:rm -rf /root/ssh" -> "hadoop:" [
+        fontsize = 30
+    ]
+
+    "user:www-data" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "package:libconfuse-dev" -> "ganglia:" [
+        fontsize = 30
+    ]
+
+    "exec:line_in_/root/.profile" -> "line_in_file:" [
+        fontsize = 30
+    ]
+
+    "variable:tripwire_smtp_port" -> "tripwire:" [
+        fontsize = 30
+    ]
+
+    "variable:current_master" -> "hadoop:" [
+        fontsize = 30
+    ]
+
+    "directory:/mnt/hadoop-data/temp/dfs/data" -> "directory:/mnt/hadoop-data/temp/mapred/local" [
+        fontsize = 30
+    ]
+
+    "directory:/mnt/hadoop-data/temp/dfs/data" -> "hadoop:" [
+        fontsize = 30
+    ]
+
+    "exec:/usr/local/hadoop/bin/hadoop fs -mkdir /tmp" -> "hive:" [
+        fontsize = 30
+    ]
+
+    "exec:line_in_/root/.profile" -> "line_in_file:" [
+        fontsize = 30
+    ]
+
+    "php:" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "exec:upgrade-core-hadoop-jar" -> "hadoop:" [
+        fontsize = 30
+    ]
+
+    "line_in_file:" -> "directory:/usr/local/src" [
+        fontsize = 30
+    ]
+
+    "variable:ganglia_gmond_is_master" -> "directory:/etc/ganglia" [
+        fontsize = 30
+    ]
+
+    "exec:cd /usr/local/src/ganglia-3.1.2 && ./configure --with-gmetad && make && make install" -> "ganglia:" [
+        fontsize = 30
+    ]
+
+    "file:/var/www/ganglia/conf.php" -> "ganglia:" [
+        fontsize = 30
+    ]
+
+    "exec:line_in_/etc/apache2/sites-enabled/default" -> "line_in_file:" [
+        fontsize = 30
+    ]
+
+    "exec:force-reload-apache2" -> "exec:mod-mime" [
+        fontsize = 30
+    ]
+
+    "file:/etc/apache2/conf.d/mime.conf" -> "file:/etc/apache2/conf.d/browser_fixes.conf" [
+        fontsize = 30
+    ]
+
+    "group:ganglia" -> "user:ganglia" [
+        fontsize = 30
+    ]
+
+    "package:libsqlite3-dev" -> "gem_package:sqlite3-ruby" [
+        fontsize = 30
+    ]
+
+    "bash_alias:cd-cookbooks" -> "convenience_helpers:" [
+        fontsize = 30
+    ]
+
+    "file:/etc/jvm" -> "package:dnsutils" [
+        fontsize = 30
+    ]
+
+    "directory:/mnt/hadoop-data/name" -> "directory:/mnt/hadoop-data/data" [
+        fontsize = 30
+    ]
+
+    "file:/tmp/tripwire_password" -> "tripwire:" [
+        fontsize = 30
+    ]
+
+    "exec:force-reload-apache2" -> "exec:mod-rewrite" [
+        fontsize = 30
+    ]
+
+    "service:hadoop-jobtracker" -> "hadoop:" [
+        fontsize = 30
+    ]
+
+    "directory:/mnt/hadoop-data/name" -> "hadoop:" [
+        fontsize = 30
+    ]
+
+    "file:/usr/local/hadoop/conf/core-site.xml" -> "hadoop:" [
+        fontsize = 30
+    ]
+
+    "exec:curl http://timkay.com/aws/aws -o /usr/bin/aws" -> "exec:echo \"export PS1='\\u@\\h \\A \\w (hadoop_master) $ '\" >> /root/.profile" [
+        fontsize = 30
+    ]
+
+    "file:/etc/apache2/apache2.conf" -> "exec:/usr/sbin/a2dissite default" [
+        fontsize = 30
+    ]
+
+    "directory:/usr/local/src" -> "tripwire:" [
+        fontsize = 30
+    ]
+
+    "variable:hadoop_this_nodes_hostname" -> "variable:hadoop_this_nodes_ip" [
+        fontsize = 30
+    ]
+
+    "directory:/mnt/hadoop-data/temp" -> "directory:/mnt/hadoop-data/temp/dfs/data" [
+        fontsize = 30
+    ]
+
+    "file:/etc/init.d/hadoop-jobtracker" -> "hadoop:" [
+        fontsize = 30
+    ]
+
+    "directory:/etc/ganglia" -> "ganglia:" [
+        fontsize = 30
+    ]
+
+    "exec:curl http://timkay.com/aws/aws -o /usr/bin/aws" -> "convenience_helpers:" [
+        fontsize = 30
+    ]
+
+    "package:nmap" -> "package:git-core" [
+        fontsize = 30
+    ]
+
+    "exec:mod-rewrite" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "file:/usr/local/hadoop/conf/mapred-site.xml" -> "hadoop:" [
+        fontsize = 30
+    ]
+
+    "file:/etc/apache2/conf.d/mime.conf" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "directory:/usr/local/src/hadoop/patches" -> "exec:wget --no-check-certificate https://issues.apache.org/jira/secure/attachment/12407207/HADOOP-4675-v7.patch -O /usr/local/src/hadoop/patches/0001-ganglia31-HADOOP-4675-v7.patch" [
+        fontsize = 30
+    ]
+
+    "service:apache2" -> "user:www-data" [
+        fontsize = 30
+    ]
+
+    "file:/usr/wpt/etc/twcfg.txt" -> "tripwire:" [
+        fontsize = 30
+    ]
+
+    "bash_alias:cd-cookbooks" -> "exec:wget http://gist.github.com/raw/131294/0622454b2cc2f787c04d20ab3d47e888e31edcd4/gistfile1 -O /usr/bin/xtail && chmod +x /usr/bin/xtail" [
+        fontsize = 30
+    ]
+
+    "exec:configure_tripwire" -> "exec:make_tripwire" [
+        fontsize = 30
+    ]
+
+    "exec:chown -R root /root/.ssh" -> "hadoop:" [
+        fontsize = 30
+    ]
+
+    "package:sun-java6-jdk" -> "hadoop:" [
+        fontsize = 30
+    ]
+
+    "exec:chmod 600 /root/.ssh/hadoop_id_rsa" -> "exec:chmod 700 /root/.ssh" [
+        fontsize = 30
+    ]
+
+    "exec:mv /usr/local/src/hive/build/dist /usr/local/hive" -> "file:/root/.hadoop-etc-env.sh" [
+        fontsize = 30
+    ]
+
+    "directory:/mnt/hadoop-data/temp/mapred/local" -> "directory:/mnt/hadoop-data/temp/mapred/system" [
+        fontsize = 30
+    ]
+
+    "package:libexpat1-dev" -> "ganglia:" [
+        fontsize = 30
+    ]
+
+    "exec:chown -R ganglia:ganglia /var/lib/ganglia/rrds" -> "exec:restart-gmetad" [
+        fontsize = 30
+    ]
+
+    "directory:/mnt/hadoop-data" -> "exec:chgrp -R root /mnt/hadoop-data" [
+        fontsize = 30
+    ]
+
+    "file:/etc/apache2/conf.d/base.conf" -> "file:/etc/apache2/conf.d/mime.conf" [
+        fontsize = 30
+    ]
+
+    "exec:cd /usr/wpt && echo `cat /tmp/tripwire_password | tail -n 1` | ./sbin/tripwire --init" -> "tripwire:" [
+        fontsize = 30
+    ]
+
+    "exec:touch /root/.ssh/authorized_keys" -> "hadoop:" [
+        fontsize = 30
+    ]
+
+    "directory:/mnt/hadoop-data/temp/mapred/temp" -> "variable:hadoop_data_dir" [
+        fontsize = 30
+    ]
+
+    "exec:cp /usr/local/src/hadoop/hadoop-0.20.0-core.jar /usr/local/src/hadoop/orig/hadoop-0.20.0-core.jar" -> "package:ant" [
+        fontsize = 30
+    ]
+
+    "variable:ganglia_this_nodes_private_ip" -> "variable:ganglia_masters_ip" [
+        fontsize = 30
+    ]
+
+    "exec:export JAVA_HOME=/usr/lib/jvm/java-6-sun && cd /usr/local/src/hadoop && ant jar" -> "hadoop:" [
+        fontsize = 30
+    ]
+
+    "chef_attributes_file:/Users/alerner/Development/ruby/mine/poolparty/bin/../lib/../vendor/chef/apache2/attributes/apache.rb" -> "php:" [
+        fontsize = 30
+    ]
+
+    "variable:hadoop_data_dir" -> "variable:hadoop_mapred_dir" [
+        fontsize = 30
+    ]
+
+    "exec:svn co http://svn.apache.org/repos/asf/hadoop/hive/trunk /usr/local/src/hive -r781069" -> "hive:" [
+        fontsize = 30
+    ]
+
+    "exec:make_tripwire" -> "file:/usr/local/src/tripwire-2.4.1.2-src/make-install-tripwire.tcl" [
+        fontsize = 30
+    ]
+
+    "package:ant" -> "hive:" [
+        fontsize = 30
+    ]
+
+    "directory:/var/www" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "file:/usr/local/hadoop/conf/hdfs-site.xml" -> "file:/usr/local/hadoop/conf/mapred-site.xml" [
+        fontsize = 30
+    ]
+
+    "package:libconfuse-dev" -> "package:libexpat1-dev" [
+        fontsize = 30
+    ]
+
+    "exec:wget http://www.gutenberg.org/files/20417/20417.txt -O /tmp/gutenberg/outline-of-science.txt" -> "exec:wget http://www.gutenberg.org/dirs/etext04/7ldvc10.txt -O /tmp/gutenberg/7ldvc10.txt" [
+        fontsize = 30
+    ]
+
+    "gem_package:bjeanes-ghost" -> "hadoop:" [
+        fontsize = 30
+    ]
+
+    "package:librrd-dev" -> "package:libapr1-dev" [
+        fontsize = 30
+    ]
+
+    "exec:touch_password" -> "tripwire:" [
+        fontsize = 30
+    ]
+
+    "directory:/mnt/hadoop-data/mapred" -> "hadoop:" [
+        fontsize = 30
+    ]
+
+    "denyhosts:" -> "tripwire:" [
+        fontsize = 30
+    ]
+
+    "bash_alias:cd-hadoop" -> "hadoop:" [
+        fontsize = 30
+    ]
+
+    "exec:cd /usr/local/src/hadoop && for PATCH in `find patches -type f | grep -v applied`; do (patch -p0 < ${PATCH}); mv ${PATCH} ${PATCH}.applied ; done" -> "exec:upgrade-core-hadoop-jar" [
+        fontsize = 30
+    ]
+
+    "ganglia:" -> "package:nmap" [
+        fontsize = 30
+    ]
+
+    "line_in_file:" -> "bash_alias:cd-cookbooks" [
+        fontsize = 30
+    ]
+
+    "hadoop:" -> "hive:" [
+        fontsize = 30
+    ]
+
+    "directory:/etc/ganglia/bin/monitors" -> "file:/etc/ganglia/bin/monitors/sshd_ganglia" [
+        fontsize = 30
+    ]
+
+    "package:expect" -> "tripwire:" [
+        fontsize = 30
+    ]
+
+    "directory:/etc/apache2" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "line_in_file:" -> "hive:" [
+        fontsize = 30
+    ]
+
+    "package:ant" -> "exec:svn co http://svn.apache.org/repos/asf/hadoop/hive/trunk /usr/local/src/hive -r781069" [
+        fontsize = 30
+    ]
+
+    "exec:chgrp -R root /mnt/hadoop-data" -> "directory:/mnt/hadoop-data/logs" [
+        fontsize = 30
+    ]
+
+    "directory:/usr/local/src/hadoop/patches" -> "hadoop:" [
+        fontsize = 30
+    ]
+
+    "package:dnsutils" -> "hadoop:" [
+        fontsize = 30
+    ]
+
+    "exec:cd /usr/local/src && tar -xvvf /usr/local/src/ganglia-3.1.2.tar.gz" -> "ganglia:" [
+        fontsize = 30
+    ]
+
+    "package:apache2" -> "exec:mod-rewrite" [
+        fontsize = 30
+    ]
+
+    "directory:/mnt/hadoop-data/temp/mapred/local" -> "hadoop:" [
+        fontsize = 30
+    ]
+
+    "variable:ganglia_masters_ip" -> "ganglia:" [
+        fontsize = 30
+    ]
+
+    "file:/etc/init.d/gmond" -> "ganglia:" [
+        fontsize = 30
+    ]
+
+    "directory:/tmp/gutenberg" -> "hadoop:" [
+        fontsize = 30
+    ]
+
+    "file:/etc/ganglia/gmetad.conf" -> "ganglia:" [
+        fontsize = 30
+    ]
+
+    "bash_alias:inspect-poolparty-recipes" -> "convenience_helpers:" [
+        fontsize = 30
+    ]
+
+    "directory:/var/lib/ganglia/rrds" -> "ganglia:" [
+        fontsize = 30
+    ]
+
+    "exec:touch /root/.ssh/authorized_keys" -> "exec:chmod 644 /root/.ssh/authorized_keys" [
+        fontsize = 30
+    ]
+
+    "package:build-essential" -> "ganglia:" [
+        fontsize = 30
+    ]
+
+    "exec:restart-apache2" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "chef_attributes_file:/Users/alerner/Development/ruby/mine/poolparty/bin/../lib/../vendor/chef/apache2/attributes/apache.rb" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "directory:/usr/wpt" -> "tripwire:" [
+        fontsize = 30
+    ]
+
+    "apache:" -> "line_in_file:" [
+        fontsize = 30
+    ]
+
+    "package:libexpat1-dev" -> "package:python-dev" [
+        fontsize = 30
+    ]
+
+    "line_in_file:" -> "bash_alias:cd-hadoop" [
+        fontsize = 30
+    ]
+
+    "directory:/root/.ssh" -> "hadoop:" [
+        fontsize = 30
+    ]
+
+    "package:zlib1g-dev" -> "directory:/usr/local/src/hadoop/patches" [
+        fontsize = 30
+    ]
+
+    "directory:/var/lib/ganglia/rrds" -> "exec:chmod 755 /var/lib/ganglia/rrds" [
+        fontsize = 30
+    ]
+
+    "directory:/etc/apache2" -> "directory:/etc/apache2/conf.d" [
+        fontsize = 30
+    ]
+
+    "file:/etc/init.d/hadoop-datanode" -> "hadoop:" [
+        fontsize = 30
+    ]
+
+    "directory:/etc/ganglia" -> "exec:restart-gmond" [
+        fontsize = 30
+    ]
+
+    "exec:make_tripwire" -> "file:/usr/local/src/tripwire-2.4.1.2-src/install/install.cfg" [
+        fontsize = 30
+    ]
+
+    "exec:make_tripwire" -> "file:/usr/wpt/etc/twpol.txt" [
+        fontsize = 30
+    ]
+
+    "package:git-core" -> "gem_package:ruby-debug" [
+        fontsize = 30
+    ]
+
+    "exec:cd /usr/local/src/hive && patch -p0 < hive-487.3.patch && mv hive-487.3.patch hive-487.3.patch.applied" -> "exec:cd /usr/local/src/hive && ant -Dhadoop.version=\"0.20.0\" package" [
+        fontsize = 30
+    ]
+
+    "package:curl" -> "convenience_helpers:" [
+        fontsize = 30
+    ]
+
+    "variable:ganglia_masters_ip" -> "service:gmond" [
+        fontsize = 30
+    ]
+
+    "variable:hadoop_this_nodes_ip" -> "file:/usr/local/hadoop/conf/core-site.xml" [
+        fontsize = 30
+    ]
+
+    "file:/usr/local/hadoop/conf/log4j.properties" -> "hadoop:" [
+        fontsize = 30
+    ]
+
+    "directory:/mnt/hadoop-data/mapred" -> "directory:/mnt/hadoop-data/temp" [
+        fontsize = 30
+    ]
+
+    "exec:make_tripwire" -> "file:/usr/wpt/etc/twcfg.txt" [
+        fontsize = 30
+    ]
+
+    "exec:/usr/local/hadoop/bin/hadoop namenode -format" -> "hadoop:" [
+        fontsize = 30
+    ]
+
+    "package:apache2" -> "exec:restart-apache2" [
+        fontsize = 30
+    ]
+
+    "package:rrdtool" -> "ganglia:" [
+        fontsize = 30
+    ]
+
+    "exec:/usr/local/hadoop/bin/hadoop fs -chmod g+w /user/hive/warehouse" -> "package:ant" [
+        fontsize = 30
+    ]
+
+    "package:ant" -> "package:jruby1.1" [
+        fontsize = 30
+    ]
+
+    "directory:/root/ssh" -> "directory:/root/.ssh" [
+        fontsize = 30
+    ]
+
+    "user:hadoop_client" -> "hadoop:" [
+        fontsize = 30
+    ]
+
+    "exec:/usr/local/hadoop/bin/hadoop fs -chmod g+w /tmp" -> "exec:/usr/local/hadoop/bin/hadoop fs -chmod g+w /user/hive/warehouse" [
+        fontsize = 30
+    ]
+
+    "file:/usr/local/hadoop/conf/log4j.properties" -> "directory:/mnt/hadoop-data" [
+        fontsize = 30
+    ]
+
+    "exec:cd /usr/local/src/hadoop && for PATCH in `find patches -type f | grep -v applied`; do (patch -p0 < ${PATCH}); mv ${PATCH} ${PATCH}.applied ; done" -> "hadoop:" [
+        fontsize = 30
+    ]
+
+    "file:/etc/ganglia/bin/monitors/sshd_ganglia" -> "cron:ganglia_monitor_sshd_ganglia" [
+        fontsize = 30
+    ]
+
+    "package:apache2" -> "service:apache2" [
+        fontsize = 30
+    ]
+
+    "exec:/usr/local/hadoop/bin/hadoop fs -mkdir /tmp" -> "exec:/usr/local/hadoop/bin/hadoop fs -mkdir /user/hive/warehouse" [
+        fontsize = 30
+    ]
+
+    "exec:rm -f /tmp/tripwire_password" -> "tripwire:" [
+        fontsize = 30
+    ]
+
+    "exec:chmod 700 /root/.ssh" -> "exec:rm -rf /root/ssh" [
+        fontsize = 30
+    ]
+
+    "file:/usr/local/hadoop/conf/hadoop-env.sh" -> "hadoop:" [
+        fontsize = 30
+    ]
+
+    "service:hadoop-namenode" -> "file:/etc/init.d/hadoop-secondarynamenode" [
+        fontsize = 30
+    ]
+
+    "line_in_file:" -> "hadoop:" [
+        fontsize = 30
+    ]
+
+    "gem_package:ruby-debug" -> "gem_package:sequel" [
+        fontsize = 30
+    ]
+
+    "gem_package:bjeanes-ghost" -> "gem_package:technicalpickles-jeweler" [
+        fontsize = 30
+    ]
+
+    "exec:force-reload-apache2" -> "variable:port" [
+        fontsize = 30
+    ]
+
+    "exec:mv /root/ssh/hadoop_id_rsa /root/.ssh/hadoop_id_rsa" -> "hadoop:" [
+        fontsize = 30
+    ]
+
+    "exec:wget --no-check-certificate https://issues.apache.org/jira/secure/attachment/12407207/HADOOP-4675-v7.patch -O /usr/local/src/hadoop/patches/0001-ganglia31-HADOOP-4675-v7.patch" -> "exec:cd /usr/local/src/hadoop && for PATCH in `find patches -type f | grep -v applied`; do (patch -p0 < ${PATCH}); mv ${PATCH} ${PATCH}.applied ; done" [
+        fontsize = 30
+    ]
+
+    "file:/etc/init.d/hadoop-secondarynamenode" -> "service:hadoop-secondarynamenode" [
+        fontsize = 30
+    ]
+
+    "directory:/root/.ssh" -> "file:/root/ssh/hadoop_id_rsa" [
+        fontsize = 30
+    ]
+
+    "variable:tripwire_smtp_host" -> "tripwire:" [
+        fontsize = 30
+    ]
+
+    "variable:hadoop_this_nodes_ip" -> "hadoop:" [
+        fontsize = 30
+    ]
+
+    "exec:chmod 700 /root/.ssh" -> "hadoop:" [
+        fontsize = 30
+    ]
+
+    "exec:reload-apache2" -> "exec:/usr/sbin/a2dissite default" [
+        fontsize = 30
+    ]
+
+    "service:hadoop-secondarynamenode" -> "directory:/tmp/gutenberg" [
+        fontsize = 30
+    ]
+
+    "variable:port" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "exec:restart-gmond" -> "ganglia:" [
+        fontsize = 30
+    ]
+
+    "exec:mod-rewrite" -> "service:apache2" [
+        fontsize = 30
+    ]
+
+    "service:apache2" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "exec:cd /usr/local/src/hive && patch -p0 < hive-487.3.patch && mv hive-487.3.patch hive-487.3.patch.applied" -> "hive:" [
+        fontsize = 30
+    ]
+
+    "variable:ganglia_pool_name" -> "ganglia:" [
+        fontsize = 30
+    ]
+
+    "variable:ganglia_pool_name" -> "exec:restart_gmetad2" [
+        fontsize = 30
+    ]
+
+    "file:/etc/init.d/hadoop-namenode" -> "service:hadoop-namenode" [
+        fontsize = 30
+    ]
+
+    "exec:mv /usr/local/src/ganglia-3.1.2/web /var/www/ganglia" -> "file:/var/www/ganglia/conf.php" [
+        fontsize = 30
+    ]
+
+    "gem_package:sequel" -> "package:libsqlite3-dev" [
+        fontsize = 30
+    ]
+
+    "variable:ganglia_gmond_is_master" -> "ganglia:" [
+        fontsize = 30
+    ]
+
+    "file:/etc/init.d/gmetad" -> "variable:ganglia_cloud_name" [
+        fontsize = 30
+    ]
+
+    "package:libapr1-dev" -> "package:libconfuse-dev" [
+        fontsize = 30
+    ]
+
+    "exec:mod-mime" -> "exec:mod-rewrite" [
+        fontsize = 30
+    ]
+
+    "package:tree" -> "convenience_helpers:" [
+        fontsize = 30
+    ]
+
+    "line_in_file:" -> "bash_alias:inspect-poolparty-recipes" [
+        fontsize = 30
+    ]
+
+    "exec:line_in_/root/.ssh/authorized_keys" -> "line_in_file:" [
+        fontsize = 30
+    ]
+
+    "bash_alias:cd-hadoop" -> "variable:current_master" [
+        fontsize = 30
+    ]
+
+    "package:python-dev" -> "ganglia:" [
+        fontsize = 30
+    ]
+
+    "file:/etc/apache2/conf.d/browser_fixes.conf" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "package:ant" -> "package:zlib1g-dev" [
+        fontsize = 30
+    ]
+
+    "exec:chmod 755 /var/lib/ganglia/rrds" -> "exec:chown -R ganglia:ganglia /var/lib/ganglia/rrds" [
+        fontsize = 30
+    ]
+
+    "exec:wget http://www.gutenberg.org/files/4300/4300.txt -O /tmp/gutenberg/ulysses.txt" -> "hadoop:" [
+        fontsize = 30
+    ]
+
+    "package:irb" -> "convenience_helpers:" [
+        fontsize = 30
+    ]
+
+    "exec:chown -R root /root/.ssh" -> "line_in_file:" [
+        fontsize = 30
+    ]
+
+    "exec:mod-mime" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "exec:reload-apache2" -> "file:/etc/apache2/conf.d/mime.conf" [
+        fontsize = 30
+    ]
+
+    "file:/etc/apache2/conf.d/browser_fixes.conf" -> "exec:mod-mime" [
+        fontsize = 30
+    ]
+
+    "directory:/usr/local/src/hadoop/orig" -> "exec:cp /usr/local/src/hadoop/hadoop-0.20.0-core.jar /usr/local/src/hadoop/orig/hadoop-0.20.0-core.jar" [
+        fontsize = 30
+    ]
+
+    "file:/etc/init.d/gmetad" -> "ganglia:" [
+        fontsize = 30
+    ]
+
+    "file:/etc/init.d/hadoop-jobtracker" -> "service:hadoop-jobtracker" [
+        fontsize = 30
+    ]
+
+    "file:/etc/ganglia/bin/monitors/sshd_ganglia" -> "ganglia:" [
+        fontsize = 30
+    ]
+
+    "variable:tripwire_smtp_password" -> "tripwire:" [
+        fontsize = 30
+    ]
+
+    "exec:restart_gmetad2" -> "file:/etc/ganglia/gmetad.conf" [
+        fontsize = 30
+    ]
+
+    "exec:rm -f /var/poolparty/dr_configure/etc/poolparty/secure/templates/tripwire/tripwire_passwords" -> "tripwire:" [
+        fontsize = 30
+    ]
+
+    "exec:echo sun-java6-jdk shared/accepted-sun-dlj-v1-1 select true | /usr/bin/debconf-set-selections" -> "hadoop:" [
+        fontsize = 30
+    ]
+
+    "service:gmetad" -> "ganglia:" [
+        fontsize = 30
+    ]
+
+    "package:php5-gd" -> "php:" [
+        fontsize = 30
+    ]
+
+    "exec:mv /usr/local/src/hadoop /usr/local/hadoop" -> "hadoop:" [
+        fontsize = 30
+    ]
+
+    "file:/etc/init.d/hadoop-secondarynamenode" -> "hadoop:" [
+        fontsize = 30
+    ]
+
+    "exec:restart_gmetad2" -> "ganglia:" [
+        fontsize = 30
+    ]
+
+    "gem_package:sqlite3-ruby" -> "denyhosts:" [
+        fontsize = 30
+    ]
+
+    "package:tree" -> "package:screen" [
+        fontsize = 30
+    ]
+
+    "exec:wget http://gist.github.com/raw/131294/0622454b2cc2f787c04d20ab3d47e888e31edcd4/gistfile1 -O /usr/bin/xtail && chmod +x /usr/bin/xtail" -> "exec:curl http://timkay.com/aws/aws -o /usr/bin/aws" [
+        fontsize = 30
+    ]
+
+    "variable:block_replication_level" -> "hadoop:" [
+        fontsize = 30
+    ]
+
+    "file:/usr/local/src/tripwire-2.4.1.2-src/install/install.cfg" -> "tripwire:" [
+        fontsize = 30
+    ]
+
+    "package:irb" -> "package:vim-nox" [
+        fontsize = 30
+    ]
+
+    "exec:wget http://superb-west.dl.sourceforge.net/sourceforge/ganglia/ganglia-3.1.2.tar.gz -O /usr/local/src/ganglia-3.1.2.tar.gz" -> "ganglia:" [
+        fontsize = 30
+    ]
+
+    "directory:/etc/apache2/conf.d" -> "directory:/etc/apache2/site-includes" [
+        fontsize = 30
+    ]
+
+    "exec:mv /usr/local/src/hadoop-0.20.0 /usr/local/src/hadoop" -> "hadoop:" [
+        fontsize = 30
+    ]
+
+    "exec:chgrp -R root /mnt/hadoop-data" -> "hadoop:" [
+        fontsize = 30
+    ]
+
+    "file:/usr/local/hadoop/conf/hdfs-site.xml" -> "hadoop:" [
+        fontsize = 30
+    ]
+
+    "package:build-essential" -> "package:librrd-dev" [
+        fontsize = 30
+    ]
+
+    "exec:chmod 755 /var/lib/ganglia/rrds" -> "ganglia:" [
+        fontsize = 30
+    ]
+
+    "exec:line_in_/root/.profile" -> "line_in_file:" [
+        fontsize = 30
+    ]
+
+    "package:librrd-dev" -> "ganglia:" [
+        fontsize = 30
+    ]
+
+    "line_in_file:" -> "hadoop:" [
+        fontsize = 30
+    ]
+
+    "exec:/usr/local/hadoop/bin/hadoop fs -chmod g+w /tmp" -> "hive:" [
+        fontsize = 30
+    ]
+
+    "file:/etc/ganglia/gmetad.conf" -> "service:gmetad" [
+        fontsize = 30
+    ]
+
+    "exec:cd /usr/wpt && echo `cat /tmp/tripwire_password | head -n 1` | ./sbin/twadmin --create-polfile /usr/wpt/etc/twpol.txt" -> "tripwire:" [
+        fontsize = 30
+    ]
+
+    "exec:reload-apache2" -> "exec:force-reload-apache2" [
+        fontsize = 30
+    ]
+
+    "exec:/usr/local/hadoop/bin/hadoop fs -mkdir /user/hive/warehouse" -> "exec:/usr/local/hadoop/bin/hadoop fs -chmod g+w /tmp" [
+        fontsize = 30
+    ]
+
+    "exec:chown -R root:root /mnt/hadoop-data" -> "hadoop:" [
+        fontsize = 30
+    ]
+
+    "exec:export JAVA_HOME=/usr/lib/jvm/java-6-sun && cd /usr/local/src/hadoop && ant jar" -> "exec:mv /usr/local/src/hadoop /usr/local/hadoop" [
+        fontsize = 30
+    ]
+
+    "exec:restart-apache2" -> "exec:reload-apache2" [
+        fontsize = 30
+    ]
+
+    "file:/usr/local/hadoop/conf/hadoop-env.sh" -> "variable:block_replication_level" [
+        fontsize = 30
+    ]
+
+    "exec:chown -R root:root /usr/local/src/hadoop" -> "directory:/usr/local/src/hadoop/orig" [
+        fontsize = 30
+    ]
+
+    "package:curl" -> "package:tree" [
+        fontsize = 30
+    ]
+
+    "file:/etc/apache2/conf.d/base.conf" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "file:/root/.hadoop-etc-env.sh" -> "hive:" [
+        fontsize = 30
+    ]
+
+    "exec:mv /usr/local/src/hadoop /usr/local/hadoop" -> "gem_package:bjeanes-ghost" [
+        fontsize = 30
+    ]
+
+    "directory:/etc/apache2/conf.d" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "exec:rm -rf /root/ssh" -> "exec:touch /root/.ssh/authorized_keys" [
+        fontsize = 30
+    ]
+
+    "exec:echo sun-java6-jre shared/accepted-sun-dlj-v1-1 select true | /usr/bin/debconf-set-selections" -> "package:sun-java6-jdk" [
+        fontsize = 30
+    ]
+
+    "variable:ganglia_this_nodes_private_ip" -> "ganglia:" [
+        fontsize = 30
+    ]
+
+    "package:screen" -> "convenience_helpers:" [
+        fontsize = 30
+    ]
+
+    "variable:hadoop_this_nodes_hostname" -> "hadoop:" [
+        fontsize = 30
+    ]
+
+    "package:vim-nox" -> "convenience_helpers:" [
+        fontsize = 30
+    ]
+
+    "package:ant" -> "hive:" [
+        fontsize = 30
+    ]
+
+    "file:/root/ssh/hadoop_id_rsa" -> "hadoop:" [
+        fontsize = 30
+    ]
+
+    "service:hadoop-datanode" -> "hadoop:" [
+        fontsize = 30
+    ]
+
+    "exec:chown -R root:root /tmp/gutenberg" -> "hadoop:" [
+        fontsize = 30
+    ]
+
+    "variable:hadoop_mapred_dir" -> "variable:hadoop_this_nodes_hostname" [
+        fontsize = 30
+    ]
+
+    "exec:unpack_tripwire" -> "tripwire:" [
+        fontsize = 30
+    ]
+
+    "exec:/usr/local/hadoop/bin/hadoop fs -mkdir /user/hive/warehouse" -> "hive:" [
+        fontsize = 30
+    ]
+
+    "exec:cd /usr/local/src && tar -xvvf /usr/local/src/ganglia-3.1.2.tar.gz" -> "exec:cd /usr/local/src/ganglia-3.1.2 && ./configure --with-gmetad && make && make install" [
+        fontsize = 30
+    ]
+
+    "file:/etc/jvm" -> "hadoop:" [
+        fontsize = 30
+    ]
+
+    "exec:mv /usr/local/src/hive/build/dist /usr/local/hive" -> "hive:" [
+        fontsize = 30
+    ]
+
+    "exec:reload-apache2" -> "file:/etc/apache2/conf.d/browser_fixes.conf" [
+        fontsize = 30
+    ]
+
+    "user:hadoop_client" -> "directory:/home/hadoop_client/.ssh" [
+        fontsize = 30
+    ]
+
+    "exec:upgrade-core-hadoop-jar" -> "exec:export JAVA_HOME=/usr/lib/jvm/java-6-sun && cd /usr/local/src/hadoop && ant jar" [
+        fontsize = 30
+    ]
+
+    "exec:cd /usr/local/src/ganglia-3.1.2 && ./configure --with-gmetad && make && make install" -> "exec:mv /usr/local/src/ganglia-3.1.2/web /var/www/ganglia" [
+        fontsize = 30
+    ]
+
+    "exec:restart-gmetad" -> "ganglia:" [
+        fontsize = 30
+    ]
+
+    "variable:hadoop_fs_default_port" -> "file:/etc/init.d/hadoop-datanode" [
+        fontsize = 30
+    ]
+
+    "variable:hadoop_fs_default_port" -> "hadoop:" [
+        fontsize = 30
+    ]
+
+    "file:/var/www/ganglia/conf.php" -> "variable:ganglia_gmond_is_master" [
+        fontsize = 30
+    ]
+
+    "file:/etc/init.d/hadoop-namenode" -> "hadoop:" [
+        fontsize = 30
+    ]
+
+    "directory:/mnt/hadoop-data/data" -> "hadoop:" [
+        fontsize = 30
+    ]
+
+    "exec:mv /usr/local/src/hadoop-0.20.0 /usr/local/src/hadoop" -> "exec:chown -R root:root /usr/local/src/hadoop" [
+        fontsize = 30
+    ]
+
+    "exec:chown -R root:root /tmp/gutenberg" -> "user:hadoop_client" [
+        fontsize = 30
+    ]
+
+    "directory:/mnt/hadoop-data/temp" -> "hadoop:" [
+        fontsize = 30
+    ]
+
+    "exec:chown -R ganglia:ganglia /var/lib/ganglia/rrds" -> "ganglia:" [
+        fontsize = 30
+    ]
+
+    "package:dnsutils" -> "directory:/root/ssh" [
+        fontsize = 30
+    ]
+
+    "exec:wget http://www.gutenberg.org/dirs/etext04/7ldvc10.txt -O /tmp/gutenberg/7ldvc10.txt" -> "exec:wget http://www.gutenberg.org/files/4300/4300.txt -O /tmp/gutenberg/ulysses.txt" [
+        fontsize = 30
+    ]
+
+    "variable:hadoop_mapred_dir" -> "hadoop:" [
+        fontsize = 30
+    ]
+
+    "variable:block_replication_level" -> "directory:/mnt/hadoop-data" [
+        fontsize = 30
+    ]
+
+    "directory:/etc/apache2/site-includes" -> "file:/etc/apache2/apache2.conf" [
+        fontsize = 30
+    ]
+
+    "variable:ganglia_gmetad_data_sources" -> "variable:ganglia_pool_name" [
+        fontsize = 30
+    ]
+
+    "package:jruby1.1" -> "gem_package:sequel" [
+        fontsize = 30
+    ]
+
+    "variable:ganglia_gmetad_data_sources" -> "ganglia:" [
+        fontsize = 30
+    ]
+
+    "file:/etc/init.d/hadoop-datanode" -> "service:hadoop-datanode" [
+        fontsize = 30
+    ]
+
+    "package:libapr1-dev" -> "ganglia:" [
+        fontsize = 30
+    ]
+
+    "exec:download_tripwire" -> "tripwire:" [
+        fontsize = 30
+    ]
+
+    "file:/etc/apache2/apache2.conf" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "variable:tripwire_smtp_settings" -> "tripwire:" [
+        fontsize = 30
+    ]
+
+    "user:ganglia" -> "ganglia:" [
+        fontsize = 30
+    ]
+
+    "file:/usr/wpt/etc/twpol.txt" -> "tripwire:" [
+        fontsize = 30
+    ]
+
+    "convenience_helpers:" -> "gem_package:bjeanes-ghost" [
+        fontsize = 30
+    ]
+
+    "directory:/mnt/hadoop-data/temp/mapred/system" -> "directory:/mnt/hadoop-data/temp/mapred/temp" [
+        fontsize = 30
+    ]
+
+    "directory:/mnt/hadoop-data/data" -> "directory:/mnt/hadoop-data/mapred" [
+        fontsize = 30
+    ]
+
+    "exec:chmod 644 /root/.ssh/authorized_keys" -> "hadoop:" [
+        fontsize = 30
+    ]
+
+    "exec:cd /usr/local/src/hive && wget --no-check-certificate https://issues.apache.org/jira/secure/attachment/12409779/hive-487.3.patch" -> "exec:cd /usr/local/src/hive && patch -p0 < hive-487.3.patch && mv hive-487.3.patch hive-487.3.patch.applied" [
+        fontsize = 30
+    ]
+
+    "package:rrdtool" -> "package:build-essential" [
+        fontsize = 30
+    ]
+
+    "bash_alias:inspect-poolparty-recipes" -> "bash_alias:cd-cookbooks" [
+        fontsize = 30
+    ]
+
+}
+

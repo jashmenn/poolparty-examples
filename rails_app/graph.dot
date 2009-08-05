@@ -1,0 +1,682 @@
+digraph GRATR__Digraph {
+    label = "pp2"
+    rankdir = LR
+    fontsize = 30
+    bgcolor = white
+    "directory:/var/www/paparazzi.com/releases/initial/public" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "directory:/var/www/paparazzi.com/releases/initial/public"
+    ]
+
+    "directory:/var/www/paparazzi.com" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "directory:/var/www/paparazzi.com"
+    ]
+
+    "directory:/var/www" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "directory:/var/www"
+    ]
+
+    "file:/etc/apache2/apache2.conf" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "file:/etc/apache2/apache2.conf"
+    ]
+
+    "directory:/etc/apache2/site-includes" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "directory:/etc/apache2/site-includes"
+    ]
+
+    "apache:" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "apache:"
+    ]
+
+    "directory:/var/www/paparazzi.com/shared/config" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "directory:/var/www/paparazzi.com/shared/config"
+    ]
+
+    "exec:install_passenger_script" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:install_passenger_script"
+    ]
+
+    "exec:mod-passenger" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:mod-passenger"
+    ]
+
+    "file:/etc/apache2/mods-available/passenger.load" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "file:/etc/apache2/mods-available/passenger.load"
+    ]
+
+    "file:/etc/apache2/conf.d/mime.conf" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "file:/etc/apache2/conf.d/mime.conf"
+    ]
+
+    "directory:/etc/apache2/conf.d" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "directory:/etc/apache2/conf.d"
+    ]
+
+    "variable:port" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "variable:port"
+    ]
+
+    "exec:reload-apache2" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:reload-apache2"
+    ]
+
+    "user:deployer" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "user:deployer"
+    ]
+
+    "rails:" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "rails:"
+    ]
+
+    "file:/etc/motd" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "file:/etc/motd"
+    ]
+
+    "directory:/var/log" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "directory:/var/log"
+    ]
+
+    "directory:/etc/apache2" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "directory:/etc/apache2"
+    ]
+
+    "directory:/var/www" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "directory:/var/www"
+    ]
+
+    "file:/var/www/index.html" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "file:/var/www/index.html"
+    ]
+
+    "directory:/var/www/paparazzi.com/logs" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "directory:/var/www/paparazzi.com/logs"
+    ]
+
+    "file:/etc/apache2/mods-available/passenger.conf" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "file:/etc/apache2/mods-available/passenger.conf"
+    ]
+
+    "directory:/var/www/paparazzi.com/shared/log" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "directory:/var/www/paparazzi.com/shared/log"
+    ]
+
+    "variable:passenger_version" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "variable:passenger_version"
+    ]
+
+    "file:/etc/apache2/conf.d/browser_fixes.conf" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "file:/etc/apache2/conf.d/browser_fixes.conf"
+    ]
+
+    "gem_package:passenger" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "gem_package:passenger"
+    ]
+
+    "package:apache2" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "package:apache2"
+    ]
+
+    "directory:/var/www/paparazzi.com/shared" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "directory:/var/www/paparazzi.com/shared"
+    ]
+
+    "variable:passenger_root_path" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "variable:passenger_root_path"
+    ]
+
+    "gem_package:fastthread" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "gem_package:fastthread"
+    ]
+
+    "directory:/var/www/paparazzi.com/releases" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "directory:/var/www/paparazzi.com/releases"
+    ]
+
+    "exec:/usr/sbin/a2ensite paparazzi.com" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:/usr/sbin/a2ensite paparazzi.com"
+    ]
+
+    "directory:/etc/apache2/sites-available" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "directory:/etc/apache2/sites-available"
+    ]
+
+    "package:apache2-prefork-dev" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "package:apache2-prefork-dev"
+    ]
+
+    "chef_attributes_file:/Users/alerner/Development/ruby/mine/poolparty/bin/../lib/../vendor/chef/apache2/attributes/apache.rb" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "chef_attributes_file:/Users/alerner/Development/ruby/mine/poolparty/bin/../lib/../vendor/chef/apache2/attributes/apache.rb"
+    ]
+
+    "service:apache2" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "service:apache2"
+    ]
+
+    "exec:force-reload-apache2" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:force-reload-apache2"
+    ]
+
+    "gem_package:rails" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "gem_package:rails"
+    ]
+
+    "app:paparazzi.com" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "app:paparazzi.com"
+    ]
+
+    "variable:passenger_module_path" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "variable:passenger_module_path"
+    ]
+
+    "package:build-essential" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "package:build-essential"
+    ]
+
+    "exec:mod-mime" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:mod-mime"
+    ]
+
+    "exec:restart-apache2" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:restart-apache2"
+    ]
+
+    "package:libsqlite3-dev" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "package:libsqlite3-dev"
+    ]
+
+    "directory:/var/www/paparazzi.com/shared/public" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "directory:/var/www/paparazzi.com/shared/public"
+    ]
+
+    "file:/etc/apache2/sites-available/paparazzi.com" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "file:/etc/apache2/sites-available/paparazzi.com"
+    ]
+
+    "exec:mod-rewrite" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:mod-rewrite"
+    ]
+
+    "file:/etc/apache2/conf.d/base.conf" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "file:/etc/apache2/conf.d/base.conf"
+    ]
+
+    "exec:/usr/sbin/a2dissite default" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:/usr/sbin/a2dissite default"
+    ]
+
+    "gem_package:sqlite3-ruby" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "gem_package:sqlite3-ruby"
+    ]
+
+    "passenger_site:paparazzi.com" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "passenger_site:paparazzi.com"
+    ]
+
+    "user:www-data" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "user:www-data"
+    ]
+
+    "directory:/var/www/paparazzi.com/releases/initial/public" -> "passenger_site:paparazzi.com" [
+        fontsize = 30
+    ]
+
+    "exec:reload-apache2" -> "exec:/usr/sbin/a2dissite default" [
+        fontsize = 30
+    ]
+
+    "gem_package:fastthread" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "package:apache2" -> "file:/etc/apache2/apache2.conf" [
+        fontsize = 30
+    ]
+
+    "directory:/var/www/paparazzi.com/releases" -> "passenger_site:paparazzi.com" [
+        fontsize = 30
+    ]
+
+    "directory:/var/www/paparazzi.com" -> "passenger_site:paparazzi.com" [
+        fontsize = 30
+    ]
+
+    "chef_attributes_file:/Users/alerner/Development/ruby/mine/poolparty/bin/../lib/../vendor/chef/apache2/attributes/apache.rb" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "exec:mod-passenger" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "exec:reload-apache2" -> "file:/etc/apache2/conf.d/mime.conf" [
+        fontsize = 30
+    ]
+
+    "package:apache2" -> "exec:install_passenger_script" [
+        fontsize = 30
+    ]
+
+    "package:apache2" -> "exec:mod-rewrite" [
+        fontsize = 30
+    ]
+
+    "variable:passenger_root_path" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "package:apache2" -> "exec:mod-mime" [
+        fontsize = 30
+    ]
+
+    "package:apache2-prefork-dev" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "directory:/var/www/paparazzi.com/shared/config" -> "passenger_site:paparazzi.com" [
+        fontsize = 30
+    ]
+
+    "directory:/var/www/paparazzi.com/logs" -> "passenger_site:paparazzi.com" [
+        fontsize = 30
+    ]
+
+    "package:apache2" -> "service:apache2" [
+        fontsize = 30
+    ]
+
+    "package:build-essential" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "exec:restart-apache2" -> "exec:install_passenger_script" [
+        fontsize = 30
+    ]
+
+    "package:apache2" -> "exec:reload-apache2" [
+        fontsize = 30
+    ]
+
+    "directory:/var/www/paparazzi.com/shared/log" -> "passenger_site:paparazzi.com" [
+        fontsize = 30
+    ]
+
+    "file:/etc/apache2/mods-available/passenger.load" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "file:/etc/apache2/mods-available/passenger.conf" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "gem_package:rails" -> "rails:" [
+        fontsize = 30
+    ]
+
+    "exec:install_passenger_script" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "directory:/var/www" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "exec:/usr/sbin/a2ensite paparazzi.com" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "exec:mod-rewrite" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "file:/etc/apache2/sites-available/paparazzi.com" -> "exec:/usr/sbin/a2ensite paparazzi.com" [
+        fontsize = 30
+    ]
+
+    "directory:/var/log" -> "file:/etc/motd" [
+        fontsize = 30
+    ]
+
+    "rails:" -> "file:/var/www/index.html" [
+        fontsize = 30
+    ]
+
+    "passenger_site:paparazzi.com" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "app:paparazzi.com" -> "package:libsqlite3-dev" [
+        fontsize = 30
+    ]
+
+    "file:/etc/apache2/conf.d/browser_fixes.conf" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "exec:reload-apache2" -> "file:/etc/apache2/conf.d/base.conf" [
+        fontsize = 30
+    ]
+
+    "gem_package:passenger" -> "exec:install_passenger_script" [
+        fontsize = 30
+    ]
+
+    "file:/etc/apache2/apache2.conf" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "file:/etc/apache2/conf.d/base.conf" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "directory:/var/www/paparazzi.com/shared/public" -> "passenger_site:paparazzi.com" [
+        fontsize = 30
+    ]
+
+    "directory:/etc/apache2" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "exec:restart-apache2" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "app:paparazzi.com" -> "rails:" [
+        fontsize = 30
+    ]
+
+    "package:apache2" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "package:libsqlite3-dev" -> "gem_package:sqlite3-ruby" [
+        fontsize = 30
+    ]
+
+    "exec:/usr/sbin/a2dissite default" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "exec:force-reload-apache2" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "user:deployer" -> "rails:" [
+        fontsize = 30
+    ]
+
+    "user:www-data" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "gem_package:rails" -> "gem_package:sqlite3-ruby" [
+        fontsize = 30
+    ]
+
+    "package:libsqlite3-dev" -> "gem_package:rails" [
+        fontsize = 30
+    ]
+
+    "exec:reload-apache2" -> "file:/etc/apache2/conf.d/browser_fixes.conf" [
+        fontsize = 30
+    ]
+
+    "file:/etc/apache2/sites-available/paparazzi.com" -> "passenger_site:paparazzi.com" [
+        fontsize = 30
+    ]
+
+    "apache:" -> "app:paparazzi.com" [
+        fontsize = 30
+    ]
+
+    "package:apache2" -> "exec:mod-passenger" [
+        fontsize = 30
+    ]
+
+    "exec:reload-apache2" -> "exec:/usr/sbin/a2ensite paparazzi.com" [
+        fontsize = 30
+    ]
+
+    "variable:port" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "file:/etc/apache2/conf.d/mime.conf" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "gem_package:sqlite3-ruby" -> "rails:" [
+        fontsize = 30
+    ]
+
+    "directory:/etc/apache2/sites-available" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "exec:mod-mime" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "file:/etc/motd" -> "rails:" [
+        fontsize = 30
+    ]
+
+    "exec:force-reload-apache2" -> "exec:mod-passenger" [
+        fontsize = 30
+    ]
+
+    "directory:/etc/apache2/conf.d" -> "file:/etc/apache2/apache2.conf" [
+        fontsize = 30
+    ]
+
+    "directory:/var/www" -> "passenger_site:paparazzi.com" [
+        fontsize = 30
+    ]
+
+    "directory:/etc/apache2/site-includes" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "directory:/var/www/paparazzi.com/shared" -> "passenger_site:paparazzi.com" [
+        fontsize = 30
+    ]
+
+    "exec:reload-apache2" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "exec:force-reload-apache2" -> "exec:mod-mime" [
+        fontsize = 30
+    ]
+
+    "package:libsqlite3-dev" -> "rails:" [
+        fontsize = 30
+    ]
+
+    "gem_package:sqlite3-ruby" -> "user:deployer" [
+        fontsize = 30
+    ]
+
+    "directory:/etc/apache2/conf.d" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "variable:passenger_version" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "variable:passenger_module_path" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "gem_package:passenger" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "exec:force-reload-apache2" -> "exec:mod-rewrite" [
+        fontsize = 30
+    ]
+
+    "service:apache2" -> "apache:" [
+        fontsize = 30
+    ]
+
+}
+

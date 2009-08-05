@@ -1,0 +1,810 @@
+digraph GRATR__Digraph {
+    label = "secure"
+    rankdir = LR
+    fontsize = 30
+    bgcolor = white
+    "apache:" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "apache:"
+    ]
+
+    "package:tree" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "package:tree"
+    ]
+
+    "exec:line_in_/etc/apache2/sites-enabled/default" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:line_in_/etc/apache2/sites-enabled/default"
+    ]
+
+    "exec:mod-rewrite" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:mod-rewrite"
+    ]
+
+    "bash_alias:inspect-poolparty-recipes" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "bash_alias:inspect-poolparty-recipes"
+    ]
+
+    "exec:rm -f /var/poolparty/dr_configure/etc/poolparty/secure/templates/tripwire/tripwire_passwords" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:rm -f /var/poolparty/dr_configure/etc/poolparty/secure/templates/tripwire/tripwire_passwords"
+    ]
+
+    "gem_package:bjeanes-ghost" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "gem_package:bjeanes-ghost"
+    ]
+
+    "convenience_helpers:" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "convenience_helpers:"
+    ]
+
+    "exec:wget http://gist.github.com/raw/131294/0622454b2cc2f787c04d20ab3d47e888e31edcd4/gistfile1 -O /usr/bin/xtail && chmod +x /usr/bin/xtail" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:wget http://gist.github.com/raw/131294/0622454b2cc2f787c04d20ab3d47e888e31edcd4/gistfile1 -O /usr/bin/xtail && chmod +x /usr/bin/xtail"
+    ]
+
+    "file:/tmp/tripwire_password" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "file:/tmp/tripwire_password"
+    ]
+
+    "variable:tripwire_smtp_settings" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "variable:tripwire_smtp_settings"
+    ]
+
+    "file:/etc/apache2/conf.d/mime.conf" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "file:/etc/apache2/conf.d/mime.conf"
+    ]
+
+    "exec:cd /usr/wpt && echo `cat /tmp/tripwire_password | head -n 1` | ./sbin/twadmin --create-polfile /usr/wpt/etc/twpol.txt" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:cd /usr/wpt && echo `cat /tmp/tripwire_password | head -n 1` | ./sbin/twadmin --create-polfile /usr/wpt/etc/twpol.txt"
+    ]
+
+    "service:apache2" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "service:apache2"
+    ]
+
+    "file:/usr/wpt/etc/twcfg.txt" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "file:/usr/wpt/etc/twcfg.txt"
+    ]
+
+    "file:/usr/local/src/tripwire-2.4.1.2-src/make-install-tripwire.tcl" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "file:/usr/local/src/tripwire-2.4.1.2-src/make-install-tripwire.tcl"
+    ]
+
+    "file:/usr/wpt/etc/twpol.txt" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "file:/usr/wpt/etc/twpol.txt"
+    ]
+
+    "shorewall:" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "shorewall:"
+    ]
+
+    "package:screen" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "package:screen"
+    ]
+
+    "line_in_file:" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "line_in_file:"
+    ]
+
+    "user:www-data" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "user:www-data"
+    ]
+
+    "gem_package:technicalpickles-jeweler" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "gem_package:technicalpickles-jeweler"
+    ]
+
+    "exec:cd /usr/local/src/tripwire-2.4.1.2-src && ./configure --prefix=/usr/wpt" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:cd /usr/local/src/tripwire-2.4.1.2-src && ./configure --prefix=/usr/wpt"
+    ]
+
+    "package:expect" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "package:expect"
+    ]
+
+    "package:irb" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "package:irb"
+    ]
+
+    "exec:line_in_/root/.profile" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:line_in_/root/.profile"
+    ]
+
+    "exec:reload-apache2" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:reload-apache2"
+    ]
+
+    "variable:tripwire_smtp_port" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "variable:tripwire_smtp_port"
+    ]
+
+    "variable:tripwire_smtp_username" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "variable:tripwire_smtp_username"
+    ]
+
+    "exec:wget http://softlayer.dl.sourceforge.net/sourceforge/tripwire/tripwire-2.4.1.2-src.tar.bz2 -O /usr/local/src/tripwire-2.4.1.2-src.tar.bz2" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:wget http://softlayer.dl.sourceforge.net/sourceforge/tripwire/tripwire-2.4.1.2-src.tar.bz2 -O /usr/local/src/tripwire-2.4.1.2-src.tar.bz2"
+    ]
+
+    "package:curl" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "package:curl"
+    ]
+
+    "line_in_file:" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "line_in_file:"
+    ]
+
+    "tripwire:" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "tripwire:"
+    ]
+
+    "package:vim-nox" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "package:vim-nox"
+    ]
+
+    "directory:/usr/local/src" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "directory:/usr/local/src"
+    ]
+
+    "file:/etc/apache2/apache2.conf" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "file:/etc/apache2/apache2.conf"
+    ]
+
+    "exec:mod-mime" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:mod-mime"
+    ]
+
+    "directory:/etc/apache2" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "directory:/etc/apache2"
+    ]
+
+    "exec:rm -f /tmp/tripwire_password" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:rm -f /tmp/tripwire_password"
+    ]
+
+    "exec:/usr/sbin/a2dissite default" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:/usr/sbin/a2dissite default"
+    ]
+
+    "bash_alias:cd-cookbooks" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "bash_alias:cd-cookbooks"
+    ]
+
+    "file:/etc/apache2/conf.d/browser_fixes.conf" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "file:/etc/apache2/conf.d/browser_fixes.conf"
+    ]
+
+    "exec:rm -f /var/poolparty/dr_configure/chef/cookbooks/poolparty/templates/default/tmp/tripwire_password.erb" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:rm -f /var/poolparty/dr_configure/chef/cookbooks/poolparty/templates/default/tmp/tripwire_password.erb"
+    ]
+
+    "file:/etc/apache2/conf.d/base.conf" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "file:/etc/apache2/conf.d/base.conf"
+    ]
+
+    "directory:/tmp" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "directory:/tmp"
+    ]
+
+    "package:nmap" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "package:nmap"
+    ]
+
+    "exec:cd /usr/local/src/tripwire-2.4.1.2-src && /usr/bin/expect make-install-tripwire.tcl `cat /tmp/tripwire_password | head -n 1` `cat /tmp/tripwire_password | tail -n 1`" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:cd /usr/local/src/tripwire-2.4.1.2-src && /usr/bin/expect make-install-tripwire.tcl `cat /tmp/tripwire_password | head -n 1` `cat /tmp/tripwire_password | tail -n 1`"
+    ]
+
+    "exec:curl http://timkay.com/aws/aws -o /usr/bin/aws" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:curl http://timkay.com/aws/aws -o /usr/bin/aws"
+    ]
+
+    "denyhosts:" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "denyhosts:"
+    ]
+
+    "directory:/usr/wpt" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "directory:/usr/wpt"
+    ]
+
+    "exec:cd /usr/wpt && echo `cat /tmp/tripwire_password | tail -n 1` | ./sbin/tripwire --init" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:cd /usr/wpt && echo `cat /tmp/tripwire_password | tail -n 1` | ./sbin/tripwire --init"
+    ]
+
+    "directory:/etc/apache2/conf.d" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "directory:/etc/apache2/conf.d"
+    ]
+
+    "exec:echo \"export PS1='\\u@\\h \\A \\w (secure) $ '\" >> /root/.profile" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:echo \"export PS1='\\u@\\h \\A \\w (secure) $ '\" >> /root/.profile"
+    ]
+
+    "line_in_file:" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "line_in_file:"
+    ]
+
+    "package:apache2" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "package:apache2"
+    ]
+
+    "exec:restart-apache2" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:restart-apache2"
+    ]
+
+    "exec:force-reload-apache2" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:force-reload-apache2"
+    ]
+
+    "file:/usr/local/src/tripwire-2.4.1.2-src/install/install.cfg" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "file:/usr/local/src/tripwire-2.4.1.2-src/install/install.cfg"
+    ]
+
+    "package:git-core" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "package:git-core"
+    ]
+
+    "exec:line_in_/root/.profile" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:line_in_/root/.profile"
+    ]
+
+    "variable:port" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "variable:port"
+    ]
+
+    "exec:cd /usr/local/src/tripwire-2.4.1.2-src && make" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:cd /usr/local/src/tripwire-2.4.1.2-src && make"
+    ]
+
+    "development_gem:poolparty-extensions" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "development_gem:poolparty-extensions"
+    ]
+
+    "chef_attributes_file:/Users/alerner/Development/ruby/mine/poolparty/bin/../lib/../vendor/chef/apache2/attributes/apache.rb" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "chef_attributes_file:/Users/alerner/Development/ruby/mine/poolparty/bin/../lib/../vendor/chef/apache2/attributes/apache.rb"
+    ]
+
+    "variable:tripwire_smtp_password" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "variable:tripwire_smtp_password"
+    ]
+
+    "directory:/etc/apache2/site-includes" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "directory:/etc/apache2/site-includes"
+    ]
+
+    "exec:cd /usr/local/src && tar -xvvf /usr/local/src/tripwire-2.4.1.2-src.tar.bz2" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "exec:cd /usr/local/src && tar -xvvf /usr/local/src/tripwire-2.4.1.2-src.tar.bz2"
+    ]
+
+    "variable:tripwire_smtp_host" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "variable:tripwire_smtp_host"
+    ]
+
+    "directory:/var/www" [
+        color = "#111111",
+        fontsize = 30,
+        style = rounded,
+        label = "directory:/var/www"
+    ]
+
+    "exec:mod-mime" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "file:/tmp/tripwire_password" -> "tripwire:" [
+        fontsize = 30
+    ]
+
+    "package:nmap" -> "package:git-core" [
+        fontsize = 30
+    ]
+
+    "exec:cd /usr/local/src/tripwire-2.4.1.2-src && /usr/bin/expect make-install-tripwire.tcl `cat /tmp/tripwire_password | head -n 1` `cat /tmp/tripwire_password | tail -n 1`" -> "tripwire:" [
+        fontsize = 30
+    ]
+
+    "exec:line_in_/root/.profile" -> "line_in_file:" [
+        fontsize = 30
+    ]
+
+    "directory:/usr/wpt" -> "tripwire:" [
+        fontsize = 30
+    ]
+
+    "exec:line_in_/etc/apache2/sites-enabled/default" -> "line_in_file:" [
+        fontsize = 30
+    ]
+
+    "directory:/etc/apache2/site-includes" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "variable:tripwire_smtp_password" -> "tripwire:" [
+        fontsize = 30
+    ]
+
+    "directory:/etc/apache2/conf.d" -> "file:/etc/apache2/apache2.conf" [
+        fontsize = 30
+    ]
+
+    "apache:" -> "package:nmap" [
+        fontsize = 30
+    ]
+
+    "variable:tripwire_smtp_settings" -> "tripwire:" [
+        fontsize = 30
+    ]
+
+    "exec:mod-rewrite" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "chef_attributes_file:/Users/alerner/Development/ruby/mine/poolparty/bin/../lib/../vendor/chef/apache2/attributes/apache.rb" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "file:/usr/local/src/tripwire-2.4.1.2-src/install/install.cfg" -> "tripwire:" [
+        fontsize = 30
+    ]
+
+    "package:apache2" -> "exec:reload-apache2" [
+        fontsize = 30
+    ]
+
+    "variable:tripwire_smtp_username" -> "tripwire:" [
+        fontsize = 30
+    ]
+
+    "exec:reload-apache2" -> "file:/etc/apache2/conf.d/mime.conf" [
+        fontsize = 30
+    ]
+
+    "file:/etc/apache2/apache2.conf" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "package:apache2" -> "exec:mod-mime" [
+        fontsize = 30
+    ]
+
+    "directory:/var/www" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "development_gem:poolparty-extensions" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "variable:tripwire_smtp_port" -> "tripwire:" [
+        fontsize = 30
+    ]
+
+    "package:apache2" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "variable:tripwire_smtp_host" -> "tripwire:" [
+        fontsize = 30
+    ]
+
+    "directory:/usr/local/src" -> "tripwire:" [
+        fontsize = 30
+    ]
+
+    "package:apache2" -> "file:/etc/apache2/apache2.conf" [
+        fontsize = 30
+    ]
+
+    "exec:reload-apache2" -> "exec:/usr/sbin/a2dissite default" [
+        fontsize = 30
+    ]
+
+    "package:screen" -> "convenience_helpers:" [
+        fontsize = 30
+    ]
+
+    "shorewall:" -> "denyhosts:" [
+        fontsize = 30
+    ]
+
+    "exec:force-reload-apache2" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "exec:curl http://timkay.com/aws/aws -o /usr/bin/aws" -> "convenience_helpers:" [
+        fontsize = 30
+    ]
+
+    "file:/etc/apache2/conf.d/browser_fixes.conf" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "exec:rm -f /var/poolparty/dr_configure/etc/poolparty/secure/templates/tripwire/tripwire_passwords" -> "tripwire:" [
+        fontsize = 30
+    ]
+
+    "package:apache2" -> "exec:mod-rewrite" [
+        fontsize = 30
+    ]
+
+    "package:git-core" -> "tripwire:" [
+        fontsize = 30
+    ]
+
+    "exec:force-reload-apache2" -> "exec:mod-rewrite" [
+        fontsize = 30
+    ]
+
+    "convenience_helpers:" -> "gem_package:bjeanes-ghost" [
+        fontsize = 30
+    ]
+
+    "package:tree" -> "convenience_helpers:" [
+        fontsize = 30
+    ]
+
+    "file:/usr/wpt/etc/twcfg.txt" -> "tripwire:" [
+        fontsize = 30
+    ]
+
+    "gem_package:technicalpickles-jeweler" -> "development_gem:poolparty-extensions" [
+        fontsize = 30
+    ]
+
+    "directory:/etc/apache2" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "file:/usr/wpt/etc/twpol.txt" -> "tripwire:" [
+        fontsize = 30
+    ]
+
+    "exec:reload-apache2" -> "file:/etc/apache2/conf.d/base.conf" [
+        fontsize = 30
+    ]
+
+    "file:/etc/apache2/conf.d/base.conf" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "variable:port" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "exec:cd /usr/local/src/tripwire-2.4.1.2-src && ./configure --prefix=/usr/wpt" -> "tripwire:" [
+        fontsize = 30
+    ]
+
+    "file:/usr/local/src/tripwire-2.4.1.2-src/make-install-tripwire.tcl" -> "tripwire:" [
+        fontsize = 30
+    ]
+
+    "bash_alias:cd-cookbooks" -> "convenience_helpers:" [
+        fontsize = 30
+    ]
+
+    "exec:rm -f /var/poolparty/dr_configure/chef/cookbooks/poolparty/templates/default/tmp/tripwire_password.erb" -> "tripwire:" [
+        fontsize = 30
+    ]
+
+    "package:vim-nox" -> "convenience_helpers:" [
+        fontsize = 30
+    ]
+
+    "directory:/tmp" -> "tripwire:" [
+        fontsize = 30
+    ]
+
+    "tripwire:" -> "shorewall:" [
+        fontsize = 30
+    ]
+
+    "line_in_file:" -> "bash_alias:cd-cookbooks" [
+        fontsize = 30
+    ]
+
+    "file:/etc/apache2/conf.d/mime.conf" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "gem_package:bjeanes-ghost" -> "gem_package:technicalpickles-jeweler" [
+        fontsize = 30
+    ]
+
+    "user:www-data" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "exec:restart-apache2" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "package:irb" -> "convenience_helpers:" [
+        fontsize = 30
+    ]
+
+    "exec:wget http://softlayer.dl.sourceforge.net/sourceforge/tripwire/tripwire-2.4.1.2-src.tar.bz2 -O /usr/local/src/tripwire-2.4.1.2-src.tar.bz2" -> "tripwire:" [
+        fontsize = 30
+    ]
+
+    "bash_alias:inspect-poolparty-recipes" -> "convenience_helpers:" [
+        fontsize = 30
+    ]
+
+    "package:expect" -> "tripwire:" [
+        fontsize = 30
+    ]
+
+    "exec:line_in_/root/.profile" -> "line_in_file:" [
+        fontsize = 30
+    ]
+
+    "exec:cd /usr/local/src && tar -xvvf /usr/local/src/tripwire-2.4.1.2-src.tar.bz2" -> "tripwire:" [
+        fontsize = 30
+    ]
+
+    "exec:cd /usr/local/src/tripwire-2.4.1.2-src && make" -> "tripwire:" [
+        fontsize = 30
+    ]
+
+    "service:apache2" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "exec:echo \"export PS1='\\u@\\h \\A \\w (secure) $ '\" >> /root/.profile" -> "convenience_helpers:" [
+        fontsize = 30
+    ]
+
+    "package:apache2" -> "service:apache2" [
+        fontsize = 30
+    ]
+
+    "exec:reload-apache2" -> "file:/etc/apache2/conf.d/browser_fixes.conf" [
+        fontsize = 30
+    ]
+
+    "exec:force-reload-apache2" -> "exec:mod-mime" [
+        fontsize = 30
+    ]
+
+    "line_in_file:" -> "bash_alias:inspect-poolparty-recipes" [
+        fontsize = 30
+    ]
+
+    "exec:reload-apache2" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "exec:wget http://gist.github.com/raw/131294/0622454b2cc2f787c04d20ab3d47e888e31edcd4/gistfile1 -O /usr/bin/xtail && chmod +x /usr/bin/xtail" -> "convenience_helpers:" [
+        fontsize = 30
+    ]
+
+    "line_in_file:" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "exec:/usr/sbin/a2dissite default" -> "apache:" [
+        fontsize = 30
+    ]
+
+    "exec:rm -f /tmp/tripwire_password" -> "tripwire:" [
+        fontsize = 30
+    ]
+
+    "exec:cd /usr/wpt && echo `cat /tmp/tripwire_password | head -n 1` | ./sbin/twadmin --create-polfile /usr/wpt/etc/twpol.txt" -> "tripwire:" [
+        fontsize = 30
+    ]
+
+    "package:curl" -> "convenience_helpers:" [
+        fontsize = 30
+    ]
+
+    "exec:cd /usr/wpt && echo `cat /tmp/tripwire_password | tail -n 1` | ./sbin/tripwire --init" -> "tripwire:" [
+        fontsize = 30
+    ]
+
+    "directory:/etc/apache2/conf.d" -> "apache:" [
+        fontsize = 30
+    ]
+
+}
+
